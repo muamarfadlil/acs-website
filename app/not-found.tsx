@@ -1,5 +1,6 @@
 // app/not-found.tsx
 // Halaman 404 — tampil saat URL tidak ditemukan
+"use client";
 
 import Link from "next/link";
 import { Home, ArrowLeft } from "lucide-react";
