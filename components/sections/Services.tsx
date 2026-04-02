@@ -1,14 +1,20 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Link from "next/link";
-// Tambahkan import 'type LucideIcon' — ini tipe resmi yang mendeskripsikan
-// semua komponen ikon Lucide secara akurat, termasuk prop size sebagai string | number
-import { type LucideIcon, Droplets, Layers, Activity, ArrowRight, CheckCircle2 } from "lucide-react";
+// LucideIcon adalah tipe resmi dari lucide-react — mendeskripsikan
+// semua ikon Lucide dengan benar, termasuk prop size sebagai string | number
+import {
+  type LucideIcon,
+  Droplets,
+  Layers,
+  Activity,
+  ArrowRight,
+  CheckCircle2,
+} from "lucide-react";
 import { services } from "@/lib/data";
 
 // Peta ikon untuk tiap layanan
-// Perbaikan: ganti React.ComponentType<{ size?: number; ... }> dengan LucideIcon
+// Menggunakan LucideIcon sebagai tipe agar kompatibel dengan TypeScript strict mode
 const iconMap: Record<string, LucideIcon> = {
   Droplets,
   Layers,
@@ -24,9 +30,6 @@ const iconMap: Record<string, LucideIcon> = {
  * - Deskripsi singkat
  * - Daftar fitur spesifik
  * - Tombol "Selengkapnya"
- *
- * Latar belakang section ini gelap (navy) untuk menciptakan
- * kontras visual setelah section About yang berwarna putih.
  */
 export default function Services() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -40,7 +43,9 @@ export default function Services() {
       },
       { threshold: 0.1 }
     );
-    sectionRef.current?.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    sectionRef.current
+      ?.querySelectorAll(".reveal")
+      .forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
@@ -63,7 +68,6 @@ export default function Services() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* === HEADER SECTION === */}
         <div className="text-center mb-16">
           <div className="reveal flex items-center justify-center gap-3 mb-4">
@@ -73,18 +77,15 @@ export default function Services() {
             </span>
             <span className="w-10 h-0.5 bg-[#c41e1e]" />
           </div>
-          <h2 className="
-            reveal font-['Bebas_Neue'] text-5xl lg:text-6xl
-            text-white tracking-wide leading-tight
-          ">
+          <h2 className="reveal font-['Bebas_Neue'] text-5xl lg:text-6xl text-white tracking-wide leading-tight">
             Solusi Lengkap untuk
             <br />
             <span className="text-[#c41e1e]">Operasi Pengeboran</span>
           </h2>
           <p className="reveal reveal-delay-1 text-white/60 text-base max-w-2xl mx-auto mt-4 leading-relaxed">
-            Dari perencanaan fluida pemboran hingga sementasi sumur — kami menyediakan
-            layanan terintegrasi yang memastikan operasi Anda berjalan efisien, aman,
-            dan menguntungkan.
+            Dari perencanaan fluida pemboran hingga sementasi sumur — kami
+            menyediakan layanan terintegrasi yang memastikan operasi Anda
+            berjalan efisien, aman, dan menguntungkan.
           </p>
         </div>
 
@@ -106,21 +107,25 @@ export default function Services() {
                 `}
               >
                 {/* Garis aksen merah di bagian atas kartu */}
-                <div className="
+                <div
+                  className="
                   h-1 bg-gradient-to-r from-[#c41e1e] to-transparent
                   group-hover:from-[#c41e1e] group-hover:to-[#c41e1e]
                   transition-all duration-300
-                " />
+                "
+                />
 
                 <div className="p-7">
                   {/* Ikon */}
-                  <div className="
+                  <div
+                    className="
                     w-12 h-12 rounded
                     bg-[#c41e1e]/15 border border-[#c41e1e]/30
                     flex items-center justify-center mb-5
                     group-hover:bg-[#c41e1e] group-hover:border-[#c41e1e]
                     transition-all duration-300
-                  ">
+                  "
+                  >
                     <Icon
                       size={22}
                       className="text-[#c41e1e] group-hover:text-white transition-colors duration-300"
@@ -128,10 +133,12 @@ export default function Services() {
                   </div>
 
                   {/* Judul layanan */}
-                  <h3 className="
+                  <h3
+                    className="
                     font-['Bebas_Neue'] text-2xl text-white
                     tracking-wide leading-tight mb-3
-                  ">
+                  "
+                  >
                     {service.title}
                   </h3>
 
@@ -144,7 +151,10 @@ export default function Services() {
                   <div className="space-y-2 mb-6">
                     {service.features.map((feature, fi) => (
                       <div key={fi} className="flex items-start gap-2.5">
-                        <CheckCircle2 size={14} className="text-[#c41e1e] flex-shrink-0 mt-0.5" />
+                        <CheckCircle2
+                          size={14}
+                          className="text-[#c41e1e] flex-shrink-0 mt-0.5"
+                        />
                         <span className="text-white/70 text-xs leading-snug">
                           {feature}
                         </span>
@@ -196,9 +206,7 @@ export default function Services() {
               },
             ].map((item, i) => (
               <div key={i} className="flex flex-col items-center">
-                <div className="
-                  w-8 h-0.5 bg-[#c41e1e] mb-3
-                " />
+                <div className="w-8 h-0.5 bg-[#c41e1e] mb-3" />
                 <h4 className="text-white font-semibold text-sm mb-2">
                   {item.title}
                 </h4>
