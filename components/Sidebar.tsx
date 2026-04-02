@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { type LucideIcon } from "lucide-react"; // Tipe resmi Lucide — sudah mencakup semua prop dengan benar
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -14,8 +15,10 @@ import {
 } from "lucide-react";
 import { sidebarLinks } from "@/lib/data";
 
-// Peta ikon – menghubungkan nama string di data.ts ke komponen Lucide
-const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+// Perbaikan: gunakan LucideIcon sebagai tipe, bukan definisi manual.
+// LucideIcon adalah tipe resmi dari lucide-react yang sudah mendeskripsikan
+// prop size sebagai string | number, sehingga cocok dengan implementasi internalnya.
+const iconMap: Record<string, LucideIcon> = {
   FlaskConical,
   Briefcase,
   UserCheck,
@@ -43,7 +46,8 @@ export default function Sidebar() {
       setIsOpen(e.detail as boolean);
     };
     window.addEventListener("toggleSidebar", handler as EventListener);
-    return () => window.removeEventListener("toggleSidebar", handler as EventListener);
+    return () =>
+      window.removeEventListener("toggleSidebar", handler as EventListener);
   }, []);
 
   // Tutup sidebar saat menekan tombol Escape
@@ -89,11 +93,13 @@ export default function Sidebar() {
         {/* Header sidebar: logo + tombol close */}
         <div className="flex items-center justify-between px-5 py-5 border-b border-white/10">
           <div className="flex items-center gap-3">
-            <div className="
+            <div
+              className="
               w-8 h-8 rounded-full bg-white
               flex items-center justify-center
               border-2 border-[#c41e1e]
-            ">
+            "
+            >
               <span className="text-[#0a1f44] font-bold text-xs">ACS</span>
             </div>
             <span className="text-white font-semibold text-sm">Menu</span>
@@ -118,9 +124,10 @@ export default function Sidebar() {
             className={`
               flex items-center gap-3 px-3 py-2.5 rounded text-sm
               transition-colors duration-150 group
-              ${pathname === "/"
-                ? "bg-[#c41e1e] text-white"
-                : "text-white/70 hover:text-white hover:bg-white/10"
+              ${
+                pathname === "/"
+                  ? "bg-[#c41e1e] text-white"
+                  : "text-white/70 hover:text-white hover:bg-white/10"
               }
             `}
           >
@@ -151,9 +158,10 @@ export default function Sidebar() {
                 className={`
                   flex items-center gap-3 px-3 py-2.5 rounded text-sm
                   transition-all duration-150 group
-                  ${isActive
-                    ? "bg-[#c41e1e] text-white"
-                    : "text-white/70 hover:text-white hover:bg-white/10"
+                  ${
+                    isActive
+                      ? "bg-[#c41e1e] text-white"
+                      : "text-white/70 hover:text-white hover:bg-white/10"
                   }
                 `}
               >
