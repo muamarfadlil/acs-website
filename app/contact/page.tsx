@@ -453,14 +453,13 @@ export default function ContactPage() {
                 </p>
                 <p className="text-gray-400 text-[10px] mt-1 leading-relaxed">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.775564897182!2d106.67909709999999!3d-6.2931998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fb22b2d745d7%3A0xb6928df299a15bf3!2sPT.%20Adiguna%20Cakra%20Semesta!5e0!3m2!1sen!2sid!4v1775138731735!5m2!1sen!2sid"
                     width="600"
                     height="450"
-                    style="border:0;"
-                    allowfullscreen=""
+                    style={{ border: 0 }} // objek JS, bukan string
+                    allowFullScreen // camelCase, tanpa nilai string kosong
                     loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                  ></iframe>
+                    referrerPolicy="no-referrer-when-downgrade" // camelCase
+                  />
                   <br />
                   Paris Square Blok B2, BSD Tangerang Selatan
                 </p>
