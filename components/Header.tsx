@@ -74,8 +74,8 @@ export default function Header() {
                 <Image
                   src="/logo.png" // Pastikan file logo.png ada di folder public
                   alt="PT ACS Logo"
-                  width={36}
-                  height={36}
+                  width={40}
+                  height={40}
                   className="object-contain"
                   priority
                 />
