@@ -37,7 +37,6 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-
             {/* === KIRI: Tombol sidebar + Logo === */}
             <div className="flex items-center gap-4">
               <button
@@ -54,11 +53,15 @@ export default function Header() {
                 {sidebarOpen ? <X size={18} /> : <Menu size={18} />}
               </button>
 
-              {/* Logo dari file public/logo.png */}
+              {/* 
+                PERBAIKAN: src diubah dari "/public/logo.png" → "/logo.png"
+                Di Next.js, folder public/ adalah static root.
+                File public/logo.png → diakses via URL /logo.png
+              */}
               <Link href="/" className="flex items-center gap-3 group">
                 <div className="relative w-9 h-9 flex-shrink-0 group-hover:scale-105 transition-transform duration-200">
                   <Image
-                    src="/public/logo.png"
+                    src="/logo.png"
                     alt="Logo PT Adiguna Cakra Semesta"
                     fill
                     className="object-contain"
@@ -79,8 +82,12 @@ export default function Header() {
             {/* === TENGAH: Menu navigasi desktop === */}
             <nav className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => (
-                // Perbaikan: tag <a yang sebelumnya hilang dikembalikan di sini
-                
+                /*
+                  PERBAIKAN: Elemen <Link> yang hilang dikembalikan dengan benar.
+                  Sebelumnya hanya ada atribut tanpa elemen pembungkus,
+                  yang menyebabkan JSX invalid dan nav tidak ter-render.
+                */
+                <Link
                   key={link.href}
                   href={link.href}
                   className="
@@ -90,12 +97,14 @@ export default function Header() {
                   "
                 >
                   {link.label}
-                  <span className="
+                  <span
+                    className="
                     absolute bottom-0 left-1/2 -translate-x-1/2
                     w-0 group-hover:w-4 h-0.5 bg-[#c41e1e]
                     transition-all duration-200
-                  " />
-                </a>
+                  "
+                  />
+                </Link>
               ))}
             </nav>
 
@@ -130,8 +139,8 @@ export default function Header() {
           <div className="lg:hidden bg-[#091532] border-t border-white/10">
             <nav className="px-4 py-3 flex flex-col gap-1">
               {navLinks.map((link) => (
-                // Perbaikan: tag <a yang sebelumnya hilang dikembalikan di sini
-                
+                /* PERBAIKAN: Sama seperti desktop — elemen <Link> dikembalikan */
+                <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileNavOpen(false)}
@@ -141,7 +150,7 @@ export default function Header() {
                   "
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <Link
                 href="/contact"
