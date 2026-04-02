@@ -3,13 +3,7 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  Briefcase,
-  ArrowLeft,
-  MapPin,
-  Calendar,
-  // DollarSign dihapus karena properti value tidak ada di data
-} from "lucide-react";
+import { Briefcase, ArrowLeft, MapPin, Calendar } from "lucide-react"; // DollarSign dihapus karena tidak lagi digunakan
 import { clients, projects } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -144,6 +138,7 @@ export default function ClientsPage() {
                     </p>
                   </div>
                 </div>
+                {/* PERBAIKAN: Hapus {project.value} karena field ini tidak ada di tipe data */}
                 <div className="flex flex-wrap gap-3 pl-10">
                   <span className="inline-flex items-center gap-1 text-xs text-gray-500">
                     <MapPin size={11} /> {project.location}
@@ -151,7 +146,6 @@ export default function ClientsPage() {
                   <span className="inline-flex items-center gap-1 text-xs text-gray-500">
                     <Calendar size={11} /> {project.date}
                   </span>
-                  {/* Bagian Nilai Kontrak (project.value) dihapus karena tidak tersedia di data */}
                 </div>
               </div>
             ))}
@@ -177,7 +171,6 @@ export default function ClientsPage() {
                   <th className="px-4 py-3 text-left text-xs font-bold text-[#0a1f44] uppercase tracking-wide">
                     Tanggal
                   </th>
-                  {/* Kolom Nilai Kontrak dihapus */}
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
@@ -215,7 +208,6 @@ export default function ClientsPage() {
                     <td className="px-4 py-3.5 text-gray-500 text-xs whitespace-nowrap">
                       {project.date}
                     </td>
-                    {/* Sel Nilai Kontrak dihapus */}
                   </tr>
                 ))}
               </tbody>
