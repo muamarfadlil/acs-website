@@ -2,11 +2,14 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { Droplets, Layers, Activity, ArrowRight, CheckCircle2 } from "lucide-react";
+// Tambahkan import 'type LucideIcon' — ini tipe resmi yang mendeskripsikan
+// semua komponen ikon Lucide secara akurat, termasuk prop size sebagai string | number
+import { type LucideIcon, Droplets, Layers, Activity, ArrowRight, CheckCircle2 } from "lucide-react";
 import { services } from "@/lib/data";
 
 // Peta ikon untuk tiap layanan
-const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+// Perbaikan: ganti React.ComponentType<{ size?: number; ... }> dengan LucideIcon
+const iconMap: Record<string, LucideIcon> = {
   Droplets,
   Layers,
   Activity,
@@ -150,7 +153,7 @@ export default function Services() {
                   </div>
 
                   {/* Link "Pelajari lebih lanjut" */}
-                  <a
+                  
                     href="#contact"
                     className="
                       inline-flex items-center gap-2 text-xs font-semibold
