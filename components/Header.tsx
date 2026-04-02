@@ -41,15 +41,15 @@ export default function Header() {
       <header
         className={`
           fixed top-0 left-0 right-0 z-40 transition-all duration-300
-          ${scrolled
-            ? "bg-[#0a1f44] shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
-            : "bg-[#0a1f44]/95 backdrop-blur-sm"
+          ${
+            scrolled
+              ? "bg-[#0a1f44] shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+              : "bg-[#0a1f44]/95 backdrop-blur-sm"
           }
         `}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-
             {/* === KIRI: Tombol sidebar + Logo === */}
             <div className="flex items-center gap-4">
               {/* Tombol hamburger untuk membuka/menutup sidebar */}
@@ -68,14 +68,16 @@ export default function Header() {
               </button>
 
               {/* Logo & Nama Perusahaan */}
-              <Link href="/" className="flex items-center gap-3 group">
+              <Link href="/logo.png" className="flex items-center gap-3 group">
                 {/* Logo placeholder – ganti dengan <Image> saat ada file logo */}
-                <div className="
+                <div
+                  className="
                   w-9 h-9 rounded-full
                   bg-white flex items-center justify-center
                   border-2 border-[#c41e1e]
                   group-hover:scale-105 transition-transform duration-200
-                ">
+                "
+                >
                   <span className="text-[#0a1f44] font-bold text-sm leading-none">
                     ACS
                   </span>
@@ -107,11 +109,13 @@ export default function Header() {
                 >
                   {link.label}
                   {/* Garis merah di bawah item aktif saat hover */}
-                  <span className="
+                  <span
+                    className="
                     absolute bottom-0 left-1/2 -translate-x-1/2
                     w-0 group-hover:w-4 h-0.5 bg-[#c41e1e]
                     transition-all duration-200
-                  " />
+                  "
+                  />
                 </a>
               ))}
             </nav>
