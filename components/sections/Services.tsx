@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-// LucideIcon adalah tipe resmi dari lucide-react — mendeskripsikan
-// semua ikon Lucide dengan benar, termasuk prop size sebagai string | number
 import {
   type LucideIcon,
   Droplets,
@@ -13,24 +11,12 @@ import {
 } from "lucide-react";
 import { services } from "@/lib/data";
 
-// Peta ikon untuk tiap layanan
-// Menggunakan LucideIcon sebagai tipe agar kompatibel dengan TypeScript strict mode
 const iconMap: Record<string, LucideIcon> = {
   Droplets,
   Layers,
   Activity,
 };
 
-/**
- * Services Section
- * ----------------
- * Menampilkan tiga layanan utama PT ACS dalam format kartu
- * yang lebar dan informatif. Setiap kartu berisi:
- * - Ikon + Judul layanan
- * - Deskripsi singkat
- * - Daftar fitur spesifik
- * - Tombol "Selengkapnya"
- */
 export default function Services() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -41,7 +27,7 @@ export default function Services() {
           if (entry.isIntersecting) entry.target.classList.add("visible");
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
     sectionRef.current
       ?.querySelectorAll(".reveal")
@@ -89,7 +75,7 @@ export default function Services() {
           </p>
         </div>
 
-        {/* === KARTU LAYANAN (3 kolom di desktop, 1 di mobile) === */}
+        {/* === KARTU LAYANAN === */}
         <div className="grid md:grid-cols-3 gap-6">
           {services.map((service, idx) => {
             const Icon = iconMap[service.icon] || Droplets;
@@ -106,39 +92,19 @@ export default function Services() {
                   transition-all duration-300
                 `}
               >
-                {/* Garis aksen merah di bagian atas kartu */}
-                <div
-                  className="
-                  h-1 bg-gradient-to-r from-[#c41e1e] to-transparent
-                  group-hover:from-[#c41e1e] group-hover:to-[#c41e1e]
-                  transition-all duration-300
-                "
-                />
+                <div className="h-1 bg-gradient-to-r from-[#c41e1e] to-transparent group-hover:from-[#c41e1e] group-hover:to-[#c41e1e] transition-all duration-300" />
 
                 <div className="p-7">
                   {/* Ikon */}
-                  <div
-                    className="
-                    w-12 h-12 rounded
-                    bg-[#c41e1e]/15 border border-[#c41e1e]/30
-                    flex items-center justify-center mb-5
-                    group-hover:bg-[#c41e1e] group-hover:border-[#c41e1e]
-                    transition-all duration-300
-                  "
-                  >
+                  <div className="w-12 h-12 rounded bg-[#c41e1e]/15 border border-[#c41e1e]/30 flex items-center justify-center mb-5 group-hover:bg-[#c41e1e] group-hover:border-[#c41e1e] transition-all duration-300">
                     <Icon
                       size={22}
                       className="text-[#c41e1e] group-hover:text-white transition-colors duration-300"
                     />
                   </div>
 
-                  {/* Judul layanan */}
-                  <h3
-                    className="
-                    font-['Bebas_Neue'] text-2xl text-white
-                    tracking-wide leading-tight mb-3
-                  "
-                  >
+                  {/* Judul */}
+                  <h3 className="font-['Bebas_Neue'] text-2xl text-white tracking-wide leading-tight mb-3">
                     {service.title}
                   </h3>
 
@@ -147,7 +113,7 @@ export default function Services() {
                     {service.description}
                   </p>
 
-                  {/* Fitur-fitur layanan */}
+                  {/* Fitur */}
                   <div className="space-y-2 mb-6">
                     {service.features.map((feature, fi) => (
                       <div key={fi} className="flex items-start gap-2.5">
@@ -162,16 +128,11 @@ export default function Services() {
                     ))}
                   </div>
 
-                  {/* Link "Pelajari lebih lanjut" */}
-                  
+                  {/* ↓ INI BARIS YANG RUSAK SEBELUMNYA — tag <a harus ada di sini */}
+
+                  <a
                     href="#contact"
-                    className="
-                      inline-flex items-center gap-2 text-xs font-semibold
-                      text-[#c41e1e] hover:text-white
-                      border-b border-[#c41e1e]/40 hover:border-white
-                      pb-0.5 transition-all duration-200
-                      group/link
-                    "
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#c41e1e] hover:text-white border-b border-[#c41e1e]/40 hover:border-white pb-0.5 transition-all duration-200 group/link"
                   >
                     Pelajari lebih lanjut
                     <ArrowRight
@@ -185,7 +146,7 @@ export default function Services() {
           })}
         </div>
 
-        {/* === SUPPLY CHAIN SERVICES (di bawah kartu utama) === */}
+        {/* === SUPPLY CHAIN SERVICES === */}
         <div className="reveal mt-12 border border-white/10 rounded p-8 bg-[#091532]">
           <h3 className="text-white font-semibold text-center mb-6 text-sm uppercase tracking-widest">
             Dukungan Rantai Pasokan
