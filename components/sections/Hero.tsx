@@ -48,7 +48,6 @@ export default function Hero() {
       {/* === KONTEN UTAMA === */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-3xl">
-
           {/* Badge / Label kecil di atas headline */}
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="w-8 h-0.5 bg-[#c41e1e]" />
@@ -58,26 +57,30 @@ export default function Hero() {
           </div>
 
           {/* Headline utama – menggunakan Bebas Neue agar impactful */}
-          <h1 className="
+          <h1
+            className="
             font-['Bebas_Neue'] text-6xl sm:text-7xl lg:text-8xl
             text-white leading-none tracking-wide
             mb-4
-          ">
+          "
+          >
             Trusted Partner
             <br />
-            <span className="text-[#c41e1e]">Drilling &</span>
+            <span className="text-[#c41e1e]">Drilling Fluids &</span>
             <br />
             Cementing
           </h1>
 
           {/* Sub-headline */}
-          <p className="
+          <p
+            className="
             text-white/70 text-lg sm:text-xl
             max-w-xl leading-relaxed mb-8
-          ">
-            PT Adiguna Cakra Semesta — mitra terpercaya dalam penyediaan
-            jasa Drilling-Completion Fluids, Cementing, dan Mud Logging
-            untuk industri hulu migas dan geotermal Indonesia.
+          "
+          >
+            PT Adiguna Cakra Semesta — mitra terpercaya dalam penyediaan jasa
+            Drilling-Completion Fluids, Cementing, dan Mud Logging untuk
+            industri hulu migas dan geotermal Indonesia.
           </p>
 
           {/* Dua tombol CTA */}
@@ -113,11 +116,13 @@ export default function Hero() {
         </div>
 
         {/* === STATISTIK PERUSAHAAN === */}
-        <div className="
+        <div
+          className="
           mt-20 grid grid-cols-2 sm:grid-cols-4 gap-px
           bg-white/10 border border-white/10 rounded overflow-hidden
           max-w-2xl
-        ">
+        "
+        >
           {stats.map((stat, idx) => (
             <div
               key={idx}
@@ -128,10 +133,12 @@ export default function Hero() {
               "
             >
               {/* Angka besar menggunakan Bebas Neue */}
-              <span className="
+              <span
+                className="
                 font-['Bebas_Neue'] text-4xl sm:text-5xl text-[#c41e1e]
                 leading-none
-              ">
+              "
+              >
                 {stat.value}
               </span>
               <span className="text-white/50 text-xs mt-1 leading-tight">
@@ -143,12 +150,16 @@ export default function Hero() {
       </div>
 
       {/* === INDIKATOR SCROLL KE BAWAH === */}
-      <div className="
+      <div
+        className="
         absolute bottom-8 left-1/2 -translate-x-1/2
         flex flex-col items-center gap-2 z-10
         animate-bounce
-      ">
-        <span className="text-white/40 text-xs tracking-widest uppercase">Scroll</span>
+      "
+      >
+        <span className="text-white/40 text-xs tracking-widest uppercase">
+          Scroll
+        </span>
         <ChevronDown size={20} className="text-white/40" />
       </div>
     </section>
