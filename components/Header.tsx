@@ -6,21 +6,11 @@ import { Menu, X, ChevronRight } from "lucide-react";
 import { navLinks } from "@/lib/data";
 import Image from "next/image";
 
-/**
- * Header Component
- * ----------------
- * Komponen header yang:
- * - Selalu berada di atas layar (fixed/sticky)
- * - Berubah tampilan saat di-scroll (lebih gelap & ada shadow)
- * - Memiliki navigasi smooth-scroll ke section di halaman utama
- * - Memiliki tombol hamburger untuk membuka Sidebar di desktop/mobile
- */
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
-  // Deteksi posisi scroll untuk mengubah tampilan header
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -29,11 +19,9 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Toggle sidebar kiri dan kirim event agar Sidebar.tsx mendengarnya
   const toggleSidebar = () => {
     const next = !sidebarOpen;
     setSidebarOpen(next);
-    // Menggunakan CustomEvent agar Sidebar yang terpisah bisa bereaksi
     window.dispatchEvent(new CustomEvent("toggleSidebar", { detail: next }));
   };
 
@@ -51,9 +39,8 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* === KIRI: Tombol sidebar + Logo === */}
+            {/* KIRI: Tombol sidebar + Logo */}
             <div className="flex items-center gap-4">
-              {/* Tombol hamburger untuk membuka/menutup sidebar */}
               <button
                 onClick={toggleSidebar}
                 aria-label="Toggle sidebar"
@@ -70,15 +57,24 @@ export default function Header() {
 
               {/* Logo & Nama Perusahaan */}
               <Link href="/" className="flex items-center gap-3 group">
-                {/* Logo placeholder – ganti dengan <Image> saat ada file logo */}
-                <Image
-                  src="/logo.png" // Pastikan file logo.png ada di folder public
-                  alt="PT ACS Logo"
-                  width={40}
-                  height={40}
-                  className="object-contain"
-                  priority
-                />
+                {/* Container lingkaran dengan border dan background putih */}
+                <div
+                  className="
+                    relative w-9 h-9 rounded-full
+                    bg-white border-2 border-[#c41e1e]
+                    flex items-center justify-center overflow-hidden
+                    group-hover:scale-105 transition-transform duration-200
+                  "
+                >
+                  <Image
+                    src="/logo.png"
+                    alt="PT ACS Logo"
+                    width={36}
+                    height={36}
+                    className="object-contain"
+                    priority
+                  />
+                </div>
 
                 <div className="hidden sm:block">
                   <p className="text-white font-bold text-sm leading-tight tracking-wide">
@@ -91,7 +87,7 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* === TENGAH: Menu navigasi (hanya tampil di desktop) === */}
+            {/* TENGAH: Menu navigasi desktop */}
             <nav className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => (
                 <a
@@ -105,21 +101,19 @@ export default function Header() {
                   "
                 >
                   {link.label}
-                  {/* Garis merah di bawah item aktif saat hover */}
                   <span
                     className="
-                    absolute bottom-0 left-1/2 -translate-x-1/2
-                    w-0 group-hover:w-4 h-0.5 bg-[#c41e1e]
-                    transition-all duration-200
-                  "
+                      absolute bottom-0 left-1/2 -translate-x-1/2
+                      w-0 group-hover:w-4 h-0.5 bg-[#c41e1e]
+                      transition-all duration-200
+                    "
                   />
                 </a>
               ))}
             </nav>
 
-            {/* === KANAN: CTA Button + Mobile menu toggle === */}
+            {/* KANAN: CTA Button + Mobile menu toggle */}
             <div className="flex items-center gap-3">
-              {/* Tombol CTA ke halaman kontak */}
               <Link
                 href="/contact"
                 className="
@@ -133,7 +127,6 @@ export default function Header() {
                 <ChevronRight size={14} />
               </Link>
 
-              {/* Tombol menu mobile (hanya tampil di layar kecil) */}
               <button
                 onClick={() => setMobileNavOpen(!mobileNavOpen)}
                 className="lg:hidden text-white/75 hover:text-white"
@@ -145,7 +138,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* === MENU MOBILE (dropdown di bawah header) === */}
+        {/* MENU MOBILE */}
         {mobileNavOpen && (
           <div className="lg:hidden bg-[#091532] border-t border-white/10">
             <nav className="px-4 py-3 flex flex-col gap-1">
