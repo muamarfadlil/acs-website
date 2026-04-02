@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
+import BackToTop from "@/components/BackToTop"; // ← import komponen baru
 
-// Metadata ini akan muncul di tab browser dan hasil pencarian Google
 export const metadata: Metadata = {
   title: "PT Adiguna Cakra Semesta | Drilling & Cementing Services",
   description:
@@ -33,11 +33,6 @@ export default function RootLayout({
   return (
     <html lang="id">
       <head>
-        {/*
-          Memuat font dari Google Fonts.
-          Bebas Neue = font display tebal untuk judul besar
-          Barlow      = font bersih untuk teks isi
-        */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -46,14 +41,16 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased">
-        {/* Header selalu tampil di semua halaman */}
         <Header />
-
-        {/* Sidebar navigasi kiri untuk halaman-halaman terpisah */}
         <Sidebar />
-
-        {/* Konten utama tiap halaman */}
         <main>{children}</main>
+
+        {/*
+          BackToTop diletakkan di layout (bukan di halaman individual)
+          sehingga tombol muncul secara otomatis di semua halaman
+          tanpa perlu ditambahkan satu per satu.
+        */}
+        <BackToTop />
       </body>
     </html>
   );
