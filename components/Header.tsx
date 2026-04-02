@@ -58,7 +58,7 @@ export default function Header() {
               <Link href="/" className="flex items-center gap-3 group">
                 <div className="relative w-9 h-9 flex-shrink-0 group-hover:scale-105 transition-transform duration-200">
                   <Image
-                    src="/logo.png"
+                    src="/public/logo.png"
                     alt="Logo PT Adiguna Cakra Semesta"
                     fill
                     className="object-contain"
