@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { navLinks } from "@/lib/data";
+import Image from "next/image";
 
 /**
  * Header Component
@@ -68,20 +69,16 @@ export default function Header() {
               </button>
 
               {/* Logo & Nama Perusahaan */}
-              <Link href="/logo.png" className="flex items-center gap-3 group">
+              <Link href="/" className="flex items-center gap-3 group">
                 {/* Logo placeholder – ganti dengan <Image> saat ada file logo */}
-                <div
-                  className="
-                  w-9 h-9 rounded-full
-                  bg-white flex items-center justify-center
-                  border-2 border-[#c41e1e]
-                  group-hover:scale-105 transition-transform duration-200
-                "
-                >
-                  <span className="text-[#0a1f44] font-bold text-sm leading-none">
-                    ACS
-                  </span>
-                </div>
+                <Image
+                  src="/logo.png" // Pastikan file logo.png ada di folder public
+                  alt="PT ACS Logo"
+                  width={36}
+                  height={36}
+                  className="object-contain"
+                  priority
+                />
 
                 <div className="hidden sm:block">
                   <p className="text-white font-bold text-sm leading-tight tracking-wide">
