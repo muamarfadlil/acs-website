@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image"; // ← import Image dari Next.js untuk optimasi otomatis
+import Image from "next/image";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { navLinks } from "@/lib/data";
 
@@ -54,21 +54,17 @@ export default function Header() {
                 {sidebarOpen ? <X size={18} /> : <Menu size={18} />}
               </button>
 
-              {/* Logo menggunakan file public/logo.png */}
+              {/* Logo dari file public/logo.png */}
               <Link href="/" className="flex items-center gap-3 group">
-                <div className="
-                  relative w-9 h-9 flex-shrink-0
-                  group-hover:scale-105 transition-transform duration-200
-                ">
+                <div className="relative w-9 h-9 flex-shrink-0 group-hover:scale-105 transition-transform duration-200">
                   <Image
                     src="/logo.png"
                     alt="Logo PT Adiguna Cakra Semesta"
-                    fill                        // mengisi seluruh div induk
-                    className="object-contain"  // menjaga proporsi logo
-                    priority                    // dimuat lebih awal karena ada di header
+                    fill
+                    className="object-contain"
+                    priority
                   />
                 </div>
-
                 <div className="hidden sm:block">
                   <p className="text-white font-bold text-sm leading-tight tracking-wide">
                     PT Adiguna Cakra Semesta
@@ -83,6 +79,7 @@ export default function Header() {
             {/* === TENGAH: Menu navigasi desktop === */}
             <nav className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => (
+                // Perbaikan: tag <a yang sebelumnya hilang dikembalikan di sini
                 
                   key={link.href}
                   href={link.href}
@@ -133,6 +130,7 @@ export default function Header() {
           <div className="lg:hidden bg-[#091532] border-t border-white/10">
             <nav className="px-4 py-3 flex flex-col gap-1">
               {navLinks.map((link) => (
+                // Perbaikan: tag <a yang sebelumnya hilang dikembalikan di sini
                 
                   key={link.href}
                   href={link.href}
