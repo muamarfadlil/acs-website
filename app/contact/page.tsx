@@ -6,8 +6,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import {
-  ArrowLeft, Mail, Phone, MapPin, Send,
-  CheckCircle2, Clock, Globe
+  ArrowLeft,
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  CheckCircle2,
+  Clock,
+  Globe,
 } from "lucide-react";
 import { company } from "@/lib/data";
 
@@ -36,11 +42,15 @@ export default function ContactPage() {
   });
 
   // State untuk status pengiriman
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
 
   // Handler perubahan input
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
   ) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -71,7 +81,6 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-[#f0f4fa]">
-
       {/* ===== HERO HALAMAN ===== */}
       <div className="bg-[#0a1f44] relative overflow-hidden">
         <div
@@ -107,8 +116,9 @@ export default function ContactPage() {
           </div>
 
           <p className="text-white/60 text-base max-w-2xl leading-relaxed">
-            Tim ahli kami siap menjawab pertanyaan Anda mengenai layanan drilling fluids,
-            cementing, dan mud logging. Kirim pesan atau hubungi kami langsung.
+            Tim ahli kami siap menjawab pertanyaan Anda mengenai layanan
+            drilling fluids, cementing, dan mud logging. Kirim pesan atau
+            hubungi kami langsung.
           </p>
         </div>
       </div>
@@ -116,7 +126,6 @@ export default function ContactPage() {
       {/* ===== KONTEN UTAMA ===== */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid lg:grid-cols-3 gap-8">
-
           {/* ===== FORM KONTAK (2/3 lebar) ===== */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded border border-[#0a1f44]/10 overflow-hidden">
@@ -128,28 +137,31 @@ export default function ContactPage() {
               </div>
 
               <div className="p-6 lg:p-8">
-
                 {/* ===== PESAN SUKSES ===== */}
                 {status === "success" && (
-                  <div className="
+                  <div
+                    className="
                     flex items-start gap-4 p-5 rounded
                     bg-green-50 border border-green-200 mb-6
-                  ">
-                    <CheckCircle2 size={22} className="text-green-600 flex-shrink-0 mt-0.5" />
+                  "
+                  >
+                    <CheckCircle2
+                      size={22}
+                      className="text-green-600 flex-shrink-0 mt-0.5"
+                    />
                     <div>
                       <p className="font-bold text-green-800 text-sm">
                         Pesan Berhasil Dikirim!
                       </p>
                       <p className="text-green-700 text-sm mt-1 leading-relaxed">
-                        Terima kasih telah menghubungi kami. Tim kami akan merespons
-                        pesan Anda dalam 1×24 jam kerja.
+                        Terima kasih telah menghubungi kami. Tim kami akan
+                        merespons pesan Anda dalam 1×24 jam kerja.
                       </p>
                     </div>
                   </div>
                 )}
 
                 <form onSubmit={handleSubmit} className="space-y-5">
-
                   {/* Baris 1: Nama + Email */}
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
@@ -229,9 +241,13 @@ export default function ContactPage() {
                         "
                       >
                         <option value="">Pilih topik...</option>
-                        <option value="drilling-fluids">Drilling Fluids Services</option>
+                        <option value="drilling-fluids">
+                          Drilling Fluids Services
+                        </option>
                         <option value="cementing">Cementing Services</option>
-                        <option value="mud-logging">Mud Logging Services</option>
+                        <option value="mud-logging">
+                          Mud Logging Services
+                        </option>
                         <option value="tender">Penawaran / Tender</option>
                         <option value="partnership">Kemitraan</option>
                         <option value="other">Lainnya</option>
@@ -283,8 +299,11 @@ export default function ContactPage() {
                         >
                           <circle
                             className="opacity-25"
-                            cx="12" cy="12" r="10"
-                            stroke="currentColor" strokeWidth="4"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
                           />
                           <path
                             className="opacity-75"
@@ -308,7 +327,6 @@ export default function ContactPage() {
 
           {/* ===== INFO KONTAK (1/3 lebar) ===== */}
           <div className="space-y-5">
-
             {/* Alamat */}
             <div className="bg-white rounded border border-[#0a1f44]/10 p-6">
               <div className="flex items-center gap-3 mb-4">
@@ -397,7 +415,9 @@ export default function ContactPage() {
             <div className="bg-[#0a1f44] rounded p-6">
               <div className="flex items-center gap-3 mb-4">
                 <Clock size={16} className="text-[#c41e1e]" />
-                <h3 className="text-white font-bold text-sm">Jam Operasional</h3>
+                <h3 className="text-white font-bold text-sm">
+                  Jam Operasional
+                </h3>
               </div>
               <div className="space-y-2">
                 {[
@@ -413,8 +433,8 @@ export default function ContactPage() {
                         item.day === "Minggu & Libur"
                           ? "text-red-400"
                           : item.day === "On-call Support"
-                          ? "text-[#c41e1e]"
-                          : "text-white"
+                            ? "text-[#c41e1e]"
+                            : "text-white"
                       }`}
                     >
                       {item.time}
@@ -432,7 +452,15 @@ export default function ContactPage() {
                   Google Maps Embed
                 </p>
                 <p className="text-gray-400 text-[10px] mt-1 leading-relaxed">
-                  Tambahkan iframe Google Maps di sini.
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.775564897182!2d106.67909709999999!3d-6.2931998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fb22b2d745d7%3A0xb6928df299a15bf3!2sPT.%20Adiguna%20Cakra%20Semesta!5e0!3m2!1sen!2sid!4v1775138731735!5m2!1sen!2sid"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
                   <br />
                   Paris Square Blok B2, BSD Tangerang Selatan
                 </p>

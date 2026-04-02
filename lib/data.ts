@@ -303,10 +303,6 @@ export const personnel = [
 // Perusahaan sister
 export const sisterCompanies = [
   {
-    name: "PT JM Mutu Utama",
-    description: "Oilfield & Industrial Chemicals",
-  },
-  {
     name: "PT Bina Mandiri Services",
     description: "Oil Well Services",
   },

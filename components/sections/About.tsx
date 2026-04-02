@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { CheckCircle2, Building2, Calendar, Award } from "lucide-react";
 import { company, sisterCompanies } from "@/lib/data";
+import Image from "next/image"; // ← tambahkan baris ini
 
 /**
  * About Section
@@ -27,7 +28,7 @@ export default function About() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     const elements = sectionRef.current?.querySelectorAll(".reveal");
@@ -58,16 +59,10 @@ export default function About() {
   ];
 
   return (
-    <section
-      id="about"
-      ref={sectionRef}
-      className="py-24 bg-white"
-    >
+    <section id="about" ref={sectionRef} className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* === LAYOUT DUA KOLOM === */}
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-
           {/* KOLOM KIRI: Teks utama */}
           <div>
             {/* Label section */}
@@ -79,10 +74,12 @@ export default function About() {
             </div>
 
             {/* Judul section */}
-            <h2 className="
+            <h2
+              className="
               reveal font-['Bebas_Neue'] text-5xl lg:text-6xl
               text-[#0a1f44] leading-tight tracking-wide mb-6
-            ">
+            "
+            >
               Dua Dekade Melayani
               <br />
               <span className="text-[#c41e1e]">Industri Migas</span>
@@ -92,17 +89,18 @@ export default function About() {
 
             {/* Paragraf deskripsi perusahaan */}
             <p className="reveal text-gray-600 text-base leading-relaxed mb-4 reveal-delay-1">
-              PT Adiguna Cakra Semesta berdiri pada 15 Mei 2004 sebagai perusahaan
-              swasta Indonesia yang bergerak di bidang jasa Drilling-Completion
-              Fluids dan Cementing. Perusahaan ini melayani industri hulu minyak,
-              gas, dan geotermal — menemani klien di setiap fase kehidupan lapangan.
+              PT Adiguna Cakra Semesta berdiri pada 15 Mei 2004 sebagai
+              perusahaan swasta Indonesia yang bergerak di bidang jasa
+              Drilling-Completion Fluids dan Cementing. Perusahaan ini melayani
+              industri hulu minyak, gas, dan geotermal — menemani klien di
+              setiap fase kehidupan lapangan.
             </p>
             <p className="reveal text-gray-600 text-base leading-relaxed mb-6 reveal-delay-2">
-              Tim kami terdiri dari para profesional berpengalaman dengan keahlian
-              mendalam di bidang teknik fluida pemboran dan sementasi. Kami
-              berkomitmen membangun hubungan jangka panjang dengan pelanggan melalui
-              perhatian maksimal, layanan prima, produk berkualitas, dan harga
-              kompetitif.
+              Tim kami terdiri dari para profesional berpengalaman dengan
+              keahlian mendalam di bidang teknik fluida pemboran dan sementasi.
+              Kami berkomitmen membangun hubungan jangka panjang dengan
+              pelanggan melalui perhatian maksimal, layanan prima, produk
+              berkualitas, dan harga kompetitif.
             </p>
 
             {/* Tiga divisi bisnis utama */}
@@ -142,7 +140,9 @@ export default function About() {
                     "
                   >
                     <span className="font-semibold">{sc.name}</span>
-                    <span className="text-gray-400 ml-1">— {sc.description}</span>
+                    <span className="text-gray-400 ml-1">
+                      — {sc.description}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -151,12 +151,13 @@ export default function About() {
 
           {/* KOLOM KANAN: Visual + Kartu informasi */}
           <div className="reveal reveal-delay-1">
-
             {/* Visual latar belakang industrial (placeholder untuk foto) */}
-            <div className="
+            <div
+              className="
               relative bg-[#0a1f44] rounded overflow-hidden
               aspect-[4/3] mb-6
-            ">
+            "
+            >
               {/* Pattern grid di dalam kotak visual */}
               <div
                 className="absolute inset-0 opacity-20"
@@ -169,38 +170,23 @@ export default function About() {
                 }}
               />
 
-              {/* Teks placeholder – ganti dengan <Image> foto lapangan */}
-              <div className="
-                absolute inset-0 flex flex-col items-center justify-center
-                text-center px-8
-              ">
-                <div className="
-                  w-20 h-20 rounded-full bg-white/10
-                  flex items-center justify-center mb-4
-                  border-2 border-[#c41e1e]
-                ">
-                  <span className="
-                    font-['Bebas_Neue'] text-3xl text-white tracking-wide
-                  ">
-                    ACS
-                  </span>
-                </div>
-                <p className="text-white/60 text-sm max-w-xs leading-relaxed">
-                  Foto operasional lapangan dapat ditambahkan di sini
-                  (ganti dengan komponen{" "}
-                  <code className="text-[#c41e1e] bg-white/10 px-1 rounded text-xs">
-                    &lt;Image&gt;
-                  </code>{" "}
-                  dari Next.js)
-                </p>
-              </div>
+              {/* Foto lapangan asli menggunakan komponen Image dari Next.js */}
+              <Image
+                src="/foto_lapangan.jpeg"
+                alt="Foto operasional lapangan PT Adiguna Cakra Semesta"
+                fill
+                className="object-cover"
+                priority
+              />
 
               {/* Badge "Est. 2004" di pojok */}
-              <div className="
+              <div
+                className="
                 absolute bottom-4 right-4
                 bg-[#c41e1e] text-white text-xs font-bold
                 px-3 py-1.5 rounded
-              ">
+              "
+              >
                 Est. 2004
               </div>
             </div>
@@ -224,7 +210,9 @@ export default function About() {
                   <p className="text-[#0a1f44] font-bold text-xs leading-snug">
                     {value}
                   </p>
-                  <p className="text-gray-400 text-[10px] leading-snug">{sub}</p>
+                  <p className="text-gray-400 text-[10px] leading-snug">
+                    {sub}
+                  </p>
                 </div>
               ))}
             </div>

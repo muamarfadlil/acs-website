@@ -73,7 +73,7 @@ export default function Header() {
                     PT Adiguna Cakra Semesta
                   </p>
                   <p className="text-white/50 text-xs leading-tight">
-                    Drilling & Cementing Services
+                    Drilling-Completion Fluids & Cementing Services
                   </p>
                 </div>
               </Link>
