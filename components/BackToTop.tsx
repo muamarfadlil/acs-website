@@ -1,23 +1,24 @@
 "use client";
 
-// Komponen ini harus "use client" karena:
-// 1. Memantau posisi scroll (window.scrollY) — hanya tersedia di browser
-// 2. Menggunakan useState dan useEffect
-// 3. Memanggil window.scrollTo() saat tombol diklik
-
 import { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
 
 export default function BackToTop() {
-  // Tombol hanya muncul setelah pengguna scroll ke bawah cukup jauh
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // Cek posisi awal saat komponen mount (penting saat halaman di-refresh di tengah)
+    setVisible(window.scrollY > 300);
+
     const handleScroll = () => {
-      // Tampilkan tombol setelah scroll 400px ke bawah
-      setVisible(window.scrollY > 400);
+      // Threshold diturunkan ke 300px agar lebih mudah muncul
+      setVisible(window.scrollY > 300);
     };
-    window.addEventListener("scroll", handleScroll);
+
+    // { passive: true } memberi tahu browser bahwa handler ini tidak akan
+    // memanggil preventDefault(), sehingga browser bisa mengoptimalkan scroll.
+    // Ini juga memperbaiki bug di mana scrollY terbaca terlambat.
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -25,14 +26,13 @@ export default function BackToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Jika belum scroll cukup jauh, komponen tidak merender apapun
   if (!visible) return null;
 
   return (
     <button
       onClick={scrollToTop}
       aria-label="Kembali ke atas"
-      className={`
+      className="
         fixed bottom-6 right-6 z-50
         w-11 h-11 rounded
         bg-[#c41e1e] text-white
@@ -41,7 +41,7 @@ export default function BackToTop() {
         hover:-translate-y-1
         transition-all duration-200
         border-2 border-white/20
-      `}
+      "
     >
       <ArrowUp size={18} />
     </button>

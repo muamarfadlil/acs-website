@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { type LucideIcon } from "lucide-react"; // Tipe resmi Lucide — sudah mencakup semua prop dengan benar
+import { type LucideIcon } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image"; // ← ditambahkan untuk komponen logo
 import { usePathname } from "next/navigation";
 import {
   FlaskConical,
@@ -15,9 +16,6 @@ import {
 } from "lucide-react";
 import { sidebarLinks } from "@/lib/data";
 
-// Perbaikan: gunakan LucideIcon sebagai tipe, bukan definisi manual.
-// LucideIcon adalah tipe resmi dari lucide-react yang sudah mendeskripsikan
-// prop size sebagai string | number, sehingga cocok dengan implementasi internalnya.
 const iconMap: Record<string, LucideIcon> = {
   FlaskConical,
   Briefcase,
@@ -25,22 +23,10 @@ const iconMap: Record<string, LucideIcon> = {
   Mail,
 };
 
-/**
- * Sidebar Component
- * -----------------
- * Panel navigasi yang muncul dari sisi kiri layar saat tombol
- * hamburger di Header diklik. Berisi link ke halaman terpisah
- * seperti /laboratory, /clients, /contact, dll.
- *
- * Cara komunikasi dengan Header:
- * Header mengirim CustomEvent "toggleSidebar" → Sidebar mendengarkan
- * event tersebut dan memperbarui state open/close-nya.
- */
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname(); // Untuk menyoroti link halaman aktif
+  const pathname = usePathname();
 
-  // Mendengarkan event dari Header.tsx
   useEffect(() => {
     const handler = (e: CustomEvent) => {
       setIsOpen(e.detail as boolean);
@@ -50,7 +36,6 @@ export default function Sidebar() {
       window.removeEventListener("toggleSidebar", handler as EventListener);
   }, []);
 
-  // Tutup sidebar saat menekan tombol Escape
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsOpen(false);
@@ -61,16 +46,11 @@ export default function Sidebar() {
 
   const close = () => {
     setIsOpen(false);
-    // Sinkronkan status ke Header juga
     window.dispatchEvent(new CustomEvent("toggleSidebar", { detail: false }));
   };
 
   return (
     <>
-      {/*
-        OVERLAY gelap di belakang sidebar.
-        Klik overlay = tutup sidebar (UX yang familiar bagi pengguna).
-      */}
       {isOpen && (
         <div
           className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
@@ -79,7 +59,6 @@ export default function Sidebar() {
         />
       )}
 
-      {/* === PANEL SIDEBAR === */}
       <aside
         className={`
           fixed top-0 left-0 h-full w-64 z-50
@@ -93,15 +72,22 @@ export default function Sidebar() {
         {/* Header sidebar: logo + tombol close */}
         <div className="flex items-center justify-between px-5 py-5 border-b border-white/10">
           <div className="flex items-center gap-3">
-            <div
-              className="
-              w-8 h-8 rounded-full bg-white
-              flex items-center justify-center
-              border-2 border-[#c41e1e]
-            "
-            >
-              <span className="text-[#0a1f44] font-bold text-xs">ACS</span>
+            {/*
+              PERBAIKAN: placeholder "ACS" diganti dengan gambar logo asli.
+              - div induk harus "relative" agar "fill" pada Image bekerja.
+              - w-8 h-8 menentukan ukuran kotak tempat logo ditampilkan.
+              - object-contain menjaga proporsi logo agar tidak terpotong.
+              - src="/logo.png" merujuk ke file public/logo.png (tanpa "/public/").
+            */}
+            <div className="relative w-8 h-8 flex-shrink-0">
+              <Image
+                src="/logo.png"
+                alt="Logo PT Adiguna Cakra Semesta"
+                fill
+                className="object-contain"
+              />
             </div>
+
             <span className="text-white font-semibold text-sm">Menu</span>
           </div>
           <button
