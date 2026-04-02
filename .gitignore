@@ -1,0 +1,44 @@
+# ===================================================
+# .gitignore untuk Proyek Next.js PT ACS
+# File-file ini TIDAK perlu diunggah ke GitHub
+# ===================================================
+
+# Folder build Next.js (dibuat otomatis saat build)
+.next/
+out/
+
+# Dependensi Node.js (diinstal ulang dengan `npm install`)
+node_modules/
+
+# File environment (JANGAN pernah commit ini ke Git!)
+# File ini menyimpan API key, password database, dll.
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Log file dari npm/yarn
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# File sistem macOS
+.DS_Store
+
+# File sistem Windows
+Thumbs.db
+Desktop.ini
+
+# Editor VSCode (opsional, bisa di-commit jika ingin berbagi settings)
+# .vscode/
+
+# Cache TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Folder deployment Vercel
+.vercel
+
+# Folder test coverage
+coverage/

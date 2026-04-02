@@ -1,0 +1,212 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import Link from "next/link";
+import { Droplets, Layers, Activity, ArrowRight, CheckCircle2 } from "lucide-react";
+import { services } from "@/lib/data";
+
+// Peta ikon untuk tiap layanan
+const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+  Droplets,
+  Layers,
+  Activity,
+};
+
+/**
+ * Services Section
+ * ----------------
+ * Menampilkan tiga layanan utama PT ACS dalam format kartu
+ * yang lebar dan informatif. Setiap kartu berisi:
+ * - Ikon + Judul layanan
+ * - Deskripsi singkat
+ * - Daftar fitur spesifik
+ * - Tombol "Selengkapnya"
+ *
+ * Latar belakang section ini gelap (navy) untuk menciptakan
+ * kontras visual setelah section About yang berwarna putih.
+ */
+export default function Services() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("visible");
+        });
+      },
+      { threshold: 0.1 }
+    );
+    sectionRef.current?.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section
+      id="services"
+      ref={sectionRef}
+      className="py-24 bg-[#0a1f44] relative overflow-hidden"
+    >
+      {/* Pattern geometris tipis di latar belakang */}
+      <div
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)
+          `,
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* === HEADER SECTION === */}
+        <div className="text-center mb-16">
+          <div className="reveal flex items-center justify-center gap-3 mb-4">
+            <span className="w-10 h-0.5 bg-[#c41e1e]" />
+            <span className="text-[#c41e1e] text-xs font-semibold uppercase tracking-[0.2em]">
+              Layanan Kami
+            </span>
+            <span className="w-10 h-0.5 bg-[#c41e1e]" />
+          </div>
+          <h2 className="
+            reveal font-['Bebas_Neue'] text-5xl lg:text-6xl
+            text-white tracking-wide leading-tight
+          ">
+            Solusi Lengkap untuk
+            <br />
+            <span className="text-[#c41e1e]">Operasi Pengeboran</span>
+          </h2>
+          <p className="reveal reveal-delay-1 text-white/60 text-base max-w-2xl mx-auto mt-4 leading-relaxed">
+            Dari perencanaan fluida pemboran hingga sementasi sumur — kami menyediakan
+            layanan terintegrasi yang memastikan operasi Anda berjalan efisien, aman,
+            dan menguntungkan.
+          </p>
+        </div>
+
+        {/* === KARTU LAYANAN (3 kolom di desktop, 1 di mobile) === */}
+        <div className="grid md:grid-cols-3 gap-6">
+          {services.map((service, idx) => {
+            const Icon = iconMap[service.icon] || Droplets;
+
+            return (
+              <div
+                key={service.id}
+                className={`
+                  reveal reveal-delay-${idx + 1}
+                  group relative
+                  bg-[#091532] border border-white/10
+                  rounded overflow-hidden
+                  hover:border-[#c41e1e]/50
+                  transition-all duration-300
+                `}
+              >
+                {/* Garis aksen merah di bagian atas kartu */}
+                <div className="
+                  h-1 bg-gradient-to-r from-[#c41e1e] to-transparent
+                  group-hover:from-[#c41e1e] group-hover:to-[#c41e1e]
+                  transition-all duration-300
+                " />
+
+                <div className="p-7">
+                  {/* Ikon */}
+                  <div className="
+                    w-12 h-12 rounded
+                    bg-[#c41e1e]/15 border border-[#c41e1e]/30
+                    flex items-center justify-center mb-5
+                    group-hover:bg-[#c41e1e] group-hover:border-[#c41e1e]
+                    transition-all duration-300
+                  ">
+                    <Icon
+                      size={22}
+                      className="text-[#c41e1e] group-hover:text-white transition-colors duration-300"
+                    />
+                  </div>
+
+                  {/* Judul layanan */}
+                  <h3 className="
+                    font-['Bebas_Neue'] text-2xl text-white
+                    tracking-wide leading-tight mb-3
+                  ">
+                    {service.title}
+                  </h3>
+
+                  {/* Deskripsi */}
+                  <p className="text-white/55 text-sm leading-relaxed mb-5">
+                    {service.description}
+                  </p>
+
+                  {/* Fitur-fitur layanan */}
+                  <div className="space-y-2 mb-6">
+                    {service.features.map((feature, fi) => (
+                      <div key={fi} className="flex items-start gap-2.5">
+                        <CheckCircle2 size={14} className="text-[#c41e1e] flex-shrink-0 mt-0.5" />
+                        <span className="text-white/70 text-xs leading-snug">
+                          {feature}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Link "Pelajari lebih lanjut" */}
+                  <a
+                    href="#contact"
+                    className="
+                      inline-flex items-center gap-2 text-xs font-semibold
+                      text-[#c41e1e] hover:text-white
+                      border-b border-[#c41e1e]/40 hover:border-white
+                      pb-0.5 transition-all duration-200
+                      group/link
+                    "
+                  >
+                    Pelajari lebih lanjut
+                    <ArrowRight
+                      size={12}
+                      className="group-hover/link:translate-x-1 transition-transform duration-200"
+                    />
+                  </a>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* === SUPPLY CHAIN SERVICES (di bawah kartu utama) === */}
+        <div className="reveal mt-12 border border-white/10 rounded p-8 bg-[#091532]">
+          <h3 className="text-white font-semibold text-center mb-6 text-sm uppercase tracking-widest">
+            Dukungan Rantai Pasokan
+          </h3>
+          <div className="grid md:grid-cols-3 gap-6 text-center">
+            {[
+              {
+                title: "Supply Chain Management",
+                desc: "Jaringan mitra luas untuk memastikan pasokan material terjamin ke seluruh lokasi di Indonesia.",
+              },
+              {
+                title: "Consignment Stock Management",
+                desc: "Pengelolaan stok material atas nama klien, invoicing sesuai barang yang digunakan per sumur.",
+              },
+              {
+                title: "Document Compliance",
+                desc: "Penyediaan dokumentasi lengkap sesuai persyaratan regulasi, termasuk sertifikat kesesuaian.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <div className="
+                  w-8 h-0.5 bg-[#c41e1e] mb-3
+                " />
+                <h4 className="text-white font-semibold text-sm mb-2">
+                  {item.title}
+                </h4>
+                <p className="text-white/50 text-xs leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
