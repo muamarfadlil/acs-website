@@ -8,7 +8,7 @@ import {
   ArrowLeft,
   MapPin,
   Calendar,
-  DollarSign,
+  // DollarSign dihapus karena properti value tidak ada di data
 } from "lucide-react";
 import { clients, projects } from "@/lib/data";
 
@@ -18,16 +18,6 @@ export const metadata: Metadata = {
     "Rekam jejak proyek PT ACS mencakup 28+ kontrak dengan KKKS terkemuka seperti Pertamina, Kondur Petroleum, EMP, dan lainnya sejak tahun 2005.",
 };
 
-/**
- * Halaman Klien & Proyek (/clients)
- * -----------------------------------
- * Menampilkan:
- * 1. Daftar mitra/klien yang pernah bekerja sama (dalam bentuk badge/grid)
- * 2. Tabel riwayat proyek lengkap dengan lokasi, tanggal, dan nilai kontrak
- *
- * Ini adalah halaman terpisah yang dapat diakses dari Sidebar,
- * bukan bagian dari landing page.
- */
 export default function ClientsPage() {
   return (
     <div className="min-h-screen bg-[#f0f4fa]">
@@ -161,9 +151,7 @@ export default function ClientsPage() {
                   <span className="inline-flex items-center gap-1 text-xs text-gray-500">
                     <Calendar size={11} /> {project.date}
                   </span>
-                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#0a1f44]">
-                    <DollarSign size={11} /> {project.value}
-                  </span>
+                  {/* Bagian Nilai Kontrak (project.value) dihapus karena tidak tersedia di data */}
                 </div>
               </div>
             ))}
@@ -189,6 +177,7 @@ export default function ClientsPage() {
                   <th className="px-4 py-3 text-left text-xs font-bold text-[#0a1f44] uppercase tracking-wide">
                     Tanggal
                   </th>
+                  {/* Kolom Nilai Kontrak dihapus */}
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
@@ -226,6 +215,7 @@ export default function ClientsPage() {
                     <td className="px-4 py-3.5 text-gray-500 text-xs whitespace-nowrap">
                       {project.date}
                     </td>
+                    {/* Sel Nilai Kontrak dihapus */}
                   </tr>
                 ))}
               </tbody>
