@@ -16,6 +16,11 @@ export const metadata: Metadata = {
     "PT Adiguna Cakra Semesta",
     "ACS Indonesia",
   ],
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     title: "PT Adiguna Cakra Semesta",
     description: "Trusted Partner in Drilling Fluids & Cementing Services",
