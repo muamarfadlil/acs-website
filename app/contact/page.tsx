@@ -422,8 +422,7 @@ export default function ContactPage() {
               <div className="space-y-2">
                 {[
                   { day: "Senin – Jumat", time: "08.00 – 17.00 WIB" },
-                  { day: "Sabtu", time: "08.00 – 13.00 WIB" },
-                  { day: "Minggu & Libur", time: "Tutup" },
+                  { day: "Sabtu & Minggu & Libur", time: "Tutup" },
                   { day: "On-call Support", time: "24 Jam / 7 Hari" },
                 ].map((item, i) => (
                   <div key={i} className="flex justify-between text-xs">
