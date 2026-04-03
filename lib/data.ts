@@ -136,8 +136,8 @@ export const certifications = [
     name: "Occupational Health & Safety",
     description:
       "Sistem manajemen K3 untuk memastikan keselamatan dan kesehatan kerja seluruh personel di lapangan maupun kantor.",
-    color: "bg-orange-50 border-orange-200",
-    iconColor: "text-orange-700",
+    color: "bg-amber-50 border-amber-200",
+    iconColor: "text-amber-600",
   },
 ];
 
