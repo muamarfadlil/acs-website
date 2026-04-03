@@ -28,7 +28,6 @@
 }
 
 html {
-  /* Smooth scroll saat klik link navigasi */
   scroll-behavior: smooth;
 }
 
@@ -42,8 +41,6 @@ body {
 /* =====================================================
    LAYOUT UTAMA – Sidebar + Main Content
    ===================================================== */
-
-/* Sidebar navigasi kiri (fixed) */
 .sidebar {
   position: fixed;
   left: 0;
@@ -64,8 +61,6 @@ body {
 /* =====================================================
    KOMPONEN REUSABLE
    ===================================================== */
-
-/* Garis aksen merah di bawah judul section */
 .section-title {
   font-family: var(--font-display);
   letter-spacing: 0.05em;
@@ -83,17 +78,15 @@ body {
   background: var(--red);
 }
 
-/* Card dengan efek hover */
 .card-hover {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(10, 31, 68, 0.15);
+  box-shadow: 0 16px 40px rgba(10, 31, 68, 0.18);
 }
 
-/* Tombol utama (navy + merah saat hover) */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -107,16 +100,16 @@ body {
   letter-spacing: 0.03em;
   border: none;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.15s ease;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
   text-decoration: none;
 }
 
 .btn-primary:hover {
   background: #a01818;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(196, 30, 30, 0.35);
 }
 
-/* Tombol outline (untuk section terang) */
 .btn-outline {
   display: inline-flex;
   align-items: center;
@@ -139,12 +132,12 @@ body {
 
 /* =====================================================
    ANIMASI SCROLL-REVEAL
-   Kelas .reveal ditambahkan lewat JS saat elemen masuk viewport
    ===================================================== */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.visible {
@@ -152,7 +145,6 @@ body {
   transform: translateY(0);
 }
 
-/* Delay bervariasi untuk elemen dalam grid */
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
@@ -162,11 +154,11 @@ body {
    HEADER
    ===================================================== */
 .header-scrolled {
-  box-shadow: 0 2px 20px rgba(10, 31, 68, 0.3);
+  box-shadow: 0 2px 24px rgba(10, 31, 68, 0.35);
 }
 
 /* =====================================================
-   HERO SECTION – Background pattern geometris
+   HERO SECTION
    ===================================================== */
 .hero-pattern {
   background-color: var(--navy);
@@ -187,7 +179,7 @@ body {
 }
 
 /* =====================================================
-   TIMELINE untuk halaman Clients/Experience
+   TIMELINE
    ===================================================== */
 .timeline-item::before {
   content: '';
@@ -197,6 +189,38 @@ body {
   width: 3px;
   height: 100%;
   background: linear-gradient(to bottom, var(--red), transparent);
+}
+
+/* =====================================================
+   GLOW UTILITIES
+   ===================================================== */
+.glow-red {
+  box-shadow: 0 0 20px rgba(196, 30, 30, 0.25);
+}
+
+.glow-navy {
+  box-shadow: 0 0 30px rgba(10, 31, 68, 0.2);
+}
+
+/* =====================================================
+   KEYFRAMES
+   ===================================================== */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 0.65; }
+}
+
+@keyframes float-up {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float-up 6s ease-in-out infinite;
 }
 
 /* =====================================================

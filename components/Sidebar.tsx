@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { type LucideIcon } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image"; // ← ditambahkan untuk komponen logo
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   FlaskConical,
@@ -32,8 +32,7 @@ export default function Sidebar() {
       setIsOpen(e.detail as boolean);
     };
     window.addEventListener("toggleSidebar", handler as EventListener);
-    return () =>
-      window.removeEventListener("toggleSidebar", handler as EventListener);
+    return () => window.removeEventListener("toggleSidebar", handler as EventListener);
   }, []);
 
   useEffect(() => {
@@ -51,9 +50,10 @@ export default function Sidebar() {
 
   return (
     <>
+      {/* Overlay backdrop */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm transition-opacity duration-300"
           onClick={close}
           aria-hidden="true"
         />
@@ -62,23 +62,18 @@ export default function Sidebar() {
       <aside
         className={`
           fixed top-0 left-0 h-full w-64 z-50
-          bg-[#0a1f44] border-r-2 border-[#c41e1e]
+          bg-gradient-to-b from-[#0d2559] via-[#0a1f44] to-[#08192f]
+          border-r-2 border-[#c41e1e]
+          shadow-[4px_0_32px_rgba(0,0,0,0.5)]
           flex flex-col
           transition-transform duration-350 ease-in-out
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
         `}
         aria-label="Navigasi halaman"
       >
-        {/* Header sidebar: logo + tombol close */}
+        {/* Header sidebar */}
         <div className="flex items-center justify-between px-5 py-5 border-b border-white/10">
           <div className="flex items-center gap-3">
-            {/*
-              PERBAIKAN: placeholder "ACS" diganti dengan gambar logo asli.
-              - div induk harus "relative" agar "fill" pada Image bekerja.
-              - w-8 h-8 menentukan ukuran kotak tempat logo ditampilkan.
-              - object-contain menjaga proporsi logo agar tidak terpotong.
-              - src="/logo.png" merujuk ke file public/logo.png (tanpa "/public/").
-            */}
             <div className="relative w-8 h-8 flex-shrink-0">
               <Image
                 src="/logo.png"
@@ -87,13 +82,16 @@ export default function Sidebar() {
                 className="object-contain"
               />
             </div>
-
             <span className="text-white font-semibold text-sm">Menu</span>
           </div>
           <button
             onClick={close}
             aria-label="Tutup sidebar"
-            className="text-white/50 hover:text-white hover:bg-white/10 p-1.5 rounded transition-colors"
+            className="
+              text-white/50 hover:text-white
+              hover:bg-white/10 p-1.5 rounded
+              transition-all duration-200
+            "
           >
             <X size={18} />
           </button>
@@ -109,11 +107,11 @@ export default function Sidebar() {
             onClick={close}
             className={`
               flex items-center gap-3 px-3 py-2.5 rounded text-sm
-              transition-colors duration-150 group
+              transition-all duration-200 group
               ${
                 pathname === "/"
-                  ? "bg-[#c41e1e] text-white"
-                  : "text-white/70 hover:text-white hover:bg-white/10"
+                  ? "bg-[#c41e1e] text-white shadow-[0_4px_12px_rgba(196,30,30,0.35)]"
+                  : "text-white/70 hover:text-white hover:bg-white/8"
               }
             `}
           >
@@ -130,7 +128,7 @@ export default function Sidebar() {
           </p>
         </div>
 
-        {/* Link ke halaman-halaman terpisah */}
+        {/* Link halaman-halaman lain */}
         <nav className="px-3 flex flex-col gap-1 flex-1 overflow-y-auto">
           {sidebarLinks.map((link) => {
             const Icon = iconMap[link.icon] || Mail;
@@ -143,11 +141,11 @@ export default function Sidebar() {
                 onClick={close}
                 className={`
                   flex items-center gap-3 px-3 py-2.5 rounded text-sm
-                  transition-all duration-150 group
+                  transition-all duration-200 group
                   ${
                     isActive
-                      ? "bg-[#c41e1e] text-white"
-                      : "text-white/70 hover:text-white hover:bg-white/10"
+                      ? "bg-[#c41e1e] text-white shadow-[0_4px_12px_rgba(196,30,30,0.35)]"
+                      : "text-white/70 hover:text-white hover:bg-white/8"
                   }
                 `}
               >
@@ -156,9 +154,8 @@ export default function Sidebar() {
                 <ChevronRight
                   size={14}
                   className={`
-                    ml-auto opacity-0 group-hover:opacity-100
-                    transition-opacity duration-150
-                    ${isActive ? "opacity-100" : ""}
+                    ml-auto transition-all duration-200
+                    ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5"}
                   `}
                 />
               </Link>
@@ -166,16 +163,16 @@ export default function Sidebar() {
           })}
         </nav>
 
-        {/* Footer sidebar: info kontak singkat */}
-        <div className="px-5 py-5 border-t border-white/10">
+        {/* Footer sidebar */}
+        <div className="px-5 py-5 border-t border-white/10 bg-black/20">
           <p className="text-white/40 text-xs leading-relaxed">
             📞 (+62) 21 53160137
           </p>
           <p className="text-white/40 text-xs mt-1 leading-relaxed">
             ✉️ adiguna@acs-indonesia.com
           </p>
-          <p className="text-white/25 text-xs mt-3">
-            © 2024 PT Adiguna Cakra Semesta
+          <p className="text-white/20 text-xs mt-3">
+            © {new Date().getFullYear()} PT Adiguna Cakra Semesta
           </p>
         </div>
       </aside>

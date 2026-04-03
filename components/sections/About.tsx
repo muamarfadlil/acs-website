@@ -3,40 +3,25 @@
 import { useEffect, useRef } from "react";
 import { CheckCircle2, Building2, Calendar, Award } from "lucide-react";
 import { company, sisterCompanies } from "@/lib/data";
-import Image from "next/image"; // ← tambahkan baris ini
+import Image from "next/image";
 
-/**
- * About Section
- * -------------
- * Menampilkan profil singkat perusahaan, tahun berdiri,
- * informasi dasar legalitas, dan perusahaan sister.
- *
- * Menggunakan IntersectionObserver untuk efek scroll-reveal
- * tanpa dependensi library animasi eksternal.
- */
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  // Scroll-reveal: elemen dengan kelas .reveal menjadi visible
-  // saat masuk viewport 80% dari bawah layar.
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
+          if (entry.isIntersecting) entry.target.classList.add("visible");
         });
       },
       { threshold: 0.1 },
     );
-
     const elements = sectionRef.current?.querySelectorAll(".reveal");
     elements?.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
-  // Data kartu informasi singkat (di bawah foto/visual)
   const highlights = [
     {
       icon: Calendar,
@@ -61,11 +46,10 @@ export default function About() {
   return (
     <section id="about" ref={sectionRef} className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* === LAYOUT DUA KOLOM === */}
         <div className="grid lg:grid-cols-2 gap-16 items-start">
+
           {/* KOLOM KIRI: Teks utama */}
           <div>
-            {/* Label section */}
             <div className="reveal flex items-center gap-3 mb-4">
               <span className="w-10 h-0.5 bg-[#c41e1e]" />
               <span className="text-[#c41e1e] text-xs font-semibold uppercase tracking-[0.2em]">
@@ -73,12 +57,11 @@ export default function About() {
               </span>
             </div>
 
-            {/* Judul section */}
             <h2
               className="
-              reveal font-['Bebas_Neue'] text-5xl lg:text-6xl
-              text-[#0a1f44] leading-tight tracking-wide mb-6
-            "
+                reveal font-['Bebas_Neue'] text-5xl lg:text-6xl
+                text-[#0a1f44] leading-tight tracking-wide mb-6
+              "
             >
               Dua Dekade Melayani
               <br />
@@ -87,7 +70,6 @@ export default function About() {
               Indonesia
             </h2>
 
-            {/* Paragraf deskripsi perusahaan */}
             <p className="reveal text-gray-600 text-base leading-relaxed mb-4 reveal-delay-1">
               PT Adiguna Cakra Semesta berdiri pada 15 Mei 2004 sebagai
               perusahaan swasta Indonesia yang bergerak di bidang jasa
@@ -113,12 +95,12 @@ export default function About() {
                 "Cementing Services",
                 "Drilling Evaluation (Mud Logging) Services",
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
+                <div key={i} className="flex items-start gap-3 group">
                   <CheckCircle2
                     size={18}
-                    className="text-[#c41e1e] flex-shrink-0 mt-0.5"
+                    className="text-[#c41e1e] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-200"
                   />
-                  <span className="text-gray-700 text-sm font-medium">
+                  <span className="text-gray-700 text-sm font-medium group-hover:text-[#0a1f44] transition-colors duration-200">
                     {item}
                   </span>
                 </div>
@@ -137,28 +119,28 @@ export default function About() {
                     className="
                       px-4 py-2 border border-[#0a1f44]/20 rounded
                       text-xs font-medium text-[#0a1f44]
+                      hover:border-[#c41e1e]/40 hover:bg-[#f0f4fa]
+                      hover:shadow-sm transition-all duration-200
                     "
                   >
                     <span className="font-semibold">{sc.name}</span>
-                    <span className="text-gray-400 ml-1">
-                      — {sc.description}
-                    </span>
+                    <span className="text-gray-400 ml-1">— {sc.description}</span>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* KOLOM KANAN: Visual + Kartu informasi */}
+          {/* KOLOM KANAN: Visual + Kartu */}
           <div className="reveal reveal-delay-1">
-            {/* Visual latar belakang industrial (placeholder untuk foto) */}
+            {/* Visual foto lapangan */}
             <div
               className="
-              relative bg-[#0a1f44] rounded overflow-hidden
-              aspect-[4/3] mb-6
-            "
+                relative bg-[#0a1f44] rounded overflow-hidden
+                aspect-[4/3] mb-6
+                shadow-[0_20px_60px_rgba(10,31,68,0.25)]
+              "
             >
-              {/* Pattern grid di dalam kotak visual */}
               <div
                 className="absolute inset-0 opacity-20"
                 style={{
@@ -170,7 +152,6 @@ export default function About() {
                 }}
               />
 
-              {/* Foto lapangan asli menggunakan komponen Image dari Next.js */}
               <Image
                 src="/foto_lapangan.jpeg"
                 alt="Foto operasional lapangan PT Adiguna Cakra Semesta"
@@ -179,19 +160,23 @@ export default function About() {
                 priority
               />
 
-              {/* Badge "Est. 2004" di pojok */}
+              {/* Overlay gradient bawah */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a1f44]/60 via-transparent to-transparent" />
+
+              {/* Badge "Est. 2004" */}
               <div
                 className="
-                absolute bottom-4 right-4
-                bg-[#c41e1e] text-white text-xs font-bold
-                px-3 py-1.5 rounded
-              "
+                  absolute bottom-4 right-4
+                  bg-[#c41e1e] text-white text-xs font-bold
+                  px-3 py-1.5 rounded
+                  shadow-[0_4px_12px_rgba(196,30,30,0.4)]
+                "
               >
                 Est. 2004
               </div>
             </div>
 
-            {/* Tiga kartu highlight informasi */}
+            {/* Tiga kartu highlight */}
             <div className="grid grid-cols-3 gap-3">
               {highlights.map(({ icon: Icon, label, value, sub }, i) => (
                 <div
@@ -200,19 +185,16 @@ export default function About() {
                     bg-[#f0f4fa] border border-[#0a1f44]/10 rounded p-4
                     flex flex-col gap-2
                     hover:border-[#c41e1e]/30 hover:bg-white
-                    transition-all duration-200
+                    hover:-translate-y-0.5 hover:shadow-md
+                    transition-all duration-250
                   "
                 >
                   <Icon size={18} className="text-[#c41e1e]" />
                   <p className="text-[10px] text-gray-400 uppercase tracking-wide font-semibold">
                     {label}
                   </p>
-                  <p className="text-[#0a1f44] font-bold text-xs leading-snug">
-                    {value}
-                  </p>
-                  <p className="text-gray-400 text-[10px] leading-snug">
-                    {sub}
-                  </p>
+                  <p className="text-[#0a1f44] font-bold text-xs leading-snug">{value}</p>
+                  <p className="text-gray-400 text-[10px] leading-snug">{sub}</p>
                 </div>
               ))}
             </div>

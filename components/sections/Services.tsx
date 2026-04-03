@@ -41,9 +41,12 @@ export default function Services() {
       ref={sectionRef}
       className="py-24 bg-[#0a1f44] relative overflow-hidden"
     >
-      {/* Pattern geometris tipis di latar belakang */}
+      {/* Background gradient depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#091532] via-[#0a1f44] to-[#091532]" />
+
+      {/* Pattern geometris tipis */}
       <div
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage: `
             linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px),
@@ -53,7 +56,11 @@ export default function Services() {
         }}
       />
 
+      {/* Glow merah subtle di tengah */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#c41e1e]/5 blur-3xl rounded-full pointer-events-none" />
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* === HEADER SECTION === */}
         <div className="text-center mb-16">
           <div className="reveal flex items-center justify-center gap-3 mb-4">
@@ -79,24 +86,35 @@ export default function Services() {
         <div className="grid md:grid-cols-3 gap-6">
           {services.map((service, idx) => {
             const Icon = iconMap[service.icon] || Droplets;
-
             return (
               <div
                 key={service.id}
                 className={`
                   reveal reveal-delay-${idx + 1}
                   group relative
-                  bg-[#091532] border border-white/10
-                  rounded overflow-hidden
+                  bg-gradient-to-b from-[#0f2449] to-[#091532]
+                  border border-white/10 rounded overflow-hidden
                   hover:border-[#c41e1e]/50
+                  hover:-translate-y-1.5
+                  hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)]
                   transition-all duration-300
                 `}
               >
-                <div className="h-1 bg-gradient-to-r from-[#c41e1e] to-transparent group-hover:from-[#c41e1e] group-hover:to-[#c41e1e] transition-all duration-300" />
+                {/* Garis atas – animasi grow saat hover */}
+                <div className="h-[3px] bg-gradient-to-r from-[#c41e1e] via-[#e83333] to-transparent group-hover:to-[#c41e1e] transition-all duration-500" />
 
                 <div className="p-7">
                   {/* Ikon */}
-                  <div className="w-12 h-12 rounded bg-[#c41e1e]/15 border border-[#c41e1e]/30 flex items-center justify-center mb-5 group-hover:bg-[#c41e1e] group-hover:border-[#c41e1e] transition-all duration-300">
+                  <div
+                    className="
+                      w-12 h-12 rounded
+                      bg-[#c41e1e]/15 border border-[#c41e1e]/30
+                      flex items-center justify-center mb-5
+                      group-hover:bg-[#c41e1e] group-hover:border-[#c41e1e]
+                      group-hover:shadow-[0_0_16px_rgba(196,30,30,0.4)]
+                      transition-all duration-300
+                    "
+                  >
                     <Icon
                       size={22}
                       className="text-[#c41e1e] group-hover:text-white transition-colors duration-300"
@@ -121,14 +139,10 @@ export default function Services() {
                           size={14}
                           className="text-[#c41e1e] flex-shrink-0 mt-0.5"
                         />
-                        <span className="text-white/70 text-xs leading-snug">
-                          {feature}
-                        </span>
+                        <span className="text-white/70 text-xs leading-snug">{feature}</span>
                       </div>
                     ))}
                   </div>
-
-                  {/* ↓ INI BARIS YANG RUSAK SEBELUMNYA — tag <a harus ada di sini */}
 
                   <a
                     href="#contact"
@@ -147,8 +161,8 @@ export default function Services() {
         </div>
 
         {/* === SUPPLY CHAIN SERVICES === */}
-        <div className="reveal mt-12 border border-white/10 rounded p-8 bg-[#091532]">
-          <h3 className="text-white font-semibold text-center mb-6 text-sm uppercase tracking-widest">
+        <div className="reveal mt-12 border border-white/10 rounded p-8 bg-gradient-to-br from-[#0f2449] to-[#091532] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+          <h3 className="text-white font-semibold text-center mb-8 text-sm uppercase tracking-widest">
             Dukungan Rantai Pasokan
           </h3>
           <div className="grid md:grid-cols-3 gap-6 text-center">
@@ -166,14 +180,13 @@ export default function Services() {
                 desc: "Penyediaan dokumentasi lengkap sesuai persyaratan regulasi, termasuk sertifikat kesesuaian.",
               },
             ].map((item, i) => (
-              <div key={i} className="flex flex-col items-center">
-                <div className="w-8 h-0.5 bg-[#c41e1e] mb-3" />
-                <h4 className="text-white font-semibold text-sm mb-2">
-                  {item.title}
-                </h4>
-                <p className="text-white/50 text-xs leading-relaxed">
-                  {item.desc}
-                </p>
+              <div
+                key={i}
+                className="flex flex-col items-center group px-2 py-4 rounded hover:bg-white/5 transition-colors duration-200"
+              >
+                <div className="w-8 h-0.5 bg-[#c41e1e] mb-4 group-hover:w-12 transition-all duration-300" />
+                <h4 className="text-white font-semibold text-sm mb-2">{item.title}</h4>
+                <p className="text-white/50 text-xs leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
