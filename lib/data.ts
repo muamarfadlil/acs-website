@@ -313,6 +313,7 @@ export const navLinks = [
   { label: "Beranda", href: "#hero" },
   { label: "Tentang Kami", href: "#about" },
   { label: "Layanan", href: "#services" },
+  { label: "CSR & K3", href: "#csr" },
   { label: "Sertifikasi", href: "#certifications" },
   { label: "Kontak", href: "#contact" },
 ];
@@ -320,7 +321,71 @@ export const navLinks = [
 // Link navigasi sidebar (menuju halaman terpisah)
 export const sidebarLinks = [
   { label: "Laboratorium", href: "/laboratory", icon: "FlaskConical" },
+  { label: "CSR & K3", href: "/csr-k3", icon: "HeartHandshake" },
   { label: "Klien & Proyek", href: "/clients", icon: "Briefcase" },
   { label: "Karir", href: "/career", icon: "UserCheck" },
   { label: "Kontak", href: "/contact", icon: "Mail" },
+];
+
+// Dokumentasi kegiatan CSR (Corporate Social Responsibility) & P2K3
+// (Panitia Pembina Keselamatan dan Kesehatan Kerja)
+export const csrK3Activities = [
+  {
+    id: "csr-2025-seminar-sekolah",
+    category: "csr" as const,
+    year: 2025,
+    title: "Seminar Kesehatan P2 HIV-AIDS & TBC untuk Pelajar",
+    date: "Jumat, 22 Agustus 2025",
+    location: "Perguruan Al-Madinah KKMB, BSD",
+    speaker: "Dr. Erik P. Sihotang — Direktur Yayasan Kasih Globalindo",
+    description:
+      "PT Adiguna Cakra Semesta (ACS) melalui program Corporate Social Responsibility (CSR) menyelenggarakan seminar kesehatan bertajuk \"Pencegahan dan Penanggulangan (P2) HIV-AIDS dan Tuberkulosis (TBC)\". Kegiatan ini diikuti oleh siswa kelas XII, pengurus OSIS, tim UKS, serta para guru, dengan tujuan meningkatkan pemahaman preventif sejak usia sekolah.",
+    photos: [
+      { src: "/csr-k3/csr-2025-foto-bersama.jpg", alt: "Foto bersama peserta Seminar P2 HIV-AIDS & TBC di Perguruan Al-Madinah KKMB BSD, 2025" },
+      { src: "/csr-k3/csr-2025-penyerahan-sertifikat.jpg", alt: "Penyerahan sertifikat dan plakat CSR seminar kesehatan 2025" },
+    ],
+  },
+  {
+    id: "k3-2025-seminar-karyawan",
+    category: "k3" as const,
+    year: 2025,
+    title: "Seminar P2K3: Pencegahan HIV-AIDS & TBC untuk Karyawan",
+    date: "Jumat, 8 Agustus 2025",
+    location: "Kantor PT Adiguna Cakra Semesta",
+    speaker: "dr. Hanif Rahman — Yayasan Kasih Globalindo",
+    description:
+      "Seminar kesehatan bertajuk \"Pencegahan dan Penanggulangan (P2) HIV-AIDS dan Tuberkulosis (TBC)\" diikuti oleh karyawan dan pemangku kepentingan perusahaan, bertujuan meningkatkan pemahaman serta kesiapsiagaan di tempat kerja terhadap dua penyakit menular yang masih menjadi masalah kesehatan masyarakat.",
+    photos: [
+      { src: "/csr-k3/k3-2025-seminar-hiv-tbc.png", alt: "Seminar P2K3 Pencegahan HIV-AIDS & TBC untuk karyawan PT ACS, 2025" },
+    ],
+  },
+  {
+    id: "k3-2026-seminar-bmi-ispa",
+    category: "k3" as const,
+    year: 2026,
+    title: "Seminar Kesehatan BMI & ISPA",
+    date: "2026, pukul 13.00 WIB",
+    location: "Kantor PT Adiguna Cakra Semesta",
+    speaker: "dr. Grishya Nanda Suryaratna",
+    description:
+      "Sebagai komitmen berkelanjutan dalam menjaga kesehatan dan kesejahteraan karyawan, PT Adiguna Cakra Semesta menyelenggarakan seminar kesehatan bertajuk \"Body Mass Index (BMI) dan Infeksi Saluran Pernapasan Akut (ISPA)\". Kegiatan ini merupakan lanjutan dari program rutin Medical Check-Up (MCU) yang diadakan perusahaan.",
+    photos: [
+      { src: "/csr-k3/k3-2026-seminar-bmi-ispa.jpg", alt: "Seminar Kesehatan BMI & ISPA untuk karyawan PT ACS, 2026" },
+      { src: "/csr-k3/k3-2026-serah-terima-sertifikat.jpg", alt: "Serah terima sertifikat Seminar Kesehatan BMI & ISPA 2026" },
+    ],
+  },
+  {
+    id: "csr-2026-literasi-keuangan",
+    category: "csr" as const,
+    year: 2026,
+    title: "Workshop Literasi Keuangan \"Panen Banyak Belum Tentu Sejahtera\"",
+    date: "Kamis, 9 Juli 2026",
+    location: "Balai Desa Sambongrejo, Kec. Semanding, Kab. Tuban",
+    description:
+      "PT Adiguna Cakra Semesta menggelar workshop literasi keuangan bagi masyarakat tani Desa Sambongrejo sebagai bagian dari program CSR pemberdayaan masyarakat. Diikuti sekitar 120 peserta dari pemerintah desa, BPD, LPMD, Karang Taruna, Gapoktan, dan tiga kelompok tani setempat, workshop ini bertujuan membekali petani dengan kemampuan mengelola hasil panen secara bijak.",
+    photos: [
+      { src: "/csr-k3/csr-2026-foto-bersama.jpg", alt: "Foto bersama peserta Workshop Literasi Keuangan di Balai Desa Sambongrejo, Tuban, 2026" },
+      { src: "/csr-k3/csr-2026-penyerahan-sertifikat.jpg", alt: "Penyerahan sertifikat dan plakat Workshop Literasi Keuangan 2026" },
+    ],
+  },
 ];

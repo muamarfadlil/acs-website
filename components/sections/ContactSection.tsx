@@ -241,6 +241,7 @@ export default function ContactSection() {
             <div className="flex flex-wrap items-center gap-5 text-xs">
               {[
                 { label: "Laboratorium", href: "/laboratory" },
+                { label: "CSR & K3", href: "/csr-k3" },
                 { label: "Klien", href: "/clients" },
                 { label: "Karir", href: "/career" },
                 { label: "Kontak", href: "/contact" },

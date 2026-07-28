@@ -4,6 +4,7 @@
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Services from "@/components/sections/Services";
+import CsrHighlight from "@/components/sections/CsrHighlight";
 import VisionMission from "@/components/sections/VisionMission";
 import Certifications from "@/components/sections/Certifications";
 import ContactSection from "@/components/sections/ContactSection";
@@ -18,9 +19,10 @@ import ContactSection from "@/components/sections/ContactSection";
  * 1. Hero          → tampilan pertama (above the fold)
  * 2. About         → profil perusahaan
  * 3. Services      → tiga layanan utama
- * 4. VisionMission → visi, misi, dan keunggulan
- * 5. Certifications→ sertifikasi ISO
- * 6. Contact       → info kontak + footer
+ * 4. CsrHighlight  → cuplikan kegiatan CSR & K3
+ * 5. VisionMission → visi, misi, dan keunggulan
+ * 6. Certifications→ sertifikasi ISO
+ * 7. Contact       → info kontak + footer
  */
 export default function HomePage() {
   return (
@@ -28,6 +30,7 @@ export default function HomePage() {
       <Hero />
       <About />
       <Services />
+      <CsrHighlight />
       <VisionMission />
       <Certifications />
       <ContactSection />

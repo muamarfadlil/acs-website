@@ -10,6 +10,7 @@ import {
   Briefcase,
   UserCheck,
   Mail,
+  HeartHandshake,
   X,
   Home,
   ChevronRight,
@@ -21,6 +22,7 @@ const iconMap: Record<string, LucideIcon> = {
   Briefcase,
   UserCheck,
   Mail,
+  HeartHandshake,
 };
 
 export default function Sidebar() {
