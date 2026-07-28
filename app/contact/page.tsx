@@ -80,7 +80,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f0f4fa]">
+    <div className="min-h-screen bg-[#f0f4fa] dark:bg-[#091832] transition-colors duration-300">
       {/* ===== HERO HALAMAN ===== */}
       <div className="bg-[#0a1f44] relative overflow-hidden">
         <div
@@ -128,8 +128,8 @@ export default function ContactPage() {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* ===== FORM KONTAK (2/3 lebar) ===== */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded border border-[#0a1f44]/10 overflow-hidden">
-              <div className="bg-[#0a1f44] px-6 py-4 flex items-center gap-3">
+            <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
+              <div className="bg-[#0a1f44] dark:bg-[#091832] px-6 py-4 flex items-center gap-3">
                 <Send size={16} className="text-[#c41e1e]" />
                 <h2 className="text-white font-bold text-sm uppercase tracking-wide">
                   Kirim Pesan
@@ -165,7 +165,7 @@ export default function ContactPage() {
                   {/* Baris 1: Nama + Email */}
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs font-semibold text-[#0a1f44] uppercase tracking-wide mb-2">
+                      <label className="block text-xs font-semibold text-[#0a1f44] dark:text-white uppercase tracking-wide mb-2">
                         Nama Lengkap <span className="text-[#c41e1e]">*</span>
                       </label>
                       <input
@@ -176,15 +176,15 @@ export default function ContactPage() {
                         required
                         placeholder="Budi Santoso"
                         className="
-                          w-full px-4 py-3 border border-gray-200 rounded text-sm
-                          text-gray-800 placeholder-gray-400
-                          focus:outline-none focus:border-[#0a1f44] focus:ring-1 focus:ring-[#0a1f44]
+                          w-full px-4 py-3 border border-gray-200 dark:border-white/20 rounded text-sm
+                          bg-white dark:bg-white/5 text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white/30
+                          focus:outline-none focus:border-[#0a1f44] dark:focus:border-white focus:ring-1 focus:ring-[#0a1f44] dark:focus:ring-white
                           transition-colors
                         "
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-[#0a1f44] uppercase tracking-wide mb-2">
+                      <label className="block text-xs font-semibold text-[#0a1f44] dark:text-white uppercase tracking-wide mb-2">
                         Alamat Email <span className="text-[#c41e1e]">*</span>
                       </label>
                       <input
@@ -195,9 +195,9 @@ export default function ContactPage() {
                         required
                         placeholder="budi@perusahaan.com"
                         className="
-                          w-full px-4 py-3 border border-gray-200 rounded text-sm
-                          text-gray-800 placeholder-gray-400
-                          focus:outline-none focus:border-[#0a1f44] focus:ring-1 focus:ring-[#0a1f44]
+                          w-full px-4 py-3 border border-gray-200 dark:border-white/20 rounded text-sm
+                          bg-white dark:bg-white/5 text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white/30
+                          focus:outline-none focus:border-[#0a1f44] dark:focus:border-white focus:ring-1 focus:ring-[#0a1f44] dark:focus:ring-white
                           transition-colors
                         "
                       />
@@ -207,7 +207,7 @@ export default function ContactPage() {
                   {/* Baris 2: Telepon + Subjek */}
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs font-semibold text-[#0a1f44] uppercase tracking-wide mb-2">
+                      <label className="block text-xs font-semibold text-[#0a1f44] dark:text-white uppercase tracking-wide mb-2">
                         Nomor Telepon
                       </label>
                       <input
@@ -217,15 +217,15 @@ export default function ContactPage() {
                         onChange={handleChange}
                         placeholder="+62 812 3456 7890"
                         className="
-                          w-full px-4 py-3 border border-gray-200 rounded text-sm
-                          text-gray-800 placeholder-gray-400
-                          focus:outline-none focus:border-[#0a1f44] focus:ring-1 focus:ring-[#0a1f44]
+                          w-full px-4 py-3 border border-gray-200 dark:border-white/20 rounded text-sm
+                          bg-white dark:bg-white/5 text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white/30
+                          focus:outline-none focus:border-[#0a1f44] dark:focus:border-white focus:ring-1 focus:ring-[#0a1f44] dark:focus:ring-white
                           transition-colors
                         "
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-[#0a1f44] uppercase tracking-wide mb-2">
+                      <label className="block text-xs font-semibold text-[#0a1f44] dark:text-white uppercase tracking-wide mb-2">
                         Subjek <span className="text-[#c41e1e]">*</span>
                       </label>
                       <select
@@ -234,10 +234,10 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         className="
-                          w-full px-4 py-3 border border-gray-200 rounded text-sm
-                          text-gray-800
-                          focus:outline-none focus:border-[#0a1f44] focus:ring-1 focus:ring-[#0a1f44]
-                          transition-colors bg-white
+                          w-full px-4 py-3 border border-gray-200 dark:border-white/20 rounded text-sm
+                          text-gray-800 dark:text-white
+                          focus:outline-none focus:border-[#0a1f44] dark:focus:border-white focus:ring-1 focus:ring-[#0a1f44] dark:focus:ring-white
+                          transition-colors bg-white dark:bg-white/5
                         "
                       >
                         <option value="">Pilih topik...</option>
@@ -257,7 +257,7 @@ export default function ContactPage() {
 
                   {/* Baris 3: Pesan */}
                   <div>
-                    <label className="block text-xs font-semibold text-[#0a1f44] uppercase tracking-wide mb-2">
+                    <label className="block text-xs font-semibold text-[#0a1f44] dark:text-white uppercase tracking-wide mb-2">
                       Pesan <span className="text-[#c41e1e]">*</span>
                     </label>
                     <textarea
@@ -268,9 +268,9 @@ export default function ContactPage() {
                       rows={6}
                       placeholder="Ceritakan kebutuhan Anda, misalnya: jenis operasi pengeboran, lokasi, jadwal yang direncanakan, dan informasi lain yang relevan..."
                       className="
-                        w-full px-4 py-3 border border-gray-200 rounded text-sm
-                        text-gray-800 placeholder-gray-400
-                        focus:outline-none focus:border-[#0a1f44] focus:ring-1 focus:ring-[#0a1f44]
+                        w-full px-4 py-3 border border-gray-200 dark:border-white/20 rounded text-sm
+                        bg-white dark:bg-white/5 text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white/30
+                        focus:outline-none focus:border-[#0a1f44] dark:focus:border-white focus:ring-1 focus:ring-[#0a1f44] dark:focus:ring-white
                         transition-colors resize-none
                       "
                     />
@@ -328,27 +328,27 @@ export default function ContactPage() {
           {/* ===== INFO KONTAK (1/3 lebar) ===== */}
           <div className="space-y-5">
             {/* Alamat */}
-            <div className="bg-white rounded border border-[#0a1f44]/10 p-6">
+            <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-9 h-9 bg-[#c41e1e] rounded flex items-center justify-center">
                   <MapPin size={16} className="text-white" />
                 </div>
-                <h3 className="font-bold text-[#0a1f44] text-sm">Alamat</h3>
+                <h3 className="font-bold text-[#0a1f44] dark:text-white text-sm">Alamat</h3>
               </div>
               <div className="space-y-3">
                 <div>
                   <p className="text-[10px] font-bold text-[#c41e1e] uppercase tracking-widest mb-1">
                     Kantor &amp; Lab
                   </p>
-                  <p className="text-gray-700 text-xs leading-relaxed">
+                  <p className="text-gray-700 dark:text-white/70 text-xs leading-relaxed">
                     {company.address.office}
                   </p>
                 </div>
-                <div className="border-t border-gray-100 pt-3">
-                  <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">
+                <div className="border-t border-gray-100 dark:border-white/10 pt-3">
+                  <p className="text-[10px] font-bold text-gray-400 dark:text-white/40 uppercase tracking-widest mb-1">
                     Gudang
                   </p>
-                  <p className="text-gray-700 text-xs leading-relaxed">
+                  <p className="text-gray-700 dark:text-white/70 text-xs leading-relaxed">
                     {company.address.warehouse}
                   </p>
                 </div>
@@ -356,18 +356,18 @@ export default function ContactPage() {
             </div>
 
             {/* Telepon & Email */}
-            <div className="bg-white rounded border border-[#0a1f44]/10 p-6 space-y-4">
+            <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6 space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 bg-[#0a1f44] rounded flex items-center justify-center">
                   <Phone size={16} className="text-white" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                  <p className="text-[10px] font-bold text-gray-400 dark:text-white/40 uppercase tracking-widest">
                     Telepon
                   </p>
                   <a
                     href={`tel:${company.phone}`}
-                    className="text-[#0a1f44] font-semibold text-sm hover:text-[#c41e1e] transition-colors"
+                    className="text-[#0a1f44] dark:text-white font-semibold text-sm hover:text-[#c41e1e] transition-colors"
                   >
                     {company.phone}
                   </a>
@@ -379,12 +379,12 @@ export default function ContactPage() {
                   <Mail size={16} className="text-white" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                  <p className="text-[10px] font-bold text-gray-400 dark:text-white/40 uppercase tracking-widest">
                     Email
                   </p>
                   <a
                     href={`mailto:${company.email}`}
-                    className="text-[#0a1f44] font-semibold text-xs hover:text-[#c41e1e] transition-colors"
+                    className="text-[#0a1f44] dark:text-white font-semibold text-xs hover:text-[#c41e1e] transition-colors"
                   >
                     {company.email}
                   </a>
@@ -392,18 +392,18 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 bg-gray-100 rounded flex items-center justify-center">
-                  <Globe size={16} className="text-[#0a1f44]" />
+                <div className="w-9 h-9 bg-gray-100 dark:bg-white/10 rounded flex items-center justify-center">
+                  <Globe size={16} className="text-[#0a1f44] dark:text-white" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                  <p className="text-[10px] font-bold text-gray-400 dark:text-white/40 uppercase tracking-widest">
                     Website
                   </p>
                   <a
                     href={`https://${company.website}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#0a1f44] font-semibold text-sm hover:text-[#c41e1e] transition-colors"
+                    className="text-[#0a1f44] dark:text-white font-semibold text-sm hover:text-[#c41e1e] transition-colors"
                   >
                     {company.website}
                   </a>
@@ -444,13 +444,13 @@ export default function ContactPage() {
             </div>
 
             {/* Peta Placeholder */}
-            <div className="bg-white rounded border border-[#0a1f44]/10 overflow-hidden">
-              <div className="bg-[#f0f4fa] h-40 flex flex-col items-center justify-center text-center px-4">
+            <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
+              <div className="bg-[#f0f4fa] dark:bg-white/5 h-40 flex flex-col items-center justify-center text-center px-4">
                 <MapPin size={28} className="text-[#c41e1e] mb-2" />
-                <p className="text-[#0a1f44] font-semibold text-xs">
+                <p className="text-[#0a1f44] dark:text-white font-semibold text-xs">
                   Google Maps Embed
                 </p>
-                <p className="text-gray-400 text-[10px] mt-1 leading-relaxed">
+                <p className="text-gray-400 dark:text-white/40 text-[10px] mt-1 leading-relaxed">
                   <iframe
                     width="600"
                     height="450"

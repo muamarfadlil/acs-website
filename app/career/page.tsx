@@ -110,7 +110,7 @@ const benefits = [
 
 export default function CareerPage() {
   return (
-    <div className="min-h-screen bg-[#f0f4fa]">
+    <div className="min-h-screen bg-[#f0f4fa] dark:bg-[#091832] transition-colors duration-300">
 
       {/* ===== HERO HALAMAN ===== */}
       <div className="bg-[#0a1f44] relative overflow-hidden">
@@ -160,10 +160,10 @@ export default function CareerPage() {
 
           {/* ===== DAFTAR LOWONGAN (2/3) ===== */}
           <div className="lg:col-span-2 space-y-5">
-            <h2 className="font-['Bebas_Neue'] text-3xl text-[#0a1f44] tracking-wide">
+            <h2 className="font-['Bebas_Neue'] text-3xl text-[#0a1f44] dark:text-white tracking-wide">
               Posisi yang Tersedia
             </h2>
-            <p className="text-gray-500 text-sm -mt-2">
+            <p className="text-gray-500 dark:text-white/50 text-sm -mt-2">
               {openings.length} posisi terbuka · Diperbarui April 2024
             </p>
 
@@ -171,7 +171,7 @@ export default function CareerPage() {
               <div
                 key={job.id}
                 className="
-                  bg-white rounded border border-[#0a1f44]/10 overflow-hidden
+                  bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden
                   hover:border-[#c41e1e]/30 hover:shadow-md
                   transition-all duration-200 group
                 "
@@ -180,7 +180,7 @@ export default function CareerPage() {
                 <div className="p-5 pb-4">
                   <div className="flex items-start justify-between gap-4 mb-3">
                     <div>
-                      <h3 className="font-bold text-[#0a1f44] text-base leading-tight">
+                      <h3 className="font-bold text-[#0a1f44] dark:text-white text-base leading-tight">
                         {job.title}
                       </h3>
                       <p className="text-[#c41e1e] text-xs font-semibold mt-0.5">
@@ -188,7 +188,7 @@ export default function CareerPage() {
                       </p>
                     </div>
                     <span className="
-                      flex-shrink-0 px-2.5 py-1 bg-[#0a1f44]/10 text-[#0a1f44]
+                      flex-shrink-0 px-2.5 py-1 bg-[#0a1f44]/10 dark:bg-white/10 text-[#0a1f44] dark:text-white
                       text-xs font-semibold rounded
                     ">
                       {job.type}
@@ -197,27 +197,27 @@ export default function CareerPage() {
 
                   {/* Meta info */}
                   <div className="flex flex-wrap gap-3 mb-3">
-                    <span className="inline-flex items-center gap-1.5 text-gray-500 text-xs">
+                    <span className="inline-flex items-center gap-1.5 text-gray-500 dark:text-white/50 text-xs">
                       <MapPin size={11} /> {job.location}
                     </span>
-                    <span className="inline-flex items-center gap-1.5 text-gray-500 text-xs">
+                    <span className="inline-flex items-center gap-1.5 text-gray-500 dark:text-white/50 text-xs">
                       <Clock size={11} /> {job.experience}
                     </span>
                   </div>
 
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 dark:text-white/60 text-sm leading-relaxed">
                     {job.description}
                   </p>
                 </div>
 
                 {/* Persyaratan (collapsible-style, tapi disimpan semuanya) */}
-                <div className="px-5 pb-5 border-t border-gray-100 pt-4">
-                  <p className="text-xs font-bold text-[#0a1f44] uppercase tracking-wide mb-2.5">
+                <div className="px-5 pb-5 border-t border-gray-100 dark:border-white/10 pt-4">
+                  <p className="text-xs font-bold text-[#0a1f44] dark:text-white uppercase tracking-wide mb-2.5">
                     Persyaratan
                   </p>
                   <div className="space-y-1.5">
                     {job.requirements.map((req, ri) => (
-                      <div key={ri} className="flex items-start gap-2 text-xs text-gray-600">
+                      <div key={ri} className="flex items-start gap-2 text-xs text-gray-600 dark:text-white/60">
                         <ChevronRight size={12} className="text-[#c41e1e] flex-shrink-0 mt-0.5" />
                         {req}
                       </div>
@@ -231,9 +231,10 @@ export default function CareerPage() {
                     href={`/contact?subject=Lamaran: ${encodeURIComponent(job.title)}`}
                     className="
                       inline-flex items-center gap-2
-                      bg-[#0a1f44] text-white
+                      bg-[#0a1f44] dark:bg-white/10 text-white
                       px-5 py-2.5 text-xs font-semibold rounded
-                      hover:bg-[#c41e1e] transition-colors duration-200
+                      border border-transparent dark:border-white/20
+                      hover:bg-[#c41e1e] dark:hover:bg-[#c41e1e] transition-colors duration-200
                       group-hover:bg-[#c41e1e]
                     "
                   >
@@ -249,13 +250,13 @@ export default function CareerPage() {
           <div className="space-y-6">
 
             {/* Keuntungan bekerja di ACS */}
-            <div className="bg-white rounded border border-[#0a1f44]/10 p-6">
-              <h3 className="font-bold text-[#0a1f44] text-sm uppercase tracking-wide mb-4">
+            <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
+              <h3 className="font-bold text-[#0a1f44] dark:text-white text-sm uppercase tracking-wide mb-4">
                 Keuntungan Bergabung
               </h3>
               <div className="space-y-2.5">
                 {benefits.map((b, i) => (
-                  <div key={i} className="flex items-start gap-2.5 text-xs text-gray-700">
+                  <div key={i} className="flex items-start gap-2.5 text-xs text-gray-700 dark:text-white/70">
                     <div className="
                       w-4 h-4 bg-[#c41e1e] rounded-full flex-shrink-0
                       flex items-center justify-center mt-0.5
@@ -296,12 +297,12 @@ export default function CareerPage() {
             </div>
 
             {/* Kirim CV Spontan */}
-            <div className="bg-[#f0f4fa] border border-[#0a1f44]/10 rounded p-5 text-center">
+            <div className="bg-[#f0f4fa] dark:bg-white/5 border border-[#0a1f44]/10 dark:border-white/10 rounded p-5 text-center">
               <Briefcase size={24} className="text-[#c41e1e] mx-auto mb-3" />
-              <p className="font-bold text-[#0a1f44] text-sm mb-2">
+              <p className="font-bold text-[#0a1f44] dark:text-white text-sm mb-2">
                 Tidak Ada Posisi yang Cocok?
               </p>
-              <p className="text-gray-500 text-xs mb-4 leading-relaxed">
+              <p className="text-gray-500 dark:text-white/50 text-xs mb-4 leading-relaxed">
                 Kirim CV Anda secara spontan. Kami akan menyimpannya untuk
                 peluang yang sesuai di masa mendatang.
               </p>
@@ -309,9 +310,10 @@ export default function CareerPage() {
                 href="mailto:adiguna@acs-indonesia.com?subject=CV%20Spontan%20-%20[Nama%20Anda]"
                 className="
                   inline-flex items-center gap-2
-                  bg-[#0a1f44] text-white
+                  bg-[#0a1f44] dark:bg-white/10 text-white
                   px-5 py-2.5 text-xs font-semibold rounded
-                  hover:bg-[#c41e1e] transition-colors duration-200
+                  border border-transparent dark:border-white/20
+                  hover:bg-[#c41e1e] dark:hover:bg-[#c41e1e] transition-colors duration-200
                 "
               >
                 Kirim CV via Email

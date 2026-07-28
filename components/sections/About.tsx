@@ -44,7 +44,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" ref={sectionRef} className="py-24 bg-white">
+    <section id="about" ref={sectionRef} className="py-24 bg-white dark:bg-[#0a1f44] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
 
@@ -60,7 +60,7 @@ export default function About() {
             <h2
               className="
                 reveal font-['Bebas_Neue'] text-5xl lg:text-6xl
-                text-[#0a1f44] leading-tight tracking-wide mb-6
+                text-[#0a1f44] dark:text-white leading-tight tracking-wide mb-6
               "
             >
               Dua Dekade Melayani
@@ -70,14 +70,14 @@ export default function About() {
               Indonesia
             </h2>
 
-            <p className="reveal text-gray-600 text-base leading-relaxed mb-4 reveal-delay-1">
+            <p className="reveal text-gray-600 dark:text-white/60 text-base leading-relaxed mb-4 reveal-delay-1">
               PT Adiguna Cakra Semesta berdiri pada 15 Mei 2004 sebagai
               perusahaan swasta Indonesia yang bergerak di bidang jasa
               Drilling-Completion Fluids dan Cementing. Perusahaan ini melayani
               industri hulu minyak, gas, dan geotermal — menemani klien di
               setiap fase kehidupan lapangan.
             </p>
-            <p className="reveal text-gray-600 text-base leading-relaxed mb-6 reveal-delay-2">
+            <p className="reveal text-gray-600 dark:text-white/60 text-base leading-relaxed mb-6 reveal-delay-2">
               Tim kami terdiri dari para profesional berpengalaman dengan
               keahlian mendalam di bidang teknik fluida pemboran dan sementasi.
               Kami berkomitmen membangun hubungan jangka panjang dengan
@@ -87,7 +87,7 @@ export default function About() {
 
             {/* Tiga divisi bisnis utama */}
             <div className="reveal reveal-delay-3 space-y-3 mb-8">
-              <p className="text-sm font-semibold text-[#0a1f44] uppercase tracking-wide mb-3">
+              <p className="text-sm font-semibold text-[#0a1f44] dark:text-white uppercase tracking-wide mb-3">
                 Tiga Divisi Bisnis Utama
               </p>
               {[
@@ -100,7 +100,7 @@ export default function About() {
                     size={18}
                     className="text-[#c41e1e] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-200"
                   />
-                  <span className="text-gray-700 text-sm font-medium group-hover:text-[#0a1f44] transition-colors duration-200">
+                  <span className="text-gray-700 dark:text-white/70 text-sm font-medium group-hover:text-[#0a1f44] dark:group-hover:text-white transition-colors duration-200">
                     {item}
                   </span>
                 </div>
@@ -108,8 +108,8 @@ export default function About() {
             </div>
 
             {/* Perusahaan sister */}
-            <div className="reveal reveal-delay-4 border-t border-gray-100 pt-6">
-              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">
+            <div className="reveal reveal-delay-4 border-t border-gray-100 dark:border-white/10 pt-6">
+              <p className="text-xs font-semibold text-gray-400 dark:text-white/40 uppercase tracking-wide mb-3">
                 Perusahaan Sister
               </p>
               <div className="flex flex-wrap gap-3">
@@ -117,14 +117,14 @@ export default function About() {
                   <div
                     key={sc.name}
                     className="
-                      px-4 py-2 border border-[#0a1f44]/20 rounded
-                      text-xs font-medium text-[#0a1f44]
-                      hover:border-[#c41e1e]/40 hover:bg-[#f0f4fa]
+                      px-4 py-2 border border-[#0a1f44]/20 dark:border-white/20 rounded
+                      text-xs font-medium text-[#0a1f44] dark:text-white
+                      hover:border-[#c41e1e]/40 hover:bg-[#f0f4fa] dark:hover:bg-white/10
                       hover:shadow-sm transition-all duration-200
                     "
                   >
                     <span className="font-semibold">{sc.name}</span>
-                    <span className="text-gray-400 ml-1">— {sc.description}</span>
+                    <span className="text-gray-400 dark:text-white/40 ml-1">— {sc.description}</span>
                   </div>
                 ))}
               </div>
@@ -182,19 +182,19 @@ export default function About() {
                 <div
                   key={i}
                   className="
-                    bg-[#f0f4fa] border border-[#0a1f44]/10 rounded p-4
+                    bg-[#f0f4fa] dark:bg-white/5 border border-[#0a1f44]/10 dark:border-white/10 rounded p-4
                     flex flex-col gap-2
-                    hover:border-[#c41e1e]/30 hover:bg-white
+                    hover:border-[#c41e1e]/30 hover:bg-white dark:hover:bg-white/10
                     hover:-translate-y-0.5 hover:shadow-md
                     transition-all duration-250
                   "
                 >
                   <Icon size={18} className="text-[#c41e1e]" />
-                  <p className="text-[10px] text-gray-400 uppercase tracking-wide font-semibold">
+                  <p className="text-[10px] text-gray-400 dark:text-white/40 uppercase tracking-wide font-semibold">
                     {label}
                   </p>
-                  <p className="text-[#0a1f44] font-bold text-xs leading-snug">{value}</p>
-                  <p className="text-gray-400 text-[10px] leading-snug">{sub}</p>
+                  <p className="text-[#0a1f44] dark:text-white font-bold text-xs leading-snug">{value}</p>
+                  <p className="text-gray-400 dark:text-white/40 text-[10px] leading-snug">{sub}</p>
                 </div>
               ))}
             </div>

@@ -17,7 +17,7 @@ export default function Certifications() {
   }, []);
 
   return (
-    <section id="certifications" ref={sectionRef} className="py-24 bg-white">
+    <section id="certifications" ref={sectionRef} className="py-24 bg-white dark:bg-[#0a1f44] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* === HEADER === */}
@@ -32,14 +32,14 @@ export default function Certifications() {
           <h2
             className="
               reveal font-['Bebas_Neue'] text-5xl lg:text-6xl
-              text-[#0a1f44] tracking-wide leading-tight
+              text-[#0a1f44] dark:text-white tracking-wide leading-tight
             "
           >
             Standar Internasional
             <br />
             <span className="text-[#c41e1e]">yang Kami Pegang</span>
           </h2>
-          <p className="reveal reveal-delay-1 text-gray-500 text-base max-w-xl mx-auto mt-4 leading-relaxed">
+          <p className="reveal reveal-delay-1 text-gray-500 dark:text-white/50 text-base max-w-xl mx-auto mt-4 leading-relaxed">
             PT ACS telah tersertifikasi oleh lembaga independen berstandar
             internasional (IAF · KAN) sejak September 2023, valid hingga September 2026.
           </p>
@@ -63,7 +63,7 @@ export default function Certifications() {
               <div className="flex items-center gap-3 mb-5">
                 <ShieldCheck size={28} className={cert.iconColor} />
                 <div>
-                  <p className="font-bold text-[#0a1f44] text-sm leading-tight">
+                  <p className="font-bold text-[#0a1f44] dark:text-white text-sm leading-tight">
                     {cert.code}
                   </p>
                   <p className={`text-xs font-semibold ${cert.iconColor} mt-0.5`}>
@@ -72,15 +72,15 @@ export default function Certifications() {
                 </div>
               </div>
 
-              <h3 className="font-bold text-[#0a1f44] text-base mb-2">
+              <h3 className="font-bold text-[#0a1f44] dark:text-white text-base mb-2">
                 {cert.name}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 dark:text-white/60 text-sm leading-relaxed">
                 {cert.description}
               </p>
 
               {/* Info validitas */}
-              <div className="mt-5 pt-4 border-t border-current/10 flex justify-between text-xs text-gray-400">
+              <div className="mt-5 pt-4 border-t border-current/10 flex justify-between text-xs text-gray-400 dark:text-white/40">
                 <span>Awal: 27 Sep 2023</span>
                 <span>Berakhir: 26 Sep 2026</span>
               </div>
@@ -92,18 +92,18 @@ export default function Certifications() {
         <div
           className="
             reveal
-            border border-[#0a1f44]/10 rounded
-            bg-gradient-to-br from-[#f0f4fa] to-[#e8eef8]
+            border border-[#0a1f44]/10 dark:border-white/10 rounded
+            bg-gradient-to-br from-[#f0f4fa] to-[#e8eef8] dark:from-[#0f2449] dark:to-[#091832]
             p-8
             shadow-[0_4px_24px_rgba(10,31,68,0.08)]
           "
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="font-['Bebas_Neue'] text-3xl text-[#0a1f44] tracking-wide mb-3">
+              <h3 className="font-['Bebas_Neue'] text-3xl text-[#0a1f44] dark:text-white tracking-wide mb-3">
                 Diakui oleh SKK Migas
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              <p className="text-gray-600 dark:text-white/60 text-sm leading-relaxed mb-4">
                 PT ACS telah terdaftar dalam sistem SPDA CIVD (Contractor Vendor
                 Information Database) SKK Migas dan memiliki sertifikat e-CSMS
                 (Contractor Safety Management System) dari berbagai KKKS terkemuka.
@@ -114,7 +114,7 @@ export default function Certifications() {
                   "e-CSMS – PT Tiarabumi Petroleum",
                   "e-CSMS – PT Pertamina EP",
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2.5 text-xs text-gray-600 group">
+                  <div key={i} className="flex items-center gap-2.5 text-xs text-gray-600 dark:text-white/60 group">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#c41e1e] flex-shrink-0 group-hover:scale-125 transition-transform duration-200" />
                     {item}
                   </div>
@@ -128,8 +128,8 @@ export default function Certifications() {
                 <div
                   key={label}
                   className="
-                    px-5 py-3 bg-white border border-[#0a1f44]/15 rounded
-                    text-xs font-bold text-[#0a1f44]
+                    px-5 py-3 bg-white dark:bg-white/10 border border-[#0a1f44]/15 dark:border-white/15 rounded
+                    text-xs font-bold text-[#0a1f44] dark:text-white
                     shadow-sm
                     hover:border-[#0a1f44]/40 hover:shadow-md
                     hover:-translate-y-0.5

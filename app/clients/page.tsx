@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function ClientsPage() {
   return (
-    <div className="min-h-screen bg-[#f0f4fa]">
+    <div className="min-h-screen bg-[#f0f4fa] dark:bg-[#091832] transition-colors duration-300">
       {/* ===== HERO HALAMAN ===== */}
       <div className="bg-[#0a1f44] relative overflow-hidden">
         <div
@@ -82,11 +82,11 @@ export default function ClientsPage() {
       {/* ===== KONTEN UTAMA ===== */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
         {/* DAFTAR KLIEN / MITRA */}
-        <div className="bg-white rounded border border-[#0a1f44]/10 p-8">
-          <h2 className="font-['Bebas_Neue'] text-3xl text-[#0a1f44] tracking-wide mb-2">
+        <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-8">
+          <h2 className="font-['Bebas_Neue'] text-3xl text-[#0a1f44] dark:text-white tracking-wide mb-2">
             Klien &amp; Mitra Kami
           </h2>
-          <p className="text-gray-500 text-sm mb-6 leading-relaxed">
+          <p className="text-gray-500 dark:text-white/50 text-sm mb-6 leading-relaxed">
             PT ACS telah bermitra dengan berbagai KKKS nasional dan
             internasional dalam operasi pengeboran di seluruh kepulauan
             Indonesia.
@@ -96,8 +96,8 @@ export default function ClientsPage() {
               <span
                 key={i}
                 className="
-                  px-4 py-2.5 border-2 border-[#0a1f44]/15 rounded
-                  text-sm font-medium text-[#0a1f44]
+                  px-4 py-2.5 border-2 border-[#0a1f44]/15 dark:border-white/15 rounded
+                  text-sm font-medium text-[#0a1f44] dark:text-white
                   hover:border-[#c41e1e] hover:bg-[#c41e1e]/5
                   transition-all duration-200 cursor-default
                 "
@@ -109,15 +109,15 @@ export default function ClientsPage() {
         </div>
 
         {/* TABEL RIWAYAT PROYEK */}
-        <div className="bg-white rounded border border-[#0a1f44]/10 overflow-hidden">
-          <div className="bg-[#0a1f44] px-6 py-4 flex items-center gap-3">
+        <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
+          <div className="bg-[#0a1f44] dark:bg-[#091832] px-6 py-4 flex items-center gap-3">
             <h2 className="text-white font-bold text-sm uppercase tracking-wide">
               Riwayat Proyek (2005 – 2022)
             </h2>
           </div>
 
           {/* Mobile: Kartu per proyek */}
-          <div className="md:hidden divide-y divide-gray-100">
+          <div className="md:hidden divide-y divide-gray-100 dark:divide-white/10">
             {projects.map((project) => (
               <div key={project.no} className="p-5 space-y-2">
                 <div className="flex items-start justify-between gap-3">
@@ -130,20 +130,20 @@ export default function ClientsPage() {
                     {project.no}
                   </span>
                   <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-[#0a1f44] text-sm leading-tight">
+                    <p className="font-semibold text-[#0a1f44] dark:text-white text-sm leading-tight">
                       {project.company}
                     </p>
-                    <p className="text-gray-600 text-xs mt-1 leading-relaxed">
+                    <p className="text-gray-600 dark:text-white/60 text-xs mt-1 leading-relaxed">
                       {project.job}
                     </p>
                   </div>
                 </div>
                 {/* PERBAIKAN: Hapus {project.value} karena field ini tidak ada di tipe data */}
                 <div className="flex flex-wrap gap-3 pl-10">
-                  <span className="inline-flex items-center gap-1 text-xs text-gray-500">
+                  <span className="inline-flex items-center gap-1 text-xs text-gray-500 dark:text-white/50">
                     <MapPin size={11} /> {project.location}
                   </span>
-                  <span className="inline-flex items-center gap-1 text-xs text-gray-500">
+                  <span className="inline-flex items-center gap-1 text-xs text-gray-500 dark:text-white/50">
                     <Calendar size={11} /> {project.date}
                   </span>
                 </div>
@@ -155,31 +155,31 @@ export default function ClientsPage() {
           <div className="hidden md:block overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-[#f0f4fa] border-b border-[#0a1f44]/10">
-                  <th className="px-4 py-3 text-left text-xs font-bold text-[#0a1f44] uppercase tracking-wide w-10">
+                <tr className="bg-[#f0f4fa] dark:bg-white/5 border-b border-[#0a1f44]/10 dark:border-white/10">
+                  <th className="px-4 py-3 text-left text-xs font-bold text-[#0a1f44] dark:text-white uppercase tracking-wide w-10">
                     No.
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-bold text-[#0a1f44] uppercase tracking-wide">
+                  <th className="px-4 py-3 text-left text-xs font-bold text-[#0a1f44] dark:text-white uppercase tracking-wide">
                     Perusahaan
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-bold text-[#0a1f44] uppercase tracking-wide">
+                  <th className="px-4 py-3 text-left text-xs font-bold text-[#0a1f44] dark:text-white uppercase tracking-wide">
                     Pekerjaan
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-bold text-[#0a1f44] uppercase tracking-wide">
+                  <th className="px-4 py-3 text-left text-xs font-bold text-[#0a1f44] dark:text-white uppercase tracking-wide">
                     Lokasi
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-bold text-[#0a1f44] uppercase tracking-wide">
+                  <th className="px-4 py-3 text-left text-xs font-bold text-[#0a1f44] dark:text-white uppercase tracking-wide">
                     Tanggal
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-gray-100 dark:divide-white/10">
                 {projects.map((project, idx) => (
                   <tr
                     key={project.no}
                     className={`
-                      hover:bg-[#f0f4fa] transition-colors
-                      ${idx % 2 === 0 ? "bg-white" : "bg-gray-50/50"}
+                      hover:bg-[#f0f4fa] dark:hover:bg-white/5 transition-colors
+                      ${idx % 2 === 0 ? "bg-white dark:bg-[#0a1f44]" : "bg-gray-50/50 dark:bg-white/[0.03]"}
                     `}
                   >
                     <td className="px-4 py-3.5">
@@ -193,19 +193,19 @@ export default function ClientsPage() {
                         {project.no}
                       </span>
                     </td>
-                    <td className="px-4 py-3.5 font-medium text-[#0a1f44] text-xs">
+                    <td className="px-4 py-3.5 font-medium text-[#0a1f44] dark:text-white text-xs">
                       {project.company}
                     </td>
-                    <td className="px-4 py-3.5 text-gray-600 text-xs max-w-xs leading-snug">
+                    <td className="px-4 py-3.5 text-gray-600 dark:text-white/60 text-xs max-w-xs leading-snug">
                       {project.job}
                     </td>
-                    <td className="px-4 py-3.5 text-gray-500 text-xs whitespace-nowrap">
+                    <td className="px-4 py-3.5 text-gray-500 dark:text-white/50 text-xs whitespace-nowrap">
                       <span className="inline-flex items-center gap-1">
                         <MapPin size={10} />
                         {project.location}
                       </span>
                     </td>
-                    <td className="px-4 py-3.5 text-gray-500 text-xs whitespace-nowrap">
+                    <td className="px-4 py-3.5 text-gray-500 dark:text-white/50 text-xs whitespace-nowrap">
                       {project.date}
                     </td>
                   </tr>
@@ -217,16 +217,17 @@ export default function ClientsPage() {
 
         {/* CTA Bawah */}
         <div className="text-center py-6">
-          <p className="text-gray-500 text-sm mb-4">
+          <p className="text-gray-500 dark:text-white/50 text-sm mb-4">
             Tertarik bergabung sebagai mitra operasional kami?
           </p>
           <Link
             href="/contact"
             className="
               inline-flex items-center gap-2
-              bg-[#0a1f44] text-white
+              bg-[#0a1f44] dark:bg-white/10 text-white
               px-8 py-3 font-semibold text-sm rounded
-              hover:bg-[#c41e1e] transition-colors duration-200
+              border border-transparent dark:border-white/20
+              hover:bg-[#c41e1e] dark:hover:bg-[#c41e1e] transition-colors duration-200
             "
           >
             Hubungi Tim Kami

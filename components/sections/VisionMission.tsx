@@ -37,7 +37,7 @@ export default function VisionMission() {
   }, []);
 
   return (
-    <section id="vision" ref={sectionRef} className="py-24 bg-[#f0f4fa]">
+    <section id="vision" ref={sectionRef} className="py-24 bg-[#f0f4fa] dark:bg-[#091832] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* === HEADER === */}
@@ -49,7 +49,7 @@ export default function VisionMission() {
             </span>
             <span className="w-10 h-0.5 bg-[#c41e1e]" />
           </div>
-          <h2 className="reveal font-['Bebas_Neue'] text-5xl lg:text-6xl text-[#0a1f44] tracking-wide leading-tight">
+          <h2 className="reveal font-['Bebas_Neue'] text-5xl lg:text-6xl text-[#0a1f44] dark:text-white tracking-wide leading-tight">
             Komitmen Kami untuk
             <br />
             <span className="text-[#c41e1e]">Industri & Pelanggan</span>
@@ -90,8 +90,8 @@ export default function VisionMission() {
           {/* Misi */}
           <div
             className="
-              reveal reveal-delay-1 bg-white rounded overflow-hidden
-              border border-[#0a1f44]/10
+              reveal reveal-delay-1 bg-white dark:bg-[#0a1f44] rounded overflow-hidden
+              border border-[#0a1f44]/10 dark:border-white/10
               shadow-[0_8px_32px_rgba(10,31,68,0.1)]
               hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(10,31,68,0.18)]
               transition-all duration-300
@@ -103,7 +103,7 @@ export default function VisionMission() {
                 <div className="w-10 h-10 rounded bg-[#0a1f44] flex items-center justify-center shadow-[0_4px_12px_rgba(10,31,68,0.3)]">
                   <Zap size={18} className="text-white" />
                 </div>
-                <h3 className="font-['Bebas_Neue'] text-3xl text-[#0a1f44] tracking-wide">
+                <h3 className="font-['Bebas_Neue'] text-3xl text-[#0a1f44] dark:text-white tracking-wide">
                   Misi
                 </h3>
               </div>
@@ -120,7 +120,7 @@ export default function VisionMission() {
                     >
                       {i + 1}
                     </span>
-                    <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-800 transition-colors duration-200">
+                    <p className="text-gray-600 dark:text-white/60 text-sm leading-relaxed group-hover:text-gray-800 dark:group-hover:text-white transition-colors duration-200">
                       {m}
                     </p>
                   </div>
@@ -133,10 +133,10 @@ export default function VisionMission() {
         {/* === WHY ACS? === */}
         <div>
           <div className="reveal text-center mb-10">
-            <h3 className="font-['Bebas_Neue'] text-4xl text-[#0a1f44] tracking-wide">
+            <h3 className="font-['Bebas_Neue'] text-4xl text-[#0a1f44] dark:text-white tracking-wide">
               Mengapa Memilih <span className="text-[#c41e1e]">ACS?</span>
             </h3>
-            <p className="text-gray-500 text-sm mt-2 max-w-xl mx-auto leading-relaxed">
+            <p className="text-gray-500 dark:text-white/50 text-sm mt-2 max-w-xl mx-auto leading-relaxed">
               Dengan rangkaian produk berkualitas, logistik rantai pasokan
               terintegrasi, dan jangkauan global yang luas — ACS selalu siap
               memberikan solusi terbaik.
@@ -151,7 +151,7 @@ export default function VisionMission() {
                   key={idx}
                   className={`
                     reveal reveal-delay-${idx + 1}
-                    bg-white border border-[#0a1f44]/10 rounded p-6
+                    bg-white dark:bg-[#0a1f44] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
                     hover:border-[#c41e1e]/30
                     hover:-translate-y-1.5
                     hover:shadow-[0_12px_32px_rgba(10,31,68,0.14)]
@@ -161,7 +161,7 @@ export default function VisionMission() {
                   <div
                     className="
                       w-11 h-11 rounded
-                      bg-[#f0f4fa] group-hover:bg-[#c41e1e]
+                      bg-[#f0f4fa] dark:bg-white/10 group-hover:bg-[#c41e1e]
                       flex items-center justify-center mb-4
                       group-hover:shadow-[0_4px_16px_rgba(196,30,30,0.3)]
                       transition-all duration-300
@@ -169,11 +169,11 @@ export default function VisionMission() {
                   >
                     <Icon
                       size={20}
-                      className="text-[#0a1f44] group-hover:text-white transition-colors duration-300"
+                      className="text-[#0a1f44] dark:text-white group-hover:text-white transition-colors duration-300"
                     />
                   </div>
-                  <h4 className="font-bold text-[#0a1f44] text-sm mb-2">{item.title}</h4>
-                  <p className="text-gray-500 text-xs leading-relaxed">{item.description}</p>
+                  <h4 className="font-bold text-[#0a1f44] dark:text-white text-sm mb-2">{item.title}</h4>
+                  <p className="text-gray-500 dark:text-white/50 text-xs leading-relaxed">{item.description}</p>
                 </div>
               );
             })}

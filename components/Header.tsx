@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { navLinks } from "@/lib/data";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -112,6 +113,8 @@ export default function Header() {
 
             {/* === KANAN: CTA + Mobile toggle === */}
             <div className="flex items-center gap-3">
+              <ThemeToggle />
+
               <Link
                 href="/contact"
                 className="

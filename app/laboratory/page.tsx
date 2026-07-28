@@ -23,7 +23,7 @@ export const metadata: Metadata = {
  */
 export default function LaboratoryPage() {
   return (
-    <div className="min-h-screen bg-[#f0f4fa]">
+    <div className="min-h-screen bg-[#f0f4fa] dark:bg-[#091832] transition-colors duration-300">
 
       {/* ===== HERO HALAMAN ===== */}
       <div className="bg-[#0a1f44] relative overflow-hidden">
@@ -86,7 +86,7 @@ export default function LaboratoryPage() {
           <div className="lg:col-span-2 space-y-8">
 
             {/* PERALATAN LAB */}
-            <div className="bg-white rounded border border-[#0a1f44]/10 overflow-hidden">
+            <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
               <div className="bg-[#0a1f44] px-6 py-4 flex items-center gap-3">
                 <FlaskConical size={18} className="text-[#c41e1e]" />
                 <h2 className="text-white font-bold text-sm uppercase tracking-wide">
@@ -94,7 +94,7 @@ export default function LaboratoryPage() {
                 </h2>
               </div>
               <div className="p-6">
-                <p className="text-gray-500 text-sm mb-5 leading-relaxed">
+                <p className="text-gray-500 dark:text-white/50 text-sm mb-5 leading-relaxed">
                   Laboratorium kami dilengkapi dengan peralatan uji berstandar API yang
                   memungkinkan analisis fluida pemboran secara komprehensif — mulai dari
                   viskositas, filtrasi, hingga pengujian HTHP (High Temperature High Pressure).
@@ -105,13 +105,13 @@ export default function LaboratoryPage() {
                       key={i}
                       className="
                         flex items-start gap-2.5
-                        p-3 rounded bg-[#f0f4fa]
-                        border border-[#0a1f44]/5
+                        p-3 rounded bg-[#f0f4fa] dark:bg-white/5
+                        border border-[#0a1f44]/5 dark:border-white/10
                         hover:border-[#c41e1e]/20 transition-colors
                       "
                     >
                       <CheckCircle2 size={14} className="text-[#c41e1e] flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700 text-xs leading-snug">{item}</span>
+                      <span className="text-gray-700 dark:text-white/70 text-xs leading-snug">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -119,7 +119,7 @@ export default function LaboratoryPage() {
             </div>
 
             {/* SOFTWARE */}
-            <div className="bg-white rounded border border-[#0a1f44]/10 overflow-hidden">
+            <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
               <div className="bg-[#1a3a6e] px-6 py-4 flex items-center gap-3">
                 <Monitor size={18} className="text-[#c41e1e]" />
                 <h2 className="text-white font-bold text-sm uppercase tracking-wide">
@@ -127,7 +127,7 @@ export default function LaboratoryPage() {
                 </h2>
               </div>
               <div className="p-6">
-                <p className="text-gray-500 text-sm mb-5 leading-relaxed">
+                <p className="text-gray-500 dark:text-white/50 text-sm mb-5 leading-relaxed">
                   PT ACS menggunakan software dari Pegasus Vertex, Inc. — pemimpin industri
                   dalam solusi perangkat lunak untuk teknik fluida pemboran.
                 </p>
@@ -165,8 +165,8 @@ export default function LaboratoryPage() {
           <div className="space-y-6">
 
             {/* LOKASI FASILITAS */}
-            <div className="bg-white rounded border border-[#0a1f44]/10 p-6">
-              <h3 className="font-bold text-[#0a1f44] text-sm mb-4 uppercase tracking-wide">
+            <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
+              <h3 className="font-bold text-[#0a1f44] dark:text-white text-sm mb-4 uppercase tracking-wide">
                 Lokasi Fasilitas
               </h3>
               <div className="space-y-4">
@@ -174,24 +174,24 @@ export default function LaboratoryPage() {
                   <p className="text-xs font-semibold text-[#c41e1e] uppercase tracking-wide mb-1">
                     Laboratorium
                   </p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 dark:text-white/60 text-sm leading-relaxed">
                     Paris Square Blok B2 No. 38–40, Jl. Letnan Sutopo, BSD,
                     Tangerang Selatan 15321
                   </p>
                 </div>
-                <div className="border-t border-gray-100 pt-4">
-                  <p className="text-xs font-semibold text-[#0a1f44] uppercase tracking-wide mb-1">
+                <div className="border-t border-gray-100 dark:border-white/10 pt-4">
+                  <p className="text-xs font-semibold text-[#0a1f44] dark:text-white uppercase tracking-wide mb-1">
                     Gudang 1
                   </p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 dark:text-white/60 text-sm leading-relaxed">
                     Pergudangan Pantai Indah Dadap, Blok CG No. 11, Tangerang
                   </p>
                 </div>
-                <div className="border-t border-gray-100 pt-4">
-                  <p className="text-xs font-semibold text-[#0a1f44] uppercase tracking-wide mb-1">
+                <div className="border-t border-gray-100 dark:border-white/10 pt-4">
+                  <p className="text-xs font-semibold text-[#0a1f44] dark:text-white uppercase tracking-wide mb-1">
                     Gudang 2
                   </p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 dark:text-white/60 text-sm leading-relaxed">
                     Pergudangan Bizhub Blok GG No. 11, Gunung Sindur, Bogor
                   </p>
                 </div>
@@ -239,11 +239,11 @@ export default function LaboratoryPage() {
             </div>
 
             {/* CTA */}
-            <div className="bg-[#f0f4fa] border border-[#0a1f44]/10 rounded p-5 text-center">
-              <p className="text-[#0a1f44] font-bold text-sm mb-2">
+            <div className="bg-[#f0f4fa] dark:bg-white/5 border border-[#0a1f44]/10 dark:border-white/10 rounded p-5 text-center">
+              <p className="text-[#0a1f44] dark:text-white font-bold text-sm mb-2">
                 Butuh Konsultasi Teknis?
               </p>
-              <p className="text-gray-500 text-xs mb-4 leading-relaxed">
+              <p className="text-gray-500 dark:text-white/50 text-xs mb-4 leading-relaxed">
                 Tim ahli kami siap membantu Anda memilih solusi yang tepat.
               </p>
               <Link

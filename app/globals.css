@@ -14,8 +14,20 @@
   --light:   #f0f4fa;
   --white:   #ffffff;
   --gray:    #6b7280;
+  --surface: #ffffff;
+  --surface-alt: #f0f4fa;
+  --text-body: #1f2937;
   --font-display: 'Bebas Neue', sans-serif;
   --font-body:    'Barlow', sans-serif;
+}
+
+.dark {
+  --light:   #0f2449;
+  --white:   #091832;
+  --gray:    #9ca3af;
+  --surface: #0a1f44;
+  --surface-alt: #091832;
+  --text-body: #e5e7eb;
 }
 
 /* =====================================================
@@ -33,9 +45,10 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--white);
-  color: #1f2937;
+  background-color: var(--surface);
+  color: var(--text-body);
   line-height: 1.6;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* =====================================================
@@ -87,6 +100,10 @@ body {
   box-shadow: 0 16px 40px rgba(10, 31, 68, 0.18);
 }
 
+.dark .card-hover:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -128,6 +145,16 @@ body {
 .btn-outline:hover {
   background: var(--navy);
   color: white;
+}
+
+.dark .btn-outline {
+  color: #e5e7eb;
+  border-color: #e5e7eb;
+}
+
+.dark .btn-outline:hover {
+  background: #e5e7eb;
+  color: var(--navy);
 }
 
 /* =====================================================
@@ -232,6 +259,10 @@ body {
 
 ::-webkit-scrollbar-track {
   background: #f1f5f9;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #091832;
 }
 
 ::-webkit-scrollbar-thumb {

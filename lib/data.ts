@@ -120,24 +120,24 @@ export const certifications = [
     name: "Quality Management System",
     description:
       "Sistem manajemen kualitas yang memastikan konsistensi layanan dan produk kami memenuhi persyaratan pelanggan.",
-    color: "bg-blue-50 border-blue-200",
-    iconColor: "text-blue-700",
+    color: "bg-blue-50 border-blue-200 dark:bg-blue-950/40 dark:border-blue-800/50",
+    iconColor: "text-blue-700 dark:text-blue-400",
   },
   {
     code: "SNI ISO 14001:2015",
     name: "Environmental Management System",
     description:
       "Komitmen kami terhadap pengelolaan lingkungan yang bertanggung jawab dalam setiap operasional perusahaan.",
-    color: "bg-green-50 border-green-200",
-    iconColor: "text-green-700",
+    color: "bg-green-50 border-green-200 dark:bg-green-950/40 dark:border-green-800/50",
+    iconColor: "text-green-700 dark:text-green-400",
   },
   {
     code: "SNI ISO 45001:2018",
     name: "Occupational Health & Safety",
     description:
       "Sistem manajemen K3 untuk memastikan keselamatan dan kesehatan kerja seluruh personel di lapangan maupun kantor.",
-    color: "bg-amber-50 border-amber-200",
-    iconColor: "text-amber-600",
+    color: "bg-amber-50 border-amber-200 dark:bg-amber-950/40 dark:border-amber-800/50",
+    iconColor: "text-amber-600 dark:text-amber-400",
   },
 ];
 

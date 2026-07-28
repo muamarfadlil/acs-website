@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import BackToTop from "@/components/BackToTop"; // ← import komponen baru
+import ThemeProvider from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "PT Adiguna Cakra Semesta | Drilling & Cementing Services",
@@ -36,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
+    <html lang="id" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -45,17 +46,19 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className="font-body antialiased">
-        <Header />
-        <Sidebar />
-        <main>{children}</main>
+      <body className="font-body antialiased bg-white dark:bg-navy-900 text-inherit transition-colors">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Header />
+          <Sidebar />
+          <main>{children}</main>
 
-        {/*
-          BackToTop diletakkan di layout (bukan di halaman individual)
-          sehingga tombol muncul secara otomatis di semua halaman
-          tanpa perlu ditambahkan satu per satu.
-        */}
-        <BackToTop />
+          {/*
+            BackToTop diletakkan di layout (bukan di halaman individual)
+            sehingga tombol muncul secara otomatis di semua halaman
+            tanpa perlu ditambahkan satu per satu.
+          */}
+          <BackToTop />
+        </ThemeProvider>
       </body>
     </html>
   );

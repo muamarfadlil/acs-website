@@ -21,7 +21,7 @@ export default function ContactSection() {
   return (
     <>
       {/* ===== CONTACT SECTION ===== */}
-      <section id="contact" ref={sectionRef} className="py-24 bg-[#f0f4fa]">
+      <section id="contact" ref={sectionRef} className="py-24 bg-[#f0f4fa] dark:bg-[#091832] transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* === CTA BESAR === */}
@@ -104,7 +104,7 @@ export default function ContactSection() {
             <div
               className="
                 reveal
-                bg-white border border-[#0a1f44]/10 rounded p-6
+                bg-white dark:bg-[#0a1f44] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
                 hover:border-[#c41e1e]/30 hover:shadow-lg hover:-translate-y-1
                 transition-all duration-300
               "
@@ -113,20 +113,20 @@ export default function ContactSection() {
                 <div className="w-10 h-10 bg-[#c41e1e] rounded flex items-center justify-center shadow-[0_4px_12px_rgba(196,30,30,0.3)]">
                   <MapPin size={18} className="text-white" />
                 </div>
-                <h3 className="font-bold text-[#0a1f44] text-sm">Lokasi</h3>
+                <h3 className="font-bold text-[#0a1f44] dark:text-white text-sm">Lokasi</h3>
               </div>
               <div className="space-y-3">
                 <div>
-                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">
+                  <p className="text-xs font-semibold text-gray-400 dark:text-white/40 uppercase tracking-wide mb-1">
                     Kantor & Laboratorium
                   </p>
-                  <p className="text-gray-700 text-sm leading-relaxed">{company.address.office}</p>
+                  <p className="text-gray-700 dark:text-white/70 text-sm leading-relaxed">{company.address.office}</p>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">
+                  <p className="text-xs font-semibold text-gray-400 dark:text-white/40 uppercase tracking-wide mb-1">
                     Gudang
                   </p>
-                  <p className="text-gray-700 text-sm leading-relaxed">{company.address.warehouse}</p>
+                  <p className="text-gray-700 dark:text-white/70 text-sm leading-relaxed">{company.address.warehouse}</p>
                 </div>
               </div>
             </div>
@@ -135,7 +135,7 @@ export default function ContactSection() {
             <div
               className="
                 reveal reveal-delay-1
-                bg-white border border-[#0a1f44]/10 rounded p-6
+                bg-white dark:bg-[#0a1f44] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
                 hover:border-[#c41e1e]/30 hover:shadow-lg hover:-translate-y-1
                 transition-all duration-300
               "
@@ -144,27 +144,27 @@ export default function ContactSection() {
                 <div className="w-10 h-10 bg-[#0a1f44] rounded flex items-center justify-center shadow-[0_4px_12px_rgba(10,31,68,0.25)]">
                   <Phone size={18} className="text-white" />
                 </div>
-                <h3 className="font-bold text-[#0a1f44] text-sm">Kontak</h3>
+                <h3 className="font-bold text-[#0a1f44] dark:text-white text-sm">Kontak</h3>
               </div>
               <div className="space-y-3">
                 <div>
-                  <p className="text-xs text-gray-400 font-semibold uppercase tracking-wide mb-1">Telepon</p>
+                  <p className="text-xs text-gray-400 dark:text-white/40 font-semibold uppercase tracking-wide mb-1">Telepon</p>
                   <a
                     href={`tel:${company.phone}`}
-                    className="text-[#0a1f44] font-semibold text-sm hover:text-[#c41e1e] transition-colors"
+                    className="text-[#0a1f44] dark:text-white font-semibold text-sm hover:text-[#c41e1e] transition-colors"
                   >
                     {company.phone}
                   </a>
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-semibold uppercase tracking-wide mb-1">Fax</p>
-                  <p className="text-gray-700 text-sm">{company.fax}</p>
+                  <p className="text-xs text-gray-400 dark:text-white/40 font-semibold uppercase tracking-wide mb-1">Fax</p>
+                  <p className="text-gray-700 dark:text-white/70 text-sm">{company.fax}</p>
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-semibold uppercase tracking-wide mb-1">Email</p>
+                  <p className="text-xs text-gray-400 dark:text-white/40 font-semibold uppercase tracking-wide mb-1">Email</p>
                   <a
                     href={`mailto:${company.email}`}
-                    className="text-[#0a1f44] font-semibold text-sm hover:text-[#c41e1e] transition-colors break-all"
+                    className="text-[#0a1f44] dark:text-white font-semibold text-sm hover:text-[#c41e1e] transition-colors break-all"
                   >
                     {company.email}
                   </a>
@@ -176,7 +176,7 @@ export default function ContactSection() {
             <div
               className="
                 reveal reveal-delay-2
-                bg-white border border-[#0a1f44]/10 rounded p-6
+                bg-white dark:bg-[#0a1f44] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
                 hover:border-[#c41e1e]/30 hover:shadow-lg hover:-translate-y-1
                 transition-all duration-300
               "
@@ -185,28 +185,28 @@ export default function ContactSection() {
                 <div className="w-10 h-10 bg-[#1a3a6e] rounded flex items-center justify-center shadow-[0_4px_12px_rgba(26,58,110,0.25)]">
                   <Globe size={18} className="text-white" />
                 </div>
-                <h3 className="font-bold text-[#0a1f44] text-sm">Online</h3>
+                <h3 className="font-bold text-[#0a1f44] dark:text-white text-sm">Online</h3>
               </div>
               <div className="space-y-3">
                 <div>
-                  <p className="text-xs text-gray-400 font-semibold uppercase tracking-wide mb-1">Website</p>
+                  <p className="text-xs text-gray-400 dark:text-white/40 font-semibold uppercase tracking-wide mb-1">Website</p>
                   <a
                     href={`https://${company.website}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#0a1f44] font-semibold text-sm hover:text-[#c41e1e] transition-colors"
+                    className="text-[#0a1f44] dark:text-white font-semibold text-sm hover:text-[#c41e1e] transition-colors"
                   >
                     {company.website}
                   </a>
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-semibold uppercase tracking-wide mb-1">Jam Operasional</p>
-                  <p className="text-gray-700 text-sm">Senin – Jumat</p>
-                  <p className="text-gray-700 text-sm">08.00 – 17.00 WIB</p>
+                  <p className="text-xs text-gray-400 dark:text-white/40 font-semibold uppercase tracking-wide mb-1">Jam Operasional</p>
+                  <p className="text-gray-700 dark:text-white/70 text-sm">Senin – Jumat</p>
+                  <p className="text-gray-700 dark:text-white/70 text-sm">08.00 – 17.00 WIB</p>
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-semibold uppercase tracking-wide mb-1">Layanan Darurat</p>
-                  <p className="text-gray-700 text-sm">24/7 (On-call support)</p>
+                  <p className="text-xs text-gray-400 dark:text-white/40 font-semibold uppercase tracking-wide mb-1">Layanan Darurat</p>
+                  <p className="text-gray-700 dark:text-white/70 text-sm">24/7 (On-call support)</p>
                 </div>
               </div>
             </div>
