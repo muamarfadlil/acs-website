@@ -3,7 +3,7 @@
 
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -14,6 +14,7 @@ import {
   Mic,
 } from "lucide-react";
 import { csrK3Activities } from "@/lib/data";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const categoryLabel: Record<string, string> = {
   csr: "CSR",
@@ -45,6 +46,11 @@ export default function HseP2k3Page() {
       (category === "all" || a.category === category) &&
       (year === "all" || a.year === year),
   );
+
+  const listRef = useRef<HTMLDivElement>(null);
+  // deps: re-amati kartu setiap kali hasil filter berubah, karena kartu
+  // baru yang muncul setelah filter belum pernah diamati observer.
+  useScrollReveal(listRef, [category, year]);
 
   return (
     <div className="min-h-screen bg-[#f0f4fa] dark:bg-[#091832] transition-colors duration-300">
@@ -135,21 +141,22 @@ export default function HseP2k3Page() {
       </div>
 
       {/* ===== DAFTAR KEGIATAN ===== */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div ref={listRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {filtered.length === 0 ? (
           <p className="text-gray-500 dark:text-white/50 text-sm text-center py-16">
             Tidak ada kegiatan untuk filter ini.
           </p>
         ) : (
           <div className="grid md:grid-cols-2 gap-6">
-            {filtered.map((activity) => (
+            {filtered.map((activity, idx) => (
               <div
                 key={activity.id}
-                className="
+                className={`
+                  reveal-scale reveal-delay-${(idx % 4) + 1}
                   bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10
                   overflow-hidden hover:border-[#c41e1e]/30 hover:shadow-md
                   transition-all duration-200
-                "
+                `}
               >
                 {/* Galeri foto */}
                 <div

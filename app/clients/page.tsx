@@ -1,18 +1,18 @@
 // app/clients/page.tsx
 // Halaman Klien & Pengalaman Proyek PT ACS
 
-import type { Metadata } from "next";
+"use client";
+
+import { useRef } from "react";
 import Link from "next/link";
 import { Briefcase, ArrowLeft, MapPin, Calendar } from "lucide-react"; // DollarSign dihapus karena tidak lagi digunakan
 import { clients, projects } from "@/lib/data";
-
-export const metadata: Metadata = {
-  title: "Klien & Proyek | PT Adiguna Cakra Semesta",
-  description:
-    "Rekam jejak proyek PT ACS mencakup 28+ kontrak dengan KKKS terkemuka seperti Pertamina, Kondur Petroleum, EMP, dan lainnya sejak tahun 2005.",
-};
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function ClientsPage() {
+  const contentRef = useRef<HTMLDivElement>(null);
+  useScrollReveal(contentRef);
+
   return (
     <div className="min-h-screen bg-[#f0f4fa] dark:bg-[#091832] transition-colors duration-300">
       {/* ===== HERO HALAMAN ===== */}
@@ -80,9 +80,9 @@ export default function ClientsPage() {
       </div>
 
       {/* ===== KONTEN UTAMA ===== */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+      <div ref={contentRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
         {/* DAFTAR KLIEN / MITRA */}
-        <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-8">
+        <div className="reveal bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-8">
           <h2 className="font-['Bebas_Neue'] text-3xl text-[#0a1f44] dark:text-white tracking-wide mb-2">
             Klien &amp; Mitra Kami
           </h2>
@@ -109,7 +109,7 @@ export default function ClientsPage() {
         </div>
 
         {/* TABEL RIWAYAT PROYEK */}
-        <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
+        <div className="reveal reveal-delay-1 bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
           <div className="bg-[#0a1f44] dark:bg-[#091832] px-6 py-4 flex items-center gap-3">
             <h2 className="text-white font-bold text-sm uppercase tracking-wide">
               Riwayat Proyek (2005 – 2022)
@@ -216,7 +216,7 @@ export default function ClientsPage() {
         </div>
 
         {/* CTA Bawah */}
-        <div className="text-center py-6">
+        <div className="reveal reveal-delay-2 text-center py-6">
           <p className="text-gray-500 dark:text-white/50 text-sm mb-4">
             Tertarik bergabung sebagai mitra operasional kami?
           </p>

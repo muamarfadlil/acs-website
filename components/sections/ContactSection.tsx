@@ -1,22 +1,15 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Phone, Globe, ArrowRight } from "lucide-react";
 import { company } from "@/lib/data";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function ContactSection() {
   const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
-      { threshold: 0.1 }
-    );
-    sectionRef.current?.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+  useScrollReveal(sectionRef);
 
   return (
     <>
@@ -103,7 +96,7 @@ export default function ContactSection() {
             {/* Alamat */}
             <div
               className="
-                reveal
+                reveal-scale
                 bg-white dark:bg-[#0a1f44] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
                 hover:border-[#c41e1e]/30 hover:shadow-lg hover:-translate-y-1
                 transition-all duration-300
@@ -134,7 +127,7 @@ export default function ContactSection() {
             {/* Telepon */}
             <div
               className="
-                reveal reveal-delay-1
+                reveal-scale reveal-delay-1
                 bg-white dark:bg-[#0a1f44] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
                 hover:border-[#c41e1e]/30 hover:shadow-lg hover:-translate-y-1
                 transition-all duration-300
@@ -175,7 +168,7 @@ export default function ContactSection() {
             {/* Website & Jam Kerja */}
             <div
               className="
-                reveal reveal-delay-2
+                reveal-scale reveal-delay-2
                 bg-white dark:bg-[#0a1f44] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
                 hover:border-[#c41e1e]/30 hover:shadow-lg hover:-translate-y-1
                 transition-all duration-300

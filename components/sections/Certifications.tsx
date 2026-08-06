@@ -1,20 +1,13 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { ShieldCheck } from "lucide-react";
 import { certifications } from "@/lib/data";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function Certifications() {
   const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
-      { threshold: 0.1 }
-    );
-    sectionRef.current?.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+  useScrollReveal(sectionRef);
 
   return (
     <section id="certifications" ref={sectionRef} className="py-24 bg-white dark:bg-[#0a1f44] transition-colors duration-300">
@@ -51,7 +44,7 @@ export default function Certifications() {
             <div
               key={idx}
               className={`
-                reveal reveal-delay-${idx + 1}
+                reveal-scale reveal-delay-${idx + 1}
                 rounded border-2 p-8
                 hover:-translate-y-2
                 hover:shadow-[0_16px_48px_rgba(10,31,68,0.15)]
@@ -91,7 +84,6 @@ export default function Certifications() {
         {/* === Sertifikasi CSMS & SPDA === */}
         <div
           className="
-            reveal
             border border-[#0a1f44]/10 dark:border-white/10 rounded
             bg-gradient-to-br from-[#f0f4fa] to-[#e8eef8] dark:from-[#0f2449] dark:to-[#091832]
             p-8
@@ -99,7 +91,7 @@ export default function Certifications() {
           "
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
+            <div className="reveal-left">
               <h3 className="font-['Bebas_Neue'] text-3xl text-[#0a1f44] dark:text-white tracking-wide mb-3">
                 Diakui oleh SKK Migas
               </h3>
@@ -123,7 +115,7 @@ export default function Certifications() {
             </div>
 
             {/* Badge mitra */}
-            <div className="flex flex-wrap gap-3 justify-center md:justify-end">
+            <div className="reveal-right flex flex-wrap gap-3 justify-center md:justify-end">
               {["SKK Migas", "PT Pertamina EP", "IAF · KAN", "MSA Certification"].map((label) => (
                 <div
                   key={label}
@@ -146,7 +138,6 @@ export default function Certifications() {
         {/* === Laporan Keuangan Teraudit === */}
         <div
           className="
-            reveal
             border border-[#0a1f44]/10 dark:border-white/10 rounded
             bg-gradient-to-br from-[#f0f4fa] to-[#e8eef8] dark:from-[#0f2449] dark:to-[#091832]
             p-8 mt-6
@@ -154,7 +145,7 @@ export default function Certifications() {
           "
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
+            <div className="reveal-left">
               <h3 className="font-['Bebas_Neue'] text-3xl text-[#0a1f44] dark:text-white tracking-wide mb-3">
                 Laporan Keuangan Teraudit
               </h3>
@@ -167,7 +158,7 @@ export default function Certifications() {
             </div>
 
             {/* Badge auditor */}
-            <div className="flex flex-wrap gap-3 justify-center md:justify-end">
+            <div className="reveal-right flex flex-wrap gap-3 justify-center md:justify-end">
               {["KAP dbsd&a", "Laporan Auditor Independen (LAI)"].map((label) => (
                 <div
                   key={label}

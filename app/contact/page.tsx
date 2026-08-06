@@ -3,7 +3,7 @@
 
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
@@ -17,6 +17,7 @@ import {
   Globe,
 } from "lucide-react";
 import { company } from "@/lib/data";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 /**
  * Halaman Kontak (/contact)
@@ -42,6 +43,8 @@ export default function ContactPage() {
 
 function ContactPageContent() {
   const searchParams = useSearchParams();
+  const contentRef = useRef<HTMLDivElement>(null);
+  useScrollReveal(contentRef);
 
   // State untuk nilai-nilai input form
   const [form, setForm] = useState({
@@ -149,11 +152,11 @@ function ContactPageContent() {
       </div>
 
       {/* ===== KONTEN UTAMA ===== */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div ref={contentRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid lg:grid-cols-3 gap-8">
           {/* ===== FORM KONTAK (2/3 lebar) ===== */}
           <div className="lg:col-span-2">
-            <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
+            <div className="reveal bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
               <div className="bg-[#0a1f44] dark:bg-[#091832] px-6 py-4 flex items-center gap-3">
                 <Send size={16} className="text-[#c41e1e]" />
                 <h2 className="text-white font-bold text-sm uppercase tracking-wide">
@@ -354,7 +357,7 @@ function ContactPageContent() {
           {/* ===== INFO KONTAK (1/3 lebar) ===== */}
           <div className="space-y-5">
             {/* Alamat */}
-            <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
+            <div className="reveal bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-9 h-9 bg-[#c41e1e] rounded flex items-center justify-center">
                   <MapPin size={16} className="text-white" />
@@ -382,7 +385,7 @@ function ContactPageContent() {
             </div>
 
             {/* Telepon & Email */}
-            <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6 space-y-4">
+            <div className="reveal reveal-delay-1 bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6 space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 bg-[#0a1f44] rounded flex items-center justify-center">
                   <Phone size={16} className="text-white" />
@@ -438,7 +441,7 @@ function ContactPageContent() {
             </div>
 
             {/* Jam Operasional */}
-            <div className="bg-[#0a1f44] rounded p-6">
+            <div className="reveal reveal-delay-2 bg-[#0a1f44] rounded p-6">
               <div className="flex items-center gap-3 mb-4">
                 <Clock size={16} className="text-[#c41e1e]" />
                 <h3 className="text-white font-bold text-sm">
@@ -470,7 +473,7 @@ function ContactPageContent() {
             </div>
 
             {/* Peta Placeholder */}
-            <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
+            <div className="reveal reveal-delay-3 bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
               <div className="bg-[#f0f4fa] dark:bg-white/5 h-40 flex flex-col items-center justify-center text-center px-4">
                 <MapPin size={28} className="text-[#c41e1e] mb-2" />
                 <p className="text-[#0a1f44] dark:text-white font-semibold text-xs">

@@ -1,15 +1,12 @@
 // app/career/page.tsx
 // Halaman Karir PT ACS
 
-import type { Metadata } from "next";
+"use client";
+
+import { useRef } from "react";
 import Link from "next/link";
 import { UserCheck, ArrowLeft, Briefcase, MapPin, Clock, ChevronRight } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Karir | PT Adiguna Cakra Semesta",
-  description:
-    "Bergabunglah dengan tim profesional PT ACS. Kami mencari individu berpengalaman di bidang teknik fluida pemboran, sementasi, dan mud logging.",
-};
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 // Data posisi yang sedang dibuka
 // Perbarui array ini sesuai kebutuhan rekrutmen terkini
@@ -43,6 +40,9 @@ const benefits = [
 ];
 
 export default function CareerPage() {
+  const contentRef = useRef<HTMLDivElement>(null);
+  useScrollReveal(contentRef);
+
   return (
     <div className="min-h-screen bg-[#f0f4fa] dark:bg-[#091832] transition-colors duration-300">
 
@@ -89,26 +89,27 @@ export default function CareerPage() {
       </div>
 
       {/* ===== KONTEN ===== */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div ref={contentRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid lg:grid-cols-3 gap-8">
 
           {/* ===== DAFTAR LOWONGAN (2/3) ===== */}
           <div className="lg:col-span-2 space-y-5">
-            <h2 className="font-['Bebas_Neue'] text-3xl text-[#0a1f44] dark:text-white tracking-wide">
+            <h2 className="reveal-left font-['Bebas_Neue'] text-3xl text-[#0a1f44] dark:text-white tracking-wide">
               Posisi yang Tersedia
             </h2>
-            <p className="text-gray-500 dark:text-white/50 text-sm -mt-2">
+            <p className="reveal-left text-gray-500 dark:text-white/50 text-sm -mt-2">
               {openings.length} posisi terbuka · Diperbarui April 2024
             </p>
 
-            {openings.map((job) => (
+            {openings.map((job, idx) => (
               <div
                 key={job.id}
-                className="
+                className={`
+                  reveal-left reveal-delay-${Math.min(idx + 1, 4)}
                   bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden
                   hover:border-[#c41e1e]/30 hover:shadow-md
                   transition-all duration-200 group
-                "
+                `}
               >
                 {/* Header kartu */}
                 <div className="p-5 pb-4">
@@ -184,7 +185,7 @@ export default function CareerPage() {
           <div className="space-y-6">
 
             {/* Keuntungan bekerja di ACS */}
-            <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
+            <div className="reveal-right bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
               <h3 className="font-bold text-[#0a1f44] dark:text-white text-sm uppercase tracking-wide mb-4">
                 Keuntungan Bergabung
               </h3>
@@ -204,7 +205,7 @@ export default function CareerPage() {
             </div>
 
             {/* Cara Melamar */}
-            <div className="bg-[#0a1f44] rounded p-6">
+            <div className="reveal-right reveal-delay-1 bg-[#0a1f44] rounded p-6">
               <h3 className="text-white font-bold text-sm uppercase tracking-wide mb-4">
                 Cara Melamar
               </h3>
@@ -231,7 +232,7 @@ export default function CareerPage() {
             </div>
 
             {/* Kirim CV Spontan */}
-            <div className="bg-[#f0f4fa] dark:bg-white/5 border border-[#0a1f44]/10 dark:border-white/10 rounded p-5 text-center">
+            <div className="reveal-right reveal-delay-2 bg-[#f0f4fa] dark:bg-white/5 border border-[#0a1f44]/10 dark:border-white/10 rounded p-5 text-center">
               <Briefcase size={24} className="text-[#c41e1e] mx-auto mb-3" />
               <p className="font-bold text-[#0a1f44] dark:text-white text-sm mb-2">
                 Tidak Ada Posisi yang Cocok?

@@ -1,16 +1,13 @@
 // app/laboratory/page.tsx
 // Halaman terpisah untuk fasilitas laboratorium PT ACS
 
-import type { Metadata } from "next";
+"use client";
+
+import { useRef } from "react";
 import Link from "next/link";
 import { FlaskConical, Monitor, ArrowLeft, CheckCircle2 } from "lucide-react";
 import { labEquipment, software, personnel } from "@/lib/data";
-
-export const metadata: Metadata = {
-  title: "Fasilitas Laboratorium | PT Adiguna Cakra Semesta",
-  description:
-    "Laboratorium drilling fluids PT ACS dilengkapi dengan peralatan uji modern termasuk Fann iX 77, HTHP, Linear Swelling Meter, dan software Pegasus Vertex.",
-};
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 /**
  * Halaman Laboratorium (/laboratory)
@@ -22,6 +19,9 @@ export const metadata: Metadata = {
  * Halaman ini dapat diakses melalui Sidebar navigasi.
  */
 export default function LaboratoryPage() {
+  const contentRef = useRef<HTMLDivElement>(null);
+  useScrollReveal(contentRef);
+
   return (
     <div className="min-h-screen bg-[#f0f4fa] dark:bg-[#091832] transition-colors duration-300">
 
@@ -79,14 +79,14 @@ export default function LaboratoryPage() {
       </div>
 
       {/* ===== KONTEN UTAMA ===== */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div ref={contentRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid lg:grid-cols-3 gap-8">
 
           {/* ===== KOLOM KIRI (2/3): Peralatan & Software ===== */}
           <div className="lg:col-span-2 space-y-8">
 
             {/* PERALATAN LAB */}
-            <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
+            <div className="reveal-left bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
               <div className="bg-[#0a1f44] px-6 py-4 flex items-center gap-3">
                 <FlaskConical size={18} className="text-[#c41e1e]" />
                 <h2 className="text-white font-bold text-sm uppercase tracking-wide">
@@ -119,7 +119,7 @@ export default function LaboratoryPage() {
             </div>
 
             {/* SOFTWARE */}
-            <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
+            <div className="reveal-left reveal-delay-1 bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
               <div className="bg-[#1a3a6e] px-6 py-4 flex items-center gap-3">
                 <Monitor size={18} className="text-[#c41e1e]" />
                 <h2 className="text-white font-bold text-sm uppercase tracking-wide">
@@ -165,7 +165,7 @@ export default function LaboratoryPage() {
           <div className="space-y-6">
 
             {/* LOKASI FASILITAS */}
-            <div className="bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
+            <div className="reveal-right bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
               <h3 className="font-bold text-[#0a1f44] dark:text-white text-sm mb-4 uppercase tracking-wide">
                 Lokasi Fasilitas
               </h3>
@@ -199,7 +199,7 @@ export default function LaboratoryPage() {
             </div>
 
             {/* PERSONEL DI LAPANGAN */}
-            <div className="bg-[#0a1f44] rounded overflow-hidden">
+            <div className="reveal-right reveal-delay-1 bg-[#0a1f44] rounded overflow-hidden">
               <div className="px-6 py-4 border-b border-white/10">
                 <h3 className="text-white font-bold text-sm uppercase tracking-wide">
                   Personel di Lapangan
@@ -239,7 +239,7 @@ export default function LaboratoryPage() {
             </div>
 
             {/* CTA */}
-            <div className="bg-[#f0f4fa] dark:bg-white/5 border border-[#0a1f44]/10 dark:border-white/10 rounded p-5 text-center">
+            <div className="reveal-right reveal-delay-2 bg-[#f0f4fa] dark:bg-white/5 border border-[#0a1f44]/10 dark:border-white/10 rounded p-5 text-center">
               <p className="text-[#0a1f44] dark:text-white font-bold text-sm mb-2">
                 Butuh Konsultasi Teknis?
               </p>

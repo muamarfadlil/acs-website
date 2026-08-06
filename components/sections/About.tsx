@@ -1,26 +1,14 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { CheckCircle2, Building2, Calendar, Award } from "lucide-react";
 import { company, sisterCompanies } from "@/lib/data";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Image from "next/image";
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("visible");
-        });
-      },
-      { threshold: 0.1 },
-    );
-    const elements = sectionRef.current?.querySelectorAll(".reveal");
-    elements?.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+  useScrollReveal(sectionRef);
 
   const highlights = [
     {
@@ -50,7 +38,7 @@ export default function About() {
 
           {/* KOLOM KIRI: Teks utama */}
           <div>
-            <div className="reveal flex items-center gap-3 mb-4">
+            <div className="reveal-left flex items-center gap-3 mb-4">
               <span className="w-10 h-0.5 bg-[#c41e1e]" />
               <span className="text-[#c41e1e] text-xs font-semibold uppercase tracking-[0.2em]">
                 Tentang Kami
@@ -59,7 +47,7 @@ export default function About() {
 
             <h2
               className="
-                reveal font-['Bebas_Neue'] text-5xl lg:text-6xl
+                reveal-left font-['Bebas_Neue'] text-5xl lg:text-6xl
                 text-[#0a1f44] dark:text-white leading-tight tracking-wide mb-6
               "
             >
@@ -70,14 +58,14 @@ export default function About() {
               Indonesia
             </h2>
 
-            <p className="reveal text-gray-600 dark:text-white/60 text-base leading-relaxed mb-4 reveal-delay-1">
+            <p className="reveal-left text-gray-600 dark:text-white/60 text-base leading-relaxed mb-4 reveal-delay-1">
               PT Adiguna Cakra Semesta berdiri pada 15 Mei 2004 sebagai
               perusahaan swasta Indonesia yang bergerak di bidang jasa
               Drilling-Completion Fluids dan Cementing. Perusahaan ini melayani
               industri hulu minyak, gas, dan geotermal — menemani klien di
               setiap fase kehidupan lapangan.
             </p>
-            <p className="reveal text-gray-600 dark:text-white/60 text-base leading-relaxed mb-6 reveal-delay-2">
+            <p className="reveal-left text-gray-600 dark:text-white/60 text-base leading-relaxed mb-6 reveal-delay-2">
               Tim kami terdiri dari para profesional berpengalaman dengan
               keahlian mendalam di bidang teknik fluida pemboran dan sementasi.
               Kami berkomitmen membangun hubungan jangka panjang dengan
@@ -86,7 +74,7 @@ export default function About() {
             </p>
 
             {/* Tiga divisi bisnis utama */}
-            <div className="reveal reveal-delay-3 space-y-3 mb-8">
+            <div className="reveal-left reveal-delay-3 space-y-3 mb-8">
               <p className="text-sm font-semibold text-[#0a1f44] dark:text-white uppercase tracking-wide mb-3">
                 Tiga Divisi Bisnis Utama
               </p>
@@ -108,7 +96,7 @@ export default function About() {
             </div>
 
             {/* Perusahaan sister */}
-            <div className="reveal reveal-delay-4 border-t border-gray-100 dark:border-white/10 pt-6">
+            <div className="reveal-left reveal-delay-4 border-t border-gray-100 dark:border-white/10 pt-6">
               <p className="text-xs font-semibold text-gray-400 dark:text-white/40 uppercase tracking-wide mb-3">
                 Perusahaan Sister
               </p>
@@ -132,7 +120,7 @@ export default function About() {
           </div>
 
           {/* KOLOM KANAN: Visual + Kartu */}
-          <div className="reveal reveal-delay-1">
+          <div className="reveal-right reveal-delay-1">
             {/* Visual foto lapangan */}
             <div
               className="

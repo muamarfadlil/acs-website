@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import {
   type LucideIcon,
   Droplets,
@@ -10,6 +10,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { services } from "@/lib/data";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const iconMap: Record<string, LucideIcon> = {
   Droplets,
@@ -19,21 +20,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function Services() {
   const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("visible");
-        });
-      },
-      { threshold: 0.1 },
-    );
-    sectionRef.current
-      ?.querySelectorAll(".reveal")
-      .forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+  useScrollReveal(sectionRef);
 
   return (
     <section
@@ -90,7 +77,7 @@ export default function Services() {
               <div
                 key={service.id}
                 className={`
-                  reveal reveal-delay-${idx + 1}
+                  reveal-scale reveal-delay-${idx + 1}
                   group relative
                   bg-gradient-to-b from-[#0f2449] to-[#091532]
                   border border-white/10 rounded overflow-hidden

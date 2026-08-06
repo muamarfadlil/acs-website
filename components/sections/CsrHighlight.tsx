@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, MapPin, Calendar } from "lucide-react";
 import { csrK3Activities } from "@/lib/data";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const categoryLabel: Record<string, string> = {
   csr: "CSR",
@@ -13,15 +14,7 @@ const categoryLabel: Record<string, string> = {
 
 export default function CsrHighlight() {
   const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
-      { threshold: 0.1 },
-    );
-    sectionRef.current?.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+  useScrollReveal(sectionRef);
 
   const latest = [...csrK3Activities]
     .sort((a, b) => b.year - a.year)
@@ -56,7 +49,7 @@ export default function CsrHighlight() {
             <div
               key={activity.id}
               className={`
-                reveal reveal-delay-${idx + 1}
+                reveal-scale reveal-delay-${idx + 1}
                 bg-white dark:bg-white/5 border border-[#0a1f44]/10 dark:border-white/10 rounded overflow-hidden
                 hover:border-[#c41e1e]/30 hover:-translate-y-1 hover:shadow-lg
                 transition-all duration-300

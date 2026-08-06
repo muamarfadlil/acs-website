@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import {
   type LucideIcon,
   Target,
@@ -11,6 +11,7 @@ import {
   Headphones,
 } from "lucide-react";
 import { visionMission, whyACS } from "@/lib/data";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const iconMap: Record<string, LucideIcon> = {
   Globe,
@@ -21,20 +22,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function VisionMission() {
   const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) =>
-        entries.forEach(
-          (e) => e.isIntersecting && e.target.classList.add("visible"),
-        ),
-      { threshold: 0.1 },
-    );
-    sectionRef.current
-      ?.querySelectorAll(".reveal")
-      .forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+  useScrollReveal(sectionRef);
 
   return (
     <section id="vision" ref={sectionRef} className="py-24 bg-[#f0f4fa] dark:bg-[#091832] transition-colors duration-300">
@@ -62,7 +50,7 @@ export default function VisionMission() {
           {/* Visi */}
           <div
             className="
-              reveal bg-gradient-to-br from-[#0d2559] to-[#0a1f44]
+              reveal-left bg-gradient-to-br from-[#0d2559] to-[#0a1f44]
               rounded overflow-hidden relative
               shadow-[0_8px_32px_rgba(10,31,68,0.25)]
               hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(10,31,68,0.35)]
@@ -90,7 +78,7 @@ export default function VisionMission() {
           {/* Misi */}
           <div
             className="
-              reveal reveal-delay-1 bg-white dark:bg-[#0a1f44] rounded overflow-hidden
+              reveal-right reveal-delay-1 bg-white dark:bg-[#0a1f44] rounded overflow-hidden
               border border-[#0a1f44]/10 dark:border-white/10
               shadow-[0_8px_32px_rgba(10,31,68,0.1)]
               hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(10,31,68,0.18)]
@@ -150,7 +138,7 @@ export default function VisionMission() {
                 <div
                   key={idx}
                   className={`
-                    reveal reveal-delay-${idx + 1}
+                    reveal-scale reveal-delay-${idx + 1}
                     bg-white dark:bg-[#0a1f44] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
                     hover:border-[#c41e1e]/30
                     hover:-translate-y-1.5
