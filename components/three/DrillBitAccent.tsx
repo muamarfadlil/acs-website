@@ -35,9 +35,10 @@ export default function DrillBitAccent() {
       gl={{ alpha: true, antialias: true }}
       dpr={[1, 2]}
     >
-      <ambientLight intensity={0.8} />
-      <directionalLight position={[3, 4, 2]} intensity={1.3} />
-      <directionalLight position={[-3, -2, -2]} intensity={0.4} color="#c41e1e" />
+      <ambientLight intensity={1.1} />
+      <directionalLight position={[3, 4, 2]} intensity={2.2} />
+      <directionalLight position={[-2, 1, 3]} intensity={1.4} color="#ffffff" />
+      <directionalLight position={[-3, -2, -3]} intensity={1.8} color="#c41e1e" />
       <Suspense fallback={null}>
         <SpinningBit />
       </Suspense>

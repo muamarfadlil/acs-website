@@ -57,13 +57,14 @@ export default function Hero() {
       {/* Aksen dekoratif model 3D — ciri khas industri migas, bukan produk ACS */}
       {showAccent && (
         <div
-          className="
-            hidden lg:block absolute right-0 top-1/2 -translate-y-1/2
-            w-[420px] h-[420px] opacity-70 pointer-events-none
-          "
+          className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none"
           aria-hidden="true"
         >
-          <DrillBitAccent />
+          {/* Glow merah di belakang model agar drill bit yang gelap tetap terlihat jelas */}
+          <div className="absolute inset-0 m-auto w-[380px] h-[380px] rounded-full bg-[#c41e1e]/25 blur-[80px]" />
+          <div className="relative w-[460px] h-[460px] opacity-95">
+            <DrillBitAccent />
+          </div>
         </div>
       )}
 
