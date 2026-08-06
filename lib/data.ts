@@ -309,13 +309,15 @@ export const sisterCompanies = [
 ];
 
 // Link navigasi header (smooth scroll ke section di halaman utama)
+// Prefiks "/" wajib ada agar link tetap berfungsi saat diklik dari
+// halaman lain (mis. /career), bukan hanya saat berada di halaman utama.
 export const navLinks = [
-  { label: "Beranda", href: "#hero" },
-  { label: "Tentang Kami", href: "#about" },
-  { label: "Layanan", href: "#services" },
-  { label: "CSR & K3", href: "#csr" },
-  { label: "Sertifikasi", href: "#certifications" },
-  { label: "Kontak", href: "#contact" },
+  { label: "Beranda", href: "/#hero" },
+  { label: "Tentang Kami", href: "/#about" },
+  { label: "Layanan", href: "/#services" },
+  { label: "CSR & K3", href: "/#csr" },
+  { label: "Sertifikasi", href: "/#certifications" },
+  { label: "Kontak", href: "/#contact" },
 ];
 
 // Link navigasi sidebar (menuju halaman terpisah)

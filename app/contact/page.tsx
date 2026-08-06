@@ -3,8 +3,9 @@
 
 "use client";
 
-import { useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import {
   ArrowLeft,
   Mail,
@@ -32,6 +33,16 @@ import { company } from "@/lib/data";
  * - Nodemailer via API Route Next.js
  */
 export default function ContactPage() {
+  return (
+    <Suspense fallback={null}>
+      <ContactPageContent />
+    </Suspense>
+  );
+}
+
+function ContactPageContent() {
+  const searchParams = useSearchParams();
+
   // State untuk nilai-nilai input form
   const [form, setForm] = useState({
     name: "",
@@ -40,6 +51,20 @@ export default function ContactPage() {
     subject: "",
     message: "",
   });
+
+  // Pre-isi subjek & pesan saat datang dari link "Lamar Posisi Ini"
+  // di halaman Karir (mis. /contact?subject=career&job=Senior%20Fluid%20Engineer)
+  useEffect(() => {
+    const subject = searchParams.get("subject");
+    const job = searchParams.get("job");
+    if (subject === "career" && job) {
+      setForm((prev) => ({
+        ...prev,
+        subject: "career",
+        message: `Saya tertarik untuk melamar posisi: ${job}.\n\n`,
+      }));
+    }
+  }, [searchParams]);
 
   // State untuk status pengiriman
   const [status, setStatus] = useState<
@@ -250,6 +275,7 @@ export default function ContactPage() {
                         </option>
                         <option value="tender">Penawaran / Tender</option>
                         <option value="partnership">Kemitraan</option>
+                        <option value="career">Lamaran Kerja / Karir</option>
                         <option value="other">Lainnya</option>
                       </select>
                     </div>

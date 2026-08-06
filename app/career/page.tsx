@@ -162,7 +162,7 @@ export default function CareerPage() {
                 {/* Tombol Apply */}
                 <div className="px-5 pb-5">
                   <Link
-                    href={`/contact?subject=Lamaran: ${encodeURIComponent(job.title)}`}
+                    href={`/contact?subject=career&job=${encodeURIComponent(job.title)}`}
                     className="
                       inline-flex items-center gap-2
                       bg-[#0a1f44] dark:bg-white/10 text-white
