@@ -1,10 +1,26 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { stats } from "@/lib/data";
 
+// Canvas WebGL hanya boleh dirender di client (butuh akses browser),
+// jadi di-load secara dinamis tanpa SSR.
+const DrillBitAccent = dynamic(() => import("@/components/three/DrillBitAccent"), {
+  ssr: false,
+});
+
 export default function Hero() {
+  // Ditunda sedikit setelah render pertama agar tidak bersaing
+  // dengan konten utama (headline, CTA) untuk waktu muat awal.
+  const [showAccent, setShowAccent] = useState(false);
+  useEffect(() => {
+    const id = window.setTimeout(() => setShowAccent(true), 400);
+    return () => window.clearTimeout(id);
+  }, []);
+
   return (
     <section
       id="hero"
@@ -37,6 +53,19 @@ export default function Hero() {
 
       {/* Garis vertikal dekoratif kiri */}
       <div className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-transparent via-[#c41e1e] to-transparent opacity-80" />
+
+      {/* Aksen dekoratif model 3D — ciri khas industri migas, bukan produk ACS */}
+      {showAccent && (
+        <div
+          className="
+            hidden lg:block absolute right-0 top-1/2 -translate-y-1/2
+            w-[420px] h-[420px] opacity-70 pointer-events-none
+          "
+          aria-hidden="true"
+        >
+          <DrillBitAccent />
+        </div>
+      )}
 
       {/* === KONTEN UTAMA === */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
