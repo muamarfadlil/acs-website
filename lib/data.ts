@@ -315,7 +315,7 @@ export const navLinks = [
   { label: "Beranda", href: "/#hero" },
   { label: "Tentang Kami", href: "/#about" },
   { label: "Layanan", href: "/#services" },
-  { label: "CSR & K3", href: "/#csr" },
+  { label: "HSE & P2K3", href: "/#csr" },
   { label: "Sertifikasi", href: "/#certifications" },
   { label: "Kontak", href: "/#contact" },
 ];
@@ -323,7 +323,7 @@ export const navLinks = [
 // Link navigasi sidebar (menuju halaman terpisah)
 export const sidebarLinks = [
   { label: "Laboratorium", href: "/laboratory", icon: "FlaskConical" },
-  { label: "CSR & K3", href: "/csr-k3", icon: "HeartHandshake" },
+  { label: "HSE & P2K3", href: "/hse-p2k3", icon: "HeartHandshake" },
   { label: "Klien & Proyek", href: "/clients", icon: "Briefcase" },
   { label: "Karir", href: "/career", icon: "UserCheck" },
   { label: "Kontak", href: "/contact", icon: "Mail" },

@@ -1,4 +1,4 @@
-// app/csr-k3/page.tsx
+// app/hse-p2k3/page.tsx
 // Halaman dokumentasi kegiatan CSR (Corporate Social Responsibility) & P2K3
 
 "use client";
@@ -28,7 +28,7 @@ const categoryStyle: Record<string, string> = {
 type CategoryFilter = "all" | "csr" | "k3";
 type YearFilter = "all" | number;
 
-export default function CsrK3Page() {
+export default function HseP2k3Page() {
   const [category, setCategory] = useState<CategoryFilter>("all");
   const [year, setYear] = useState<YearFilter>("all");
 
@@ -77,7 +77,7 @@ export default function CsrK3Page() {
                 Tanggung Jawab Sosial
               </p>
               <h1 className="font-['Bebas_Neue'] text-5xl text-white tracking-wide leading-tight">
-                CSR &amp; K3
+                HSE &amp; P2K3
               </h1>
             </div>
           </div>

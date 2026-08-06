@@ -19,7 +19,7 @@ import ContactSection from "@/components/sections/ContactSection";
  * 1. Hero          → tampilan pertama (above the fold)
  * 2. About         → profil perusahaan
  * 3. Services      → tiga layanan utama
- * 4. CsrHighlight  → cuplikan kegiatan CSR & K3
+ * 4. CsrHighlight  → cuplikan kegiatan HSE & P2K3
  * 5. VisionMission → visi, misi, dan keunggulan
  * 6. Certifications→ sertifikasi ISO
  * 7. Contact       → info kontak + footer

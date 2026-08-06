@@ -34,7 +34,7 @@ export default function CsrHighlight() {
           <div className="reveal flex items-center justify-center gap-3 mb-4">
             <span className="w-10 h-0.5 bg-[#c41e1e]" />
             <span className="text-[#c41e1e] text-xs font-semibold uppercase tracking-[0.2em]">
-              CSR &amp; K3
+              HSE &amp; P2K3
             </span>
             <span className="w-10 h-0.5 bg-[#c41e1e]" />
           </div>
@@ -92,7 +92,7 @@ export default function CsrHighlight() {
 
         <div className="reveal text-center">
           <Link
-            href="/csr-k3"
+            href="/hse-p2k3"
             className="
               inline-flex items-center gap-2
               bg-[#0a1f44] dark:bg-white/10 text-white
