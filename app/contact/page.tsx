@@ -472,33 +472,19 @@ function ContactPageContent() {
               </div>
             </div>
 
-            {/* Peta Placeholder */}
+            {/* Peta Lokasi */}
             <div className="reveal reveal-delay-3 bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
-              <div className="bg-[#f0f4fa] dark:bg-white/5 h-40 flex flex-col items-center justify-center text-center px-4">
-                <MapPin size={28} className="text-[#c41e1e] mb-2" />
-                <p className="text-[#0a1f44] dark:text-white font-semibold text-xs">
-                  Google Maps Embed
-                </p>
-                <p className="text-gray-400 dark:text-white/40 text-[10px] mt-1 leading-relaxed">
-                  <iframe
-                    width="600"
-                    height="450"
-                    style={{ border: 0 }} // objek JS, bukan string
-                    allowFullScreen // camelCase, tanpa nilai string kosong
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade" // camelCase
-                  />
-                  <br />
-                  Paris Square Blok B2, BSD Tangerang Selatan
-                </p>
+              <div className="relative aspect-video">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d333.1843841007858!2d106.67906508702487!3d-6.293378507241656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTcnMzUuOSJTIDEwNsKwNDAnNDQuOSJF!5e1!3m2!1sen!2sid!4v1786020634961!5m2!1sen!2sid"
+                  className="absolute inset-0 w-full h-full"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  title="Lokasi PT Adiguna Cakra Semesta"
+                />
               </div>
-              {/*
-                Cara menambahkan Google Maps:
-                1. Buka maps.google.com → cari alamat kantor
-                2. Klik "Bagikan" → "Sematkan peta"
-                3. Salin kode <iframe> dan tempel di sini
-                4. Tambahkan className="w-full h-full" pada iframe
-              */}
             </div>
           </div>
         </div>
