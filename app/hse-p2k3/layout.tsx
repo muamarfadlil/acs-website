@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "HSE & P2K3 | PT Adiguna Cakra Semesta",
   description:
-    "Dokumentasi kegiatan Corporate Social Responsibility (CSR) dan Panitia Pembina Keselamatan dan Kesehatan Kerja (P2K3) PT Adiguna Cakra Semesta.",
+    "Dokumentasi kegiatan Health, Safety & Environment (HSE), Panitia Pembina Keselamatan dan Kesehatan Kerja (P2K3), dan tanggung jawab sosial perusahaan (CSR) PT Adiguna Cakra Semesta.",
 };
 
 export default function HseP2k3Layout({

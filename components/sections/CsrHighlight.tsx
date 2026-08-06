@@ -44,9 +44,10 @@ export default function CsrHighlight() {
             <span className="text-[#c41e1e]">Kesejahteraan Karyawan</span>
           </h2>
           <p className="reveal reveal-delay-1 text-gray-500 dark:text-white/50 text-base max-w-2xl mx-auto mt-4 leading-relaxed">
-            Rangkaian kegiatan Corporate Social Responsibility (CSR) dan
-            Panitia Pembina Keselamatan dan Kesehatan Kerja (P2K3) yang kami
-            selenggarakan sepanjang 2025–2026.
+            Rangkaian kegiatan Health, Safety &amp; Environment (HSE), Panitia
+            Pembina Keselamatan dan Kesehatan Kerja (P2K3), dan tanggung jawab
+            sosial perusahaan (CSR) yang kami selenggarakan sepanjang
+            2025–2026.
           </p>
         </div>
 

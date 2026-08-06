@@ -83,10 +83,10 @@ export default function HseP2k3Page() {
           </div>
 
           <p className="text-white/60 text-base max-w-2xl leading-relaxed">
-            Dokumentasi kegiatan Corporate Social Responsibility (CSR) dan
-            Panitia Pembina Keselamatan dan Kesehatan Kerja (P2K3) PT Adiguna
-            Cakra Semesta — komitmen kami terhadap masyarakat sekitar dan
-            kesejahteraan karyawan.
+            Dokumentasi kegiatan Health, Safety &amp; Environment (HSE), Panitia
+            Pembina Keselamatan dan Kesehatan Kerja (P2K3), dan tanggung jawab
+            sosial perusahaan (CSR) PT Adiguna Cakra Semesta — komitmen kami
+            terhadap masyarakat sekitar dan kesejahteraan karyawan.
           </p>
         </div>
       </div>

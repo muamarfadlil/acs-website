@@ -390,4 +390,32 @@ export const csrK3Activities = [
       { src: "/csr-k3/csr-2026-penyerahan-sertifikat.jpg", alt: "Penyerahan sertifikat dan plakat Workshop Literasi Keuangan 2026" },
     ],
   },
+  {
+    id: "k3-2026-mwt-manajemen",
+    category: "k3" as const,
+    year: 2026,
+    title: "Management Walkthrough (MWT) Manajemen PT Adiguna Cakra Semesta",
+    date: "Rabu, 8 Juli 2026",
+    location: "Sumur GGNP-1 ST, TGE Project, Kabupaten Tuban",
+    description:
+      "Jajaran manajemen PT Adiguna Cakra Semesta (Drilling-Completion Fluids & Cementing Services) turun langsung ke lapangan melaksanakan Management Walkthrough (MWT) di Sumur GGNP-1 ST, TGE Project, Kabupaten Tuban. Kegiatan yang dihadiri Direktur Utama beserta Manager Operasional, Manager HSE, dan Manager HRD ini merupakan wujud komitmen kepemimpinan terhadap budaya keselamatan kerja — memastikan standar K3 diterapkan secara nyata di lapangan, bukan sekadar kebijakan tertulis, sekaligus mempercepat identifikasi potensi bahaya melalui interaksi langsung dengan tim operasional di garis depan.",
+    photos: [
+      { src: "/csr-k3/k3-2026-mwt-manajemen.jpg", alt: "Jajaran manajemen PT Adiguna Cakra Semesta melaksanakan Management Walkthrough (MWT) di Sumur GGNP-1 ST, TGE Project, Tuban, 2026" },
+    ],
+  },
+  {
+    id: "k3-2026-kajian-fiqih-rutin",
+    category: "k3" as const,
+    year: 2026,
+    title: "Kajian Fiqih & Tafsir Hadits Rutin P2K3",
+    date: "Rutin setiap 2 pekan, awal 2026",
+    location: "Kantor PT Adiguna Cakra Semesta",
+    description:
+      "Sebagai bagian dari program P2K3 (Panitia Pembina Keselamatan dan Kesehatan Kerja), PT Adiguna Cakra Semesta menghadirkan Kajian Fiqih dan Tafsir Hadits Rutin yang diselenggarakan setiap dua pekan bagi seluruh personel. Program ini melengkapi aspek teknis keselamatan kerja dengan penguatan nilai integritas dan tanggung jawab, sehingga penerapan K3 di lapangan tidak semata didasari kepatuhan terhadap aturan, melainkan juga kesadaran menjaga keselamatan diri dan rekan kerja sebagai bagian dari amanah yang dipertanggungjawabkan.",
+    photos: [
+      { src: "/csr-k3/k3-2026-kajian-fiqih-1.jpeg", alt: "Karyawan PT Adiguna Cakra Semesta mengikuti Kajian Fiqih Rutin, 2026" },
+      { src: "/csr-k3/k3-2026-kajian-fiqih-2.jpeg", alt: "Suasana Kajian Fiqih Rutin P2K3 di kantor PT Adiguna Cakra Semesta, 2026" },
+      { src: "/csr-k3/k3-2026-kajian-fiqih-3.jpg", alt: "Karyawan dan manajemen PT Adiguna Cakra Semesta dalam Kajian Fiqih Rutin, 2026" },
+    ],
+  },
 ];

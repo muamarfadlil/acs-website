@@ -142,6 +142,50 @@ export default function Certifications() {
             </div>
           </div>
         </div>
+
+        {/* === Laporan Keuangan Teraudit === */}
+        <div
+          className="
+            reveal
+            border border-[#0a1f44]/10 dark:border-white/10 rounded
+            bg-gradient-to-br from-[#f0f4fa] to-[#e8eef8] dark:from-[#0f2449] dark:to-[#091832]
+            p-8 mt-6
+            shadow-[0_4px_24px_rgba(10,31,68,0.08)]
+          "
+        >
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="font-['Bebas_Neue'] text-3xl text-[#0a1f44] dark:text-white tracking-wide mb-3">
+                Laporan Keuangan Teraudit
+              </h3>
+              <p className="text-gray-600 dark:text-white/60 text-sm leading-relaxed">
+                Sebagai bentuk transparansi dan akuntabilitas kepada klien dan
+                mitra, laporan keuangan PT ACS diperiksa secara independen dan
+                diberikan opini kewajaran melalui Laporan Auditor Independen
+                (LAI) oleh Kantor Akuntan Publik (KAP) dbsd&amp;a.
+              </p>
+            </div>
+
+            {/* Badge auditor */}
+            <div className="flex flex-wrap gap-3 justify-center md:justify-end">
+              {["KAP dbsd&a", "Laporan Auditor Independen (LAI)"].map((label) => (
+                <div
+                  key={label}
+                  className="
+                    px-5 py-3 bg-white dark:bg-white/10 border border-[#0a1f44]/15 dark:border-white/15 rounded
+                    text-xs font-bold text-[#0a1f44] dark:text-white
+                    shadow-sm
+                    hover:border-[#0a1f44]/40 hover:shadow-md
+                    hover:-translate-y-0.5
+                    transition-all duration-200
+                  "
+                >
+                  {label}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
