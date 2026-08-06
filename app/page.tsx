@@ -8,6 +8,7 @@ import CsrHighlight from "@/components/sections/CsrHighlight";
 import VisionMission from "@/components/sections/VisionMission";
 import Certifications from "@/components/sections/Certifications";
 import ContactSection from "@/components/sections/ContactSection";
+import SectionDots from "@/components/SectionDots";
 
 /**
  * Halaman Utama (/)
@@ -34,6 +35,7 @@ export default function HomePage() {
       <VisionMission />
       <Certifications />
       <ContactSection />
+      <SectionDots />
     </>
   );
 }

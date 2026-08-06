@@ -5,6 +5,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { stats } from "@/lib/data";
+import CountUp from "@/components/CountUp";
 
 // Canvas WebGL hanya boleh dirender di client (butuh akses browser),
 // jadi di-load secara dinamis tanpa SSR.
@@ -154,14 +155,13 @@ export default function Hero() {
                 group cursor-default
               "
             >
-              <span
+              <CountUp
+                value={stat.value}
                 className="
                   font-['Bebas_Neue'] text-4xl sm:text-5xl text-[#c41e1e]
                   leading-none group-hover:scale-105 transition-transform duration-200
                 "
-              >
-                {stat.value}
-              </span>
+              />
               <span className="text-white/50 text-xs mt-1 leading-tight">
                 {stat.label}
               </span>
