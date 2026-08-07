@@ -61,9 +61,9 @@ export default function Hero() {
           className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none"
           aria-hidden="true"
         >
-          {/* Glow merah di belakang model agar drill bit yang gelap tetap terlihat jelas */}
-          <div className="absolute inset-0 m-auto w-[380px] h-[380px] rounded-full bg-[#c41e1e]/25 blur-[80px]" />
-          <div className="relative w-[460px] h-[460px] opacity-95">
+          {/* Glow merah di belakang model agar drill bit tetap kontras dari background */}
+          <div className="absolute inset-0 m-auto w-[420px] h-[420px] rounded-full bg-[#c41e1e]/35 blur-[90px]" />
+          <div className="relative w-[460px] h-[460px]">
             <DrillBitAccent />
           </div>
         </div>
