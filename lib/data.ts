@@ -25,7 +25,7 @@ export const company = {
 // Statistik untuk ditampilkan di Hero / About section
 export const stats = [
   { value: "20+", label: "Tahun Pengalaman" },
-  { value: "50+", label: "Proyek Selesai" },
+  { value: "150+", label: "Proyek Selesai" },
   { value: "3", label: "Sertifikasi ISO" },
   { value: "35+", label: "Tenaga Ahli" },
 ];
@@ -295,7 +295,7 @@ export const personnel = [
   { role: "Fluid Engineering Technical Advisor (TA)", count: 2 },
   { role: "Senior Fluid Engineer", count: 16 },
   { role: "Junior Fluid Engineer", count: 10 },
-  { role: "Laboratory Technician", count: 2 },
+  { role: "Laboratory Technician", count: 5 },
   { role: "HES Officer", count: 2 },
   { role: "Helper (Local)", count: 12 },
 ];
@@ -325,6 +325,7 @@ export const sidebarLinks = [
   { label: "Laboratorium", href: "/laboratory", icon: "FlaskConical" },
   { label: "HSE & P2K3", href: "/hse-p2k3", icon: "HeartHandshake" },
   { label: "Klien & Proyek", href: "/clients", icon: "Briefcase" },
+  { label: "Peta Pengalaman Kerja", href: "/experience-map", icon: "MapPinned" },
   { label: "Karir", href: "/career", icon: "UserCheck" },
   { label: "Kontak", href: "/contact", icon: "Mail" },
 ];
