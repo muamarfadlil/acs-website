@@ -1,18 +1,16 @@
 // Data peta sebaran pengalaman kerja PT Adiguna Cakra Semesta.
-// Sumber: peta_pengalaman_kerja_acs.html — diekstrak ke JSON agar dapat dipakai di komponen React.
+// Sumber: ACS Portofolio_Filter.xlsx (sheet "Drilling Fluids" & "Cementing"),
+// diekstrak via scripts/build_experience_data.py ke JSON per lini layanan.
 
-import rawMarkers from "./markers.json";
+import rawDrillingMarkers from "./markers-drilling.json";
+import rawCementingMarkers from "./markers-cementing.json";
 import provinceLabelsRaw from "./province-labels.json";
 import provinceBoundariesRaw from "./province-boundaries.json";
 import type { FeatureCollection } from "geojson";
 
-export type RecordType = "Contract" | "Project";
-
 export interface ExperienceItem {
   owner: string;
-  title: string;
   date: string;
-  type: RecordType;
 }
 
 export interface ExperienceMarker {
@@ -22,6 +20,14 @@ export interface ExperienceMarker {
   prov: string;
   count: number;
   items: ExperienceItem[];
+}
+
+export interface ExperienceCategory {
+  id: string;
+  label: string;
+  shortLabel: string;
+  icon: string;
+  markers: ExperienceMarker[];
 }
 
 // Gabungkan titik dengan koordinat identik (mis. beda penulisan nama lokasi untuk titik yang sama)
@@ -43,7 +49,29 @@ function dedupeMarkers(list: ExperienceMarker[]): ExperienceMarker[] {
   return order.map((k) => byKey[k]);
 }
 
-export const MARKERS: ExperienceMarker[] = dedupeMarkers(rawMarkers as ExperienceMarker[]);
+export const DRILLING_MARKERS: ExperienceMarker[] = dedupeMarkers(
+  rawDrillingMarkers as ExperienceMarker[]
+);
+export const CEMENTING_MARKERS: ExperienceMarker[] = dedupeMarkers(
+  rawCementingMarkers as ExperienceMarker[]
+);
+
+export const EXPERIENCE_CATEGORIES: ExperienceCategory[] = [
+  {
+    id: "drilling",
+    label: "Drilling & Completion Fluids Services",
+    shortLabel: "Drilling Fluids",
+    icon: "🛢️",
+    markers: DRILLING_MARKERS,
+  },
+  {
+    id: "cementing",
+    label: "Cementing Services",
+    shortLabel: "Cementing",
+    icon: "🧱",
+    markers: CEMENTING_MARKERS,
+  },
+];
 
 export const PROVINCE_LABELS: Record<string, string> = provinceLabelsRaw;
 
@@ -60,10 +88,10 @@ export function extractYear(dateStr: string): string {
   return `${years[0]}–${years[years.length - 1]}`;
 }
 
-export function earliestYear(): number | null {
+export function earliestYear(markers: ExperienceMarker[]): number | null {
   let min: number | null = null;
   const re = /(19|20)\d{2}/g;
-  MARKERS.forEach((m) =>
+  markers.forEach((m) =>
     m.items.forEach((it) => {
       const found = (it.date || "").match(re);
       if (found) {

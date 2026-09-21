@@ -63,9 +63,9 @@ export default function ExperienceMapPage() {
           </div>
 
           <p className="text-white/60 text-base max-w-2xl leading-relaxed">
-            Jelajahi sebaran kontrak dan proyek Mud Engineering / Drilling Services PT ACS di
-            seluruh Indonesia secara interaktif — klik wilayah pada peta atau cari klien, lokasi,
-            maupun provinsi untuk melihat detail riwayat kerja.
+            Jelajahi sebaran kontrak layanan Drilling &amp; Completion Fluids maupun Cementing
+            PT ACS di seluruh Indonesia secara interaktif — pilih kategori layanan, klik wilayah
+            pada peta, atau cari klien, lokasi, maupun provinsi untuk melihat detail riwayat kerja.
           </p>
         </div>
       </div>

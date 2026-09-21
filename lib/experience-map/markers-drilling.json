@@ -1,0 +1,373 @@
+[
+  {
+    "loc": "Pekanbaru Riau",
+    "lat": 0.53,
+    "lng": 101.45,
+    "prov": "Riau",
+    "count": 4,
+    "items": [
+      {
+        "owner": "Kondur Petroleum S.A",
+        "date": "25 September 2005"
+      },
+      {
+        "owner": "Kondur Petroleum S.A",
+        "date": "01 Mei 2006"
+      },
+      {
+        "owner": "Kondur Petroleum S.A",
+        "date": "25 Juni 2006"
+      },
+      {
+        "owner": "Kondur Petroleum S.A",
+        "date": "18 November 2007"
+      }
+    ]
+  },
+  {
+    "loc": "Kalimantan Timur",
+    "lat": 0.5,
+    "lng": 116.5,
+    "prov": "Kalimantan Timur",
+    "count": 2,
+    "items": [
+      {
+        "owner": "PT. Semberani Persada Oil / Semco",
+        "date": "04 Juli 2006"
+      },
+      {
+        "owner": "PT. Semberani Persada Oil / Semco",
+        "date": "12 Juli 2006"
+      }
+    ]
+  },
+  {
+    "loc": "Sumatera Selatan",
+    "lat": -3.3,
+    "lng": 104,
+    "prov": "Sumatera Selatan",
+    "count": 3,
+    "items": [
+      {
+        "owner": "PT. Pertamina EP Region Sumatera",
+        "date": "01 Agustus 2008"
+      },
+      {
+        "owner": "PT. Pertamina EP Region Sumatera",
+        "date": "03 Juli 2009"
+      },
+      {
+        "owner": "PT PHE Metana Sumatera 4",
+        "date": "01 November 2012"
+      }
+    ]
+  },
+  {
+    "loc": "Tanjung Kalimantan Selatan",
+    "lat": -2.17,
+    "lng": 115.4,
+    "prov": "Kalimantan Selatan",
+    "count": 1,
+    "items": [
+      {
+        "owner": "PT PHE Metan Tanjung II",
+        "date": "01 juli 2013"
+      }
+    ]
+  },
+  {
+    "loc": "Benakat Sumatera",
+    "lat": -3.4,
+    "lng": 103.65,
+    "prov": "Sumatera Selatan",
+    "count": 1,
+    "items": [
+      {
+        "owner": "TAC Pertamina – Binatek Reka Kruh",
+        "date": "15 Juli 2013"
+      }
+    ]
+  },
+  {
+    "loc": "Pabuaran, Subang - Jawa Barat",
+    "lat": -6.55,
+    "lng": 107.77,
+    "prov": "Jawa Barat",
+    "count": 1,
+    "items": [
+      {
+        "owner": "PT. IEV Pabuaran KSO",
+        "date": "01 Oktober 2013"
+      }
+    ]
+  },
+  {
+    "loc": "Sumatera Utara",
+    "lat": 2.5,
+    "lng": 98.7,
+    "prov": "Sumatera Utara",
+    "count": 1,
+    "items": [
+      {
+        "owner": "TAC PEP Putra Kencana Diski Petroleum",
+        "date": "04 April 2014"
+      }
+    ]
+  },
+  {
+    "loc": "Lapangan Air Benakat - Sumatera Selatan",
+    "lat": -3.4,
+    "lng": 103.65,
+    "prov": "Sumatera Selatan",
+    "count": 1,
+    "items": [
+      {
+        "owner": "PT. Pertamina Hulu Energi Metana Sumatera 7",
+        "date": "20 Mei 2014"
+      }
+    ]
+  },
+  {
+    "loc": "Blok Pasir, Kalimantan Timur",
+    "lat": -1.9,
+    "lng": 116.2,
+    "prov": "Kalimantan Timur",
+    "count": 1,
+    "items": [
+      {
+        "owner": "PT. Asia Petrocom Servivces [Pasir Petroleum Resources Limited]",
+        "date": "12 Desember 2014"
+      }
+    ]
+  },
+  {
+    "loc": "Blok Bengara, Kalimantan Utara",
+    "lat": 3.75,
+    "lng": 117.55,
+    "prov": "Kalimantan Utara",
+    "count": 1,
+    "items": [
+      {
+        "owner": "PT. Asia Petrocom Services [PT. Geo Drilling Indonesia]",
+        "date": "04 Mei 2015"
+      }
+    ]
+  },
+  {
+    "loc": "Jambi, Sumatera",
+    "lat": -1.61,
+    "lng": 103.61,
+    "prov": "Jambi",
+    "count": 1,
+    "items": [
+      {
+        "owner": "PT. Wira Insani (Weatherford) (Ranhill Jambi Inc. Pte. Ltd.)",
+        "date": "06 Agustus 2015"
+      }
+    ]
+  },
+  {
+    "loc": "Kruh Pendopo, Sumatera Selatan",
+    "lat": -3.32,
+    "lng": 103.95,
+    "prov": "Sumatera Selatan",
+    "count": 2,
+    "items": [
+      {
+        "owner": "TAC Pertamina EP - Green World Nusantara Kruh / [GWN Kruh]",
+        "date": "01 September 2015"
+      },
+      {
+        "owner": "TAC Pertamina EP - Green World Nusantara Kruh / [GWN Kruh]",
+        "date": "None"
+      }
+    ]
+  },
+  {
+    "loc": "Blok Baturaja, Sumatera Selatan",
+    "lat": -4.13,
+    "lng": 104.17,
+    "prov": "Sumatera Selatan",
+    "count": 1,
+    "items": [
+      {
+        "owner": "PT. Asia Petrocom Servivces  [PT. Tiarabumi Petroleum]",
+        "date": "16 November 2015"
+      }
+    ]
+  },
+  {
+    "loc": "Betun, Sumatera Selatan",
+    "lat": -3.35,
+    "lng": 104,
+    "prov": "Sumatera Selatan",
+    "count": 1,
+    "items": [
+      {
+        "owner": "KSO Pertamina EP – Petroenim Betun Selo",
+        "date": "15 Januari 2016"
+      }
+    ]
+  },
+  {
+    "loc": "Sidoarjo, Jawa Timur",
+    "lat": -7.45,
+    "lng": 112.72,
+    "prov": "Jawa Timur",
+    "count": 1,
+    "items": [
+      {
+        "owner": "PT. Bias Drillindo Utama  [Lapindo Brantas Inc.]",
+        "date": "12 Mei 2016"
+      }
+    ]
+  },
+  {
+    "loc": "Kurau, Pulau padang",
+    "lat": 0.35,
+    "lng": 102.95,
+    "prov": "Riau",
+    "count": 2,
+    "items": [
+      {
+        "owner": "EMP Malacca Strait S.A. (PT. Bina Mitra Artha)",
+        "date": "17 Nopember 2018"
+      },
+      {
+        "owner": "EMP Malacca Strait S.A. (PT. Bina Mitra Artha)",
+        "date": "8 Nopember 2018"
+      }
+    ]
+  },
+  {
+    "loc": "Tanjung Darat",
+    "lat": -3.4,
+    "lng": 104.1,
+    "prov": "Sumatera Selatan",
+    "count": 1,
+    "items": [
+      {
+        "owner": "EMP Gebang Limited (PT. Bina Mitra Artha)",
+        "date": "31 Desember 2018"
+      }
+    ]
+  },
+  {
+    "loc": "Prabumulih, Sumatera Selatan",
+    "lat": -3.43,
+    "lng": 104.24,
+    "prov": "Sumatera Selatan",
+    "count": 1,
+    "items": [
+      {
+        "owner": "Bass Oil Sukananti Limikted",
+        "date": "10 September 2019"
+      }
+    ]
+  },
+  {
+    "loc": "Kab. Pali Sumatera Selatan",
+    "lat": -3.35,
+    "lng": 104.05,
+    "prov": "Sumatera Selatan",
+    "count": 2,
+    "items": [
+      {
+        "owner": "KSO Pertamina EP – GWN Kruh",
+        "date": "24 Februari 2022"
+      },
+      {
+        "owner": "KSO Pertamina EP – GWN Kruh",
+        "date": "01 Juni 2022"
+      }
+    ]
+  },
+  {
+    "loc": "Sorong - Papua",
+    "lat": -0.88,
+    "lng": 131.25,
+    "prov": "Papua Barat",
+    "count": 1,
+    "items": [
+      {
+        "owner": "PT. PERTAMINA EP Zona 14 Papua",
+        "date": "1 Maret 2022"
+      }
+    ]
+  },
+  {
+    "loc": "Riau",
+    "lat": 0.5,
+    "lng": 101.45,
+    "prov": "Riau",
+    "count": 8,
+    "items": [
+      {
+        "owner": "PT. Texcal Mahato EP FZCO",
+        "date": "17 Oktober 2022"
+      },
+      {
+        "owner": "PT. Bina Mitra Artha",
+        "date": "27 Juli 2023"
+      },
+      {
+        "owner": "PT. Texcal Mahato EP FZCO",
+        "date": "15 Maret 2023"
+      },
+      {
+        "owner": "Texcal Energy Mahato Inc.",
+        "date": "30 Mei 2024"
+      },
+      {
+        "owner": "Texcal Energy Mahato Inc.",
+        "date": "16 Agustus 2024"
+      },
+      {
+        "owner": "IDS Apexindo - APG West Kampar Indonesia",
+        "date": "10 Desember 2024"
+      },
+      {
+        "owner": "APG West Kampar Indonesia",
+        "date": "6 Agustus 2025"
+      },
+      {
+        "owner": "Texcal Energy Mahato Inc.",
+        "date": "14 September 2025"
+      }
+    ]
+  },
+  {
+    "loc": "Jawa Barat",
+    "lat": -6.9,
+    "lng": 107.6,
+    "prov": "Jawa Barat",
+    "count": 1,
+    "items": [
+      {
+        "owner": "PT. Pertamina EP Region Java",
+        "date": "27 September 2023"
+      }
+    ]
+  },
+  {
+    "loc": "Tuban - Jawa Timur",
+    "lat": -6.9,
+    "lng": 112.06,
+    "prov": "Jawa Timur",
+    "count": 3,
+    "items": [
+      {
+        "owner": "KSO PT. Pertamina EP - PT. Tawun Gegunung Energi",
+        "date": "18 Agustus 2025"
+      },
+      {
+        "owner": "KSO PT. Pertamina EP - PT. Tawun Gegunung Energi",
+        "date": "18 Agustus 2025"
+      },
+      {
+        "owner": "KSO PT. Pertamina EP - PT. Estu Barata Naca Energi",
+        "date": "16 Maret 2026"
+      }
+    ]
+  }
+]

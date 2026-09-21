@@ -2,6 +2,32 @@
    Diskop di bawah .exp-map-root supaya tidak bentrok dengan gaya situs lain.
    Palet warna mengikuti tema situs (light) / panel gelap (dark, lewat .dark .exp-map-root). */
 
+.exp-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.exp-tab {
+  padding: 9px 18px;
+  border-radius: 8px 8px 0 0;
+  border: 1px solid rgba(10, 31, 68, 0.12);
+  border-bottom: none;
+  background: var(--surface-alt);
+  color: var(--gray);
+  font-family: var(--font-body), sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.dark .exp-tab { border-color: rgba(255, 255, 255, 0.12); }
+.exp-tab:hover { color: var(--text-body); }
+.exp-tab.active {
+  background: var(--surface);
+  color: var(--red);
+  box-shadow: inset 0 2px 0 var(--red);
+}
+
 .exp-map-root {
   --em-bg: var(--light);
   --em-panel: var(--surface);
@@ -166,6 +192,14 @@
 
 .exp-no-results { padding: 14px 10px; font-size: 12.5px; color: var(--em-muted); }
 
+.exp-sidebar-footer {
+  padding: 6px 16px 10px;
+  font-size: 9.5px;
+  color: var(--em-muted);
+  opacity: 0.7;
+  border-top: 1px solid var(--em-border);
+}
+
 .exp-detail-panel {
   border-top: 1px solid var(--em-border);
   max-height: 46%;
@@ -181,21 +215,26 @@
 .exp-rec {
   background: var(--em-panel-2);
   border: 1px solid var(--em-border);
-  border-left: 3px solid var(--em-border);
+  border-left: 3px solid var(--em-accent);
   border-radius: 6px;
   padding: 9px 11px;
   margin-bottom: 8px;
   font-size: 12.3px;
   line-height: 1.45;
 }
-.exp-rec.rec-Contract { border-left-color: var(--em-accent); }
-.exp-rec.rec-Project { border-left-color: var(--em-accent-2); }
 .exp-rec .owner { font-weight: 700; }
 .exp-rec .meta { margin-top: 5px; display: flex; justify-content: space-between; font-size: 11px; color: var(--em-muted); }
 
-.exp-badge { display: inline-block; padding: 1px 7px; border-radius: 20px; font-size: 10px; font-weight: 700; letter-spacing: 0.3px; }
-.exp-badge.Contract { background: rgba(47, 181, 200, 0.18); color: var(--em-accent); }
-.exp-badge.Project { background: rgba(244, 163, 64, 0.18); color: var(--em-accent-2); }
+.exp-badge {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  background: rgba(196, 30, 30, 0.14);
+  color: var(--em-accent);
+}
 
 .exp-map-root .leaflet-popup-content-wrapper { background: var(--em-panel); color: var(--em-text); border-radius: 10px; }
 .exp-map-root .leaflet-popup-tip { background: var(--em-panel); }
@@ -214,7 +253,7 @@
   padding: 10px 14px;
   font-size: 11.5px;
   color: var(--em-muted);
-  max-width: 200px;
+  max-width: 230px;
 }
 .exp-legend-box .lt { font-weight: 700; color: var(--em-text); margin-bottom: 6px; font-size: 12px; }
 .exp-legend-row { display: flex; align-items: center; gap: 8px; margin: 3px 0; }

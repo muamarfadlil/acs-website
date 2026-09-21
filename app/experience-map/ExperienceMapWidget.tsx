@@ -5,12 +5,13 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./experience-map.css";
 import {
-  MARKERS,
+  EXPERIENCE_CATEGORIES,
   PALETTE,
   PROVINCE_BOUNDARIES,
   earliestYear,
   extractYear,
   normalizeProvinceName,
+  type ExperienceCategory,
   type ExperienceItem,
 } from "@/lib/experience-map/data";
 
@@ -20,14 +21,21 @@ function radiusForCount(count: number) {
   return 4 + Math.sqrt(count) * 3.5;
 }
 
-function RecordCard({ item }: { item: ExperienceItem }) {
-  const icon = item.type === "Contract" ? "📄" : "🔧";
+function RecordCard({
+  item,
+  categoryIcon,
+  categoryLabel,
+}: {
+  item: ExperienceItem;
+  categoryIcon: string;
+  categoryLabel: string;
+}) {
   return (
-    <div className={`exp-rec rec-${item.type}`}>
+    <div className="exp-rec">
       <div className="owner">{item.owner}</div>
       <div className="meta">
-        <span className={`exp-badge ${item.type}`}>
-          {icon} {item.type === "Contract" ? "Kontrak" : "Proyek"}
+        <span className="exp-badge">
+          {categoryIcon} {categoryLabel}
         </span>
         <span>{extractYear(item.date)}</span>
       </div>
@@ -35,7 +43,8 @@ function RecordCard({ item }: { item: ExperienceItem }) {
   );
 }
 
-export default function ExperienceMapWidget() {
+function SingleCategoryMap({ category }: { category: ExperienceCategory }) {
+  const MARKERS = category.markers;
   const mapElRef = useRef<HTMLDivElement | null>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
   const provinceLayerRef = useRef<L.GeoJSON | null>(null);
@@ -59,7 +68,7 @@ export default function ExperienceMapWidget() {
       }
     });
     return colors;
-  }, []);
+  }, [MARKERS]);
 
   const provAgg = useMemo(() => {
     const agg: Record<string, { count: number; locs: number }> = {};
@@ -69,7 +78,7 @@ export default function ExperienceMapWidget() {
       agg[m.prov].locs += 1;
     });
     return agg;
-  }, []);
+  }, [MARKERS]);
 
   const provArr = useMemo(
     () => Object.entries(provAgg).sort((a, b) => b[1].count - a[1].count),
@@ -84,18 +93,16 @@ export default function ExperienceMapWidget() {
     const totalRecords = MARKERS.reduce((s, m) => s + m.count, 0);
     const totalLocs = MARKERS.length;
     const totalProv = Object.keys(provAgg).length;
-    const sinceYear = earliestYear();
+    const sinceYear = earliestYear(MARKERS);
     const allItems = MARKERS.flatMap((m) => m.items);
     const totalClients = new Set(allItems.map((it) => it.owner.trim().toLowerCase())).size;
-    const totalContract = allItems.filter((it) => it.type === "Contract").length;
-    const totalProject = allItems.filter((it) => it.type === "Project").length;
-    return { totalRecords, totalLocs, totalProv, sinceYear, totalClients, totalContract, totalProject };
-  }, [provAgg]);
+    return { totalRecords, totalLocs, totalProv, sinceYear, totalClients };
+  }, [MARKERS, provAgg]);
 
   const legendSteps = useMemo(() => {
     const maxItemCount = Math.max(...MARKERS.map((m) => m.count));
     return Array.from(new Set([1, Math.max(2, Math.round(maxItemCount / 2)), maxItemCount]));
-  }, []);
+  }, [MARKERS]);
 
   const trimmedQuery = query.trim().toLowerCase();
   const searchMatch = useMemo(() => {
@@ -108,7 +115,7 @@ export default function ExperienceMapWidget() {
         " " +
         m.prov +
         " " +
-        m.items.map((it) => it.owner + " " + it.title).join(" ")
+        m.items.map((it) => it.owner).join(" ")
       ).toLowerCase();
       if (hay.includes(trimmedQuery)) {
         matchedLocs.add(m.loc);
@@ -116,7 +123,7 @@ export default function ExperienceMapWidget() {
       }
     });
     return { matchedLocs, matchedProvs };
-  }, [trimmedQuery]);
+  }, [MARKERS, trimmedQuery]);
 
   const resetFilter = useCallback(() => {
     setQuery("");
@@ -218,7 +225,7 @@ export default function ExperienceMapWidget() {
       titleEl.textContent = m.loc;
       const subEl = document.createElement("div");
       subEl.className = "exp-popup-sub";
-      subEl.textContent = `${m.prov}, ${m.count} item pengalaman`;
+      subEl.textContent = `${m.prov}, ${m.count} kontrak`;
       const btnEl = document.createElement("span");
       btnEl.className = "exp-popup-btn";
       btnEl.textContent = "Lihat detail →";
@@ -288,7 +295,7 @@ export default function ExperienceMapWidget() {
     }
     if (bounds.length === 1) map.setView(bounds[0], 7);
     else if (bounds.length > 1) map.fitBounds(bounds, { padding: [60, 60], maxZoom: 8 });
-  }, [activeProv, trimmedQuery, searchMatch]);
+  }, [MARKERS, activeProv, trimmedQuery, searchMatch]);
 
   const showResetLink = query.length > 0 || activeProv !== null;
 
@@ -296,19 +303,17 @@ export default function ExperienceMapWidget() {
     <div className="exp-map-root">
       <div className="exp-header">
         <div>
-          <h2>{"🗺️"} Peta Sebaran Pengalaman Kerja</h2>
+          <h2>
+            {category.icon} Peta Sebaran Pengalaman Kerja
+          </h2>
           <p>
-            PT Adiguna Cakra Semesta (ACS) — Kontrak &amp; Proyek Mud Engineering / Drilling Services di
-            seluruh Indonesia
+            PT Adiguna Cakra Semesta (ACS) — Kontrak {category.label} di seluruh Indonesia
           </p>
         </div>
         <div className="exp-stats">
           <div className="exp-stat" style={{ "--stat-accent": PALETTE[0] } as CSSProperties}>
             <div className="num">{stats.totalRecords}</div>
-            <div className="lbl">Total Item</div>
-            <div className="sub">
-              {stats.totalContract} Kontrak / {stats.totalProject} Proyek
-            </div>
+            <div className="lbl">Total Kontrak</div>
           </div>
           <div className="exp-stat" style={{ "--stat-accent": PALETTE[1] } as CSSProperties}>
             <div className="num">{stats.totalLocs}</div>
@@ -338,21 +343,20 @@ export default function ExperienceMapWidget() {
         <div ref={mapElRef} className="exp-map" />
 
         <div className="exp-legend-box">
-          <div className="lt">Keterangan</div>
+          <div className="lt">
+            Legenda — {category.icon} {category.shortLabel}
+          </div>
           {legendSteps.map((c) => {
             const d = Math.round(radiusForCount(c) * 2);
             return (
               <div className="exp-legend-row" key={c}>
                 <span className="exp-legend-circle" style={{ width: d, height: d }} />
-                {c} item pengalaman
+                {c} kontrak di lokasi ini
               </div>
             );
           })}
           <div className="exp-legend-row" style={{ marginTop: 6 }}>
-            Warna = wilayah / provinsi
-          </div>
-          <div className="exp-legend-row" style={{ marginTop: 6, fontSize: 10, opacity: 0.7 }}>
-            Batas wilayah: GADM v4.1
+            Warna lingkaran &amp; wilayah mengikuti provinsi (lihat daftar provinsi di panel kanan)
           </div>
         </div>
 
@@ -366,7 +370,7 @@ export default function ExperienceMapWidget() {
                 </span>
               ) : null}
             </h3>
-            <div className="sub">Klik wilayah atau titik pada peta untuk melihat detail kontrak/proyek</div>
+            <div className="sub">Klik wilayah atau titik pada peta untuk melihat detail kontrak</div>
             <input
               className="exp-search"
               type="text"
@@ -398,7 +402,7 @@ export default function ExperienceMapWidget() {
                       <span className="exp-prov-name">{prov}</span>
                     </div>
                     <span className="exp-prov-count">
-                      {agg.count} item, {agg.locs} lokasi
+                      {agg.count} kontrak, {agg.locs} lokasi
                     </span>
                   </div>
                   <div className="exp-prov-bar">
@@ -418,10 +422,10 @@ export default function ExperienceMapWidget() {
                     <>
                       <h4>{m.loc}</h4>
                       <div className="exp-prov-tag">
-                        {m.prov}, {m.count} item
+                        {m.prov}, {m.count} kontrak
                       </div>
                       {m.items.map((it, i) => (
-                        <RecordCard item={it} key={i} />
+                        <RecordCard item={it} categoryIcon={category.icon} categoryLabel={category.shortLabel} key={i} />
                       ))}
                     </>
                   );
@@ -437,13 +441,13 @@ export default function ExperienceMapWidget() {
                     <>
                       <h4>{detail.prov}</h4>
                       <div className="exp-prov-tag">
-                        {total} item di {locsInProv.length} lokasi
+                        {total} kontrak di {locsInProv.length} lokasi
                       </div>
                       {locsInProv.map((loc) => (
                         <div key={loc.loc}>
                           <div className="exp-loc-heading">{"📍"} {loc.loc}</div>
                           {loc.items.map((it, i) => (
-                            <RecordCard item={it} key={i} />
+                            <RecordCard item={it} categoryIcon={category.icon} categoryLabel={category.shortLabel} key={i} />
                           ))}
                         </div>
                       ))}
@@ -452,8 +456,34 @@ export default function ExperienceMapWidget() {
                 })()
               : null}
           </div>
+
+          <div className="exp-sidebar-footer">Sumber batas wilayah: GADM v4.1</div>
         </div>
       </div>
+    </div>
+  );
+}
+
+export default function ExperienceMapWidget() {
+  const [activeId, setActiveId] = useState(EXPERIENCE_CATEGORIES[0].id);
+  const activeCategory =
+    EXPERIENCE_CATEGORIES.find((c) => c.id === activeId) ?? EXPERIENCE_CATEGORIES[0];
+
+  return (
+    <div>
+      <div className="exp-tabs">
+        {EXPERIENCE_CATEGORIES.map((cat) => (
+          <button
+            type="button"
+            key={cat.id}
+            className={`exp-tab${cat.id === activeId ? " active" : ""}`}
+            onClick={() => setActiveId(cat.id)}
+          >
+            {cat.icon} {cat.shortLabel}
+          </button>
+        ))}
+      </div>
+      <SingleCategoryMap key={activeCategory.id} category={activeCategory} />
     </div>
   );
 }
