@@ -3,14 +3,14 @@
    Palet warna mengikuti tema situs (light) / panel gelap (dark, lewat .dark .exp-map-root). */
 
 .exp-map-root {
-  --em-bg: #f3f6fb;
-  --em-panel: #ffffff;
-  --em-panel-2: #eef2f9;
-  --em-border: #dbe3f0;
-  --em-text: #111827;
-  --em-muted: #5b6472;
-  --em-accent: #2fb5c8;
-  --em-accent-2: #f4a340;
+  --em-bg: var(--light);
+  --em-panel: var(--surface);
+  --em-panel-2: var(--surface-alt);
+  --em-border: rgba(10, 31, 68, 0.12);
+  --em-text: var(--text-body);
+  --em-muted: var(--gray);
+  --em-accent: var(--red);
+  --em-accent-2: var(--blue);
 
   display: flex;
   flex-direction: column;
@@ -23,17 +23,12 @@
   border: 1px solid var(--em-border);
   background: var(--em-bg);
   color: var(--em-text);
-  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   position: relative;
 }
 
 .dark .exp-map-root {
-  --em-bg: #0b1220;
-  --em-panel: #0f1a2e;
-  --em-panel-2: #13233d;
-  --em-border: #223454;
-  --em-text: #e7edf7;
-  --em-muted: #93a3bf;
+  --em-border: rgba(255, 255, 255, 0.12);
 }
 
 .exp-header {
@@ -58,10 +53,12 @@
   opacity: 0.85;
 }
 .exp-header h2 {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 18px;
+  font-family: var(--font-display), sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   margin: 0;
-  font-weight: 700;
+  font-weight: 400;
 }
 .exp-header p {
   margin: 3px 0 0;
@@ -81,7 +78,7 @@
   min-width: 84px;
 }
 .exp-stat .num {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
   font-size: 18px;
   font-weight: 500;
   color: var(--stat-accent, var(--em-accent));
@@ -194,7 +191,6 @@
 .exp-rec.rec-Contract { border-left-color: var(--em-accent); }
 .exp-rec.rec-Project { border-left-color: var(--em-accent-2); }
 .exp-rec .owner { font-weight: 700; }
-.exp-rec .title { color: var(--em-muted); margin-top: 2px; }
 .exp-rec .meta { margin-top: 5px; display: flex; justify-content: space-between; font-size: 11px; color: var(--em-muted); }
 
 .exp-badge { display: inline-block; padding: 1px 7px; border-radius: 20px; font-size: 10px; font-weight: 700; letter-spacing: 0.3px; }

@@ -9,6 +9,7 @@ import {
   PALETTE,
   PROVINCE_BOUNDARIES,
   earliestYear,
+  extractYear,
   normalizeProvinceName,
   type ExperienceItem,
 } from "@/lib/experience-map/data";
@@ -24,12 +25,11 @@ function RecordCard({ item }: { item: ExperienceItem }) {
   return (
     <div className={`exp-rec rec-${item.type}`}>
       <div className="owner">{item.owner}</div>
-      {item.title ? <div className="title">{item.title}</div> : null}
       <div className="meta">
         <span className={`exp-badge ${item.type}`}>
           {icon} {item.type === "Contract" ? "Kontrak" : "Proyek"}
         </span>
-        <span>{item.date}</span>
+        <span>{extractYear(item.date)}</span>
       </div>
     </div>
   );

@@ -53,6 +53,13 @@ export function normalizeProvinceName(raw: string): string {
   return PROVINCE_LABELS[raw] || raw;
 }
 
+export function extractYear(dateStr: string): string {
+  const years = Array.from(new Set((dateStr.match(/(19|20)\d{2}/g) || [])));
+  if (years.length === 0) return dateStr;
+  if (years.length === 1) return years[0];
+  return `${years[0]}–${years[years.length - 1]}`;
+}
+
 export function earliestYear(): number | null {
   let min: number | null = null;
   const re = /(19|20)\d{2}/g;
@@ -70,17 +77,19 @@ export function earliestYear(): number | null {
   return min;
 }
 
+// Turunan warna brand ACS (navy #0a1f44, biru #1a3a6e, merah #c41e1e) —
+// disusun berselang-seling agar wilayah yang bersebelahan tetap mudah dibedakan.
 export const PALETTE = [
-  "#2fb5c8",
-  "#f4a340",
-  "#e05d5d",
-  "#8b6ce0",
-  "#4caf7d",
-  "#e0c23e",
-  "#5da8e0",
-  "#c9538a",
-  "#7ec850",
-  "#c97f3a",
-  "#5e7ce0",
-  "#e0895d",
+  "#1a3a6e",
+  "#c41e1e",
+  "#4a72a8",
+  "#8f1616",
+  "#0a1f44",
+  "#e2574f",
+  "#2f5590",
+  "#a83232",
+  "#6f8fc2",
+  "#c76b6b",
+  "#12294f",
+  "#6b7280",
 ];
