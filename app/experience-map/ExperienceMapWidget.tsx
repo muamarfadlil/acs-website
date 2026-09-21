@@ -153,6 +153,8 @@ function SingleCategoryMap({ category }: { category: ExperienceCategory }) {
     [resetFilter]
   );
 
+  const closeDetail = useCallback(() => setDetail(null), []);
+
   useEffect(() => {
     showDetailRef.current = showLocDetail;
   }, [showLocDetail]);
@@ -361,101 +363,114 @@ function SingleCategoryMap({ category }: { category: ExperienceCategory }) {
         </div>
 
         <div className={`exp-sidebar${sidebarOpen ? " mobile-open" : ""}`}>
-          <div className="head">
-            <h3>
-              Wilayah Operasi{" "}
-              {showResetLink ? (
-                <span className="exp-reset show" onClick={resetFilter}>
-                  (reset)
-                </span>
-              ) : null}
-            </h3>
-            <div className="sub">Klik wilayah atau titik pada peta untuk melihat detail kontrak</div>
-            <input
-              className="exp-search"
-              type="text"
-              placeholder="Cari klien, lokasi, atau provinsi…"
-              autoComplete="off"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-            />
-          </div>
-
-          <div className="exp-filter-list">
-            {provArr.map(([prov, agg]) => {
-              const pct = Math.round((agg.count / maxProvCount) * 100);
-              const isActive = activeProv === prov;
-              const isMatch = trimmedQuery.length > 0 && searchMatch?.matchedProvs.has(prov);
-              const isDim = trimmedQuery.length > 0 && !isMatch;
-              return (
-                <button
-                  type="button"
-                  key={prov}
-                  className={`exp-prov-row${isActive ? " active" : ""}${isDim ? " dim" : ""}${
-                    isMatch ? " match" : ""
-                  }`}
-                  onClick={() => filterProv(prov)}
-                >
-                  <div className="top-line">
-                    <div className="left">
-                      <span className="exp-dot" style={{ background: provColors[prov] }} />
-                      <span className="exp-prov-name">{prov}</span>
-                    </div>
-                    <span className="exp-prov-count">
-                      {agg.count} kontrak, {agg.locs} lokasi
-                    </span>
-                  </div>
-                  <div className="exp-prov-bar">
-                    <div className="exp-prov-bar-fill" style={{ width: `${pct}%`, background: provColors[prov] }} />
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-
-          <div className={`exp-detail-panel${detail ? " open" : ""}`}>
-            {detail?.kind === "loc"
-              ? (() => {
-                  const m = MARKERS.find((x) => x.loc === detail.loc);
-                  if (!m) return null;
-                  return (
-                    <>
-                      <h4>{m.loc}</h4>
-                      <div className="exp-prov-tag">
-                        {m.prov}, {m.count} kontrak
-                      </div>
-                      {m.items.map((it, i) => (
-                        <RecordCard item={it} categoryIcon={category.icon} categoryLabel={category.shortLabel} key={i} />
-                      ))}
-                    </>
-                  );
-                })()
-              : null}
-            {detail?.kind === "prov"
-              ? (() => {
-                  const locsInProv = MARKERS.filter((m) => m.prov === detail.prov).sort(
-                    (a, b) => b.count - a.count
-                  );
-                  const total = locsInProv.reduce((s, l) => s + l.count, 0);
-                  return (
-                    <>
-                      <h4>{detail.prov}</h4>
-                      <div className="exp-prov-tag">
-                        {total} kontrak di {locsInProv.length} lokasi
-                      </div>
-                      {locsInProv.map((loc) => (
-                        <div key={loc.loc}>
-                          <div className="exp-loc-heading">{"📍"} {loc.loc}</div>
-                          {loc.items.map((it, i) => (
-                            <RecordCard item={it} categoryIcon={category.icon} categoryLabel={category.shortLabel} key={i} />
+          {detail ? (
+            <div className="exp-detail-view">
+              <button type="button" className="exp-back" onClick={closeDetail}>
+                ← Kembali ke daftar wilayah
+              </button>
+              <div className="exp-detail-panel">
+                {detail.kind === "loc"
+                  ? (() => {
+                      const m = MARKERS.find((x) => x.loc === detail.loc);
+                      if (!m) return null;
+                      return (
+                        <>
+                          <h4>{m.loc}</h4>
+                          <div className="exp-prov-tag">
+                            {m.prov}, {m.count} kontrak
+                          </div>
+                          <div className="exp-rec-grid">
+                            {m.items.map((it, i) => (
+                              <RecordCard item={it} categoryIcon={category.icon} categoryLabel={category.shortLabel} key={i} />
+                            ))}
+                          </div>
+                        </>
+                      );
+                    })()
+                  : null}
+                {detail.kind === "prov"
+                  ? (() => {
+                      const locsInProv = MARKERS.filter((m) => m.prov === detail.prov).sort(
+                        (a, b) => b.count - a.count
+                      );
+                      const total = locsInProv.reduce((s, l) => s + l.count, 0);
+                      return (
+                        <>
+                          <h4>{detail.prov}</h4>
+                          <div className="exp-prov-tag">
+                            {total} kontrak di {locsInProv.length} lokasi
+                          </div>
+                          {locsInProv.map((loc) => (
+                            <div key={loc.loc}>
+                              <div className="exp-loc-heading">{"📍"} {loc.loc}</div>
+                              <div className="exp-rec-grid">
+                                {loc.items.map((it, i) => (
+                                  <RecordCard item={it} categoryIcon={category.icon} categoryLabel={category.shortLabel} key={i} />
+                                ))}
+                              </div>
+                            </div>
                           ))}
+                        </>
+                      );
+                    })()
+                  : null}
+              </div>
+            </div>
+          ) : (
+            <div className="exp-list-view">
+              <div className="head">
+                <h3>
+                  Wilayah Operasi{" "}
+                  {showResetLink ? (
+                    <span className="exp-reset show" onClick={resetFilter}>
+                      (reset)
+                    </span>
+                  ) : null}
+                </h3>
+                <div className="sub">Klik wilayah atau titik pada peta untuk melihat detail kontrak</div>
+                <input
+                  className="exp-search"
+                  type="text"
+                  placeholder="Cari klien, lokasi, atau provinsi…"
+                  autoComplete="off"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                />
+              </div>
+
+              <div className="exp-filter-list">
+                {provArr.map(([prov, agg]) => {
+                  const pct = Math.round((agg.count / maxProvCount) * 100);
+                  const isActive = activeProv === prov;
+                  const isMatch = trimmedQuery.length > 0 && searchMatch?.matchedProvs.has(prov);
+                  const isDim = trimmedQuery.length > 0 && !isMatch;
+                  return (
+                    <button
+                      type="button"
+                      key={prov}
+                      className={`exp-prov-row${isActive ? " active" : ""}${isDim ? " dim" : ""}${
+                        isMatch ? " match" : ""
+                      }`}
+                      onClick={() => filterProv(prov)}
+                    >
+                      <div className="top-line">
+                        <div className="left">
+                          <span className="exp-dot" style={{ background: provColors[prov] }} />
+                          <span className="exp-prov-name">{prov}</span>
                         </div>
-                      ))}
-                    </>
+                        <span className="exp-prov-count">
+                          {agg.count} kontrak, {agg.locs} lokasi
+                        </span>
+                      </div>
+                      <div className="exp-prov-bar">
+                        <div className="exp-prov-bar-fill" style={{ width: `${pct}%`, background: provColors[prov] }} />
+                      </div>
+                    </button>
                   );
-                })()
-              : null}
-          </div>
+                })}
+              </div>
+            </div>
+          )}
 
           <div className="exp-sidebar-footer">Sumber batas wilayah: GADM v4.1</div>
         </div>

@@ -125,8 +125,8 @@
 }
 
 .exp-sidebar {
-  width: 360px;
-  max-width: 40vw;
+  width: 440px;
+  max-width: 42vw;
   background: var(--em-panel);
   border-left: 1px solid var(--em-border);
   display: flex;
@@ -136,6 +136,30 @@
 .exp-sidebar .head { padding: 14px 16px 10px; border-bottom: 1px solid var(--em-border); }
 .exp-sidebar .head h3 { margin: 0 0 4px; font-size: 14.5px; }
 .exp-sidebar .head .sub { font-size: 12px; color: var(--em-muted); }
+
+.exp-list-view,
+.exp-detail-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.exp-back {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 14px 16px;
+  border: none;
+  border-bottom: 1px solid var(--em-border);
+  background: var(--em-panel-2);
+  color: var(--em-accent);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.exp-back:hover { background: var(--em-border); }
 
 .exp-search {
   width: 100%;
@@ -201,16 +225,20 @@
 }
 
 .exp-detail-panel {
-  border-top: 1px solid var(--em-border);
-  max-height: 46%;
+  flex: 1;
+  min-height: 0;
   overflow-y: auto;
-  padding: 12px 16px 18px;
-  display: none;
+  padding: 14px 16px 20px;
 }
-.exp-detail-panel.open { display: block; }
-.exp-detail-panel h4 { margin: 0 0 2px; font-size: 14px; }
-.exp-prov-tag { font-size: 11px; color: var(--em-accent); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
-.exp-loc-heading { font-weight: 700; font-size: 12.5px; margin: 10px 0 4px; color: var(--em-muted); }
+.exp-detail-panel h4 { margin: 0 0 2px; font-size: 16px; }
+.exp-prov-tag { font-size: 11px; color: var(--em-accent); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+.exp-loc-heading { font-weight: 700; font-size: 13px; margin: 14px 0 6px; color: var(--em-muted); }
+
+.exp-rec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 8px;
+}
 
 .exp-rec {
   background: var(--em-panel-2);
@@ -218,7 +246,6 @@
   border-left: 3px solid var(--em-accent);
   border-radius: 6px;
   padding: 9px 11px;
-  margin-bottom: 8px;
   font-size: 12.3px;
   line-height: 1.45;
 }
