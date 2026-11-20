@@ -21,9 +21,10 @@ export default function ContactSection() {
           <div
             className="
               reveal
-              bg-gradient-to-br from-[#0d2559] via-[#0a1f44] to-[#091532]
+              bg-gradient-to-br from-[#f4f2ef] via-[#efeeec] to-[#e6e3dd]
+              dark:from-[#0d2559] dark:via-[#0a1f44] dark:to-[#091532]
               rounded overflow-hidden relative mb-16
-              shadow-[0_16px_64px_rgba(10,31,68,0.35)]
+              shadow-[0_16px_64px_rgba(10,31,68,0.12)] dark:shadow-[0_16px_64px_rgba(10,31,68,0.35)]
             "
           >
             {/* Garis merah atas */}
@@ -46,12 +47,12 @@ export default function ContactSection() {
 
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 p-10 md:p-14">
               <div className="text-center md:text-left">
-                <h2 className="font-['Bebas_Neue'] text-4xl md:text-5xl text-white tracking-wide leading-tight mb-3">
+                <h2 className="font-['Bebas_Neue'] text-4xl md:text-5xl text-[#0a1f44] dark:text-white tracking-wide leading-tight mb-3">
                   Siap Bekerja Sama?
                   <br />
                   <span className="text-[#c41e1e]">Mari Berdiskusi</span>
                 </h2>
-                <p className="text-white/60 text-sm max-w-md leading-relaxed">
+                <p className="text-[#0a1f44]/60 dark:text-white/60 text-sm max-w-md leading-relaxed">
                   Tim ahli kami siap membantu Anda merancang solusi fluida pemboran
                   dan sementasi yang tepat untuk operasi Anda.
                 </p>
@@ -62,10 +63,10 @@ export default function ContactSection() {
                   href="/contact"
                   className="
                     inline-flex items-center justify-center gap-2
-                    bg-[#c41e1e] text-white
+                    bg-gradient-to-br from-[#d6241c] via-[#c41e1e] to-[#8f1414] text-white
                     px-8 py-3.5 font-semibold text-sm rounded
                     shadow-[0_4px_20px_rgba(196,30,30,0.4)]
-                    hover:bg-[#a01818] hover:-translate-y-0.5
+                    hover:brightness-110 hover:-translate-y-0.5
                     hover:shadow-[0_8px_28px_rgba(196,30,30,0.5)]
                     transition-all duration-200
                   "
@@ -77,9 +78,10 @@ export default function ContactSection() {
                   href={`tel:${company.phone}`}
                   className="
                     inline-flex items-center justify-center gap-2
-                    border-2 border-white/30 text-white
+                    border-2 border-[#0a1f44]/30 text-[#0a1f44] dark:border-white/30 dark:text-white
                     px-8 py-3.5 font-semibold text-sm rounded
-                    hover:border-white hover:bg-white/10
+                    hover:border-[#0a1f44] hover:bg-gradient-to-br hover:from-[#0a1f44]/10 hover:to-transparent
+                    dark:hover:border-white dark:hover:from-white/15 dark:hover:to-transparent
                     hover:-translate-y-0.5
                     transition-all duration-200
                   "
@@ -97,7 +99,7 @@ export default function ContactSection() {
             <div
               className="
                 reveal-scale
-                bg-white dark:bg-[#0a1f44] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
+                bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
                 hover:border-[#c41e1e]/30 hover:shadow-lg hover:-translate-y-1
                 transition-all duration-300
               "
@@ -128,7 +130,7 @@ export default function ContactSection() {
             <div
               className="
                 reveal-scale reveal-delay-1
-                bg-white dark:bg-[#0a1f44] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
+                bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
                 hover:border-[#c41e1e]/30 hover:shadow-lg hover:-translate-y-1
                 transition-all duration-300
               "
@@ -169,7 +171,7 @@ export default function ContactSection() {
             <div
               className="
                 reveal-scale reveal-delay-2
-                bg-white dark:bg-[#0a1f44] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
+                bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
                 hover:border-[#c41e1e]/30 hover:shadow-lg hover:-translate-y-1
                 transition-all duration-300
               "
@@ -208,7 +210,7 @@ export default function ContactSection() {
       </section>
 
       {/* ===== FOOTER ===== */}
-      <footer className="bg-gradient-to-b from-[#060e1e] to-[#040d1a] border-t border-white/5">
+      <footer className="bg-gradient-to-br from-[#0d2559] via-[#0a1424] to-[#040d1a] border-t border-white/5">
         {/* Garis aksen atas */}
         <div className="h-[2px] bg-gradient-to-r from-transparent via-[#c41e1e]/60 to-transparent" />
 

@@ -26,14 +26,24 @@ export default function Services() {
     <section
       id="services"
       ref={sectionRef}
-      className="py-24 bg-[#0a1f44] relative overflow-hidden"
+      className="py-24 bg-gradient-to-br from-[#f2f0ed] via-[#efeeec] to-[#e2dfd8] dark:from-[#102a52] dark:via-[#0a1f44] dark:to-[#061328] relative overflow-hidden"
     >
       {/* Background gradient depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#091532] via-[#0a1f44] to-[#091532]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#e8e5df] via-transparent to-[#e8e5df] dark:from-[#091532] dark:via-transparent dark:to-[#091532]" />
 
-      {/* Pattern geometris tipis */}
+      {/* Pattern geometris tipis — versi mode siang (garis navy) & mode malam (garis putih) */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.05] dark:hidden"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(10,31,68,0.8) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(10,31,68,0.8) 1px, transparent 1px)
+          `,
+          backgroundSize: "60px 60px",
+        }}
+      />
+      <div
+        className="absolute inset-0 opacity-[0.04] hidden dark:block"
         style={{
           backgroundImage: `
             linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px),
@@ -57,12 +67,12 @@ export default function Services() {
             </span>
             <span className="w-10 h-0.5 bg-[#c41e1e]" />
           </div>
-          <h2 className="reveal font-['Bebas_Neue'] text-5xl lg:text-6xl text-white tracking-wide leading-tight">
+          <h2 className="reveal font-['Bebas_Neue'] text-5xl lg:text-6xl text-[#0a1f44] dark:text-white tracking-wide leading-tight">
             Solusi Lengkap untuk
             <br />
             <span className="text-[#c41e1e]">Operasi Pengeboran</span>
           </h2>
-          <p className="reveal reveal-delay-1 text-white/60 text-base max-w-2xl mx-auto mt-4 leading-relaxed">
+          <p className="reveal reveal-delay-1 text-[#0a1f44]/60 dark:text-white/60 text-base max-w-2xl mx-auto mt-4 leading-relaxed">
             Dari perencanaan fluida pemboran hingga sementasi sumur — kami
             menyediakan layanan terintegrasi yang memastikan operasi Anda
             berjalan efisien, aman, dan menguntungkan.
@@ -79,11 +89,12 @@ export default function Services() {
                 className={`
                   reveal-scale reveal-delay-${idx + 1}
                   group relative
-                  bg-gradient-to-b from-[#0f2449] to-[#091532]
-                  border border-white/10 rounded overflow-hidden
+                  bg-gradient-to-b from-white to-[#f5f3f0] dark:from-[#0f2449] dark:to-[#091532]
+                  border border-[#0a1f44]/10 dark:border-white/10 rounded overflow-hidden
                   hover:border-[#c41e1e]/50
                   hover:-translate-y-1.5
-                  hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)]
+                  shadow-[0_8px_24px_rgba(10,31,68,0.08)] hover:shadow-[0_12px_40px_rgba(10,31,68,0.14)]
+                  dark:shadow-none dark:hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)]
                   transition-all duration-300
                 `}
               >
@@ -109,12 +120,12 @@ export default function Services() {
                   </div>
 
                   {/* Judul */}
-                  <h3 className="font-['Bebas_Neue'] text-2xl text-white tracking-wide leading-tight mb-3">
+                  <h3 className="font-['Bebas_Neue'] text-2xl text-[#0a1f44] dark:text-white tracking-wide leading-tight mb-3">
                     {service.title}
                   </h3>
 
                   {/* Deskripsi */}
-                  <p className="text-white/55 text-sm leading-relaxed mb-5">
+                  <p className="text-gray-600 dark:text-white/55 text-sm leading-relaxed mb-5">
                     {service.description}
                   </p>
 
@@ -126,14 +137,14 @@ export default function Services() {
                           size={14}
                           className="text-[#c41e1e] flex-shrink-0 mt-0.5"
                         />
-                        <span className="text-white/70 text-xs leading-snug">{feature}</span>
+                        <span className="text-gray-600 dark:text-white/70 text-xs leading-snug">{feature}</span>
                       </div>
                     ))}
                   </div>
 
                   <a
                     href="#contact"
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#c41e1e] hover:text-white border-b border-[#c41e1e]/40 hover:border-white pb-0.5 transition-all duration-200 group/link"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#c41e1e] hover:text-[#0a1f44] dark:hover:text-white border-b border-[#c41e1e]/40 hover:border-[#0a1f44] dark:hover:border-white pb-0.5 transition-all duration-200 group/link"
                   >
                     Pelajari lebih lanjut
                     <ArrowRight
@@ -148,8 +159,8 @@ export default function Services() {
         </div>
 
         {/* === SUPPLY CHAIN SERVICES === */}
-        <div className="reveal mt-12 border border-white/10 rounded p-8 bg-gradient-to-br from-[#0f2449] to-[#091532] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
-          <h3 className="text-white font-semibold text-center mb-8 text-sm uppercase tracking-widest">
+        <div className="reveal mt-12 border border-[#0a1f44]/10 dark:border-white/10 rounded p-8 bg-white dark:bg-gradient-to-br dark:from-[#0f2449] dark:to-[#091532] shadow-[0_4px_20px_rgba(10,31,68,0.06)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+          <h3 className="text-[#0a1f44] dark:text-white font-semibold text-center mb-8 text-sm uppercase tracking-widest">
             Dukungan Rantai Pasokan
           </h3>
           <div className="grid md:grid-cols-3 gap-6 text-center">
@@ -169,11 +180,11 @@ export default function Services() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center group px-2 py-4 rounded hover:bg-white/5 transition-colors duration-200"
+                className="flex flex-col items-center group px-2 py-4 rounded hover:bg-[#0a1f44]/5 dark:hover:bg-white/5 transition-colors duration-200"
               >
                 <div className="w-8 h-0.5 bg-[#c41e1e] mb-4 group-hover:w-12 transition-all duration-300" />
-                <h4 className="text-white font-semibold text-sm mb-2">{item.title}</h4>
-                <p className="text-white/50 text-xs leading-relaxed">{item.desc}</p>
+                <h4 className="text-[#0a1f44] dark:text-white font-semibold text-sm mb-2">{item.title}</h4>
+                <p className="text-gray-600 dark:text-white/50 text-xs leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>

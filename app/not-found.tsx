@@ -28,10 +28,13 @@ export default function NotFound() {
           href="/"
           className="
             inline-flex items-center gap-2
-            bg-[#0a1f44] dark:bg-white/10 text-white
+            bg-gradient-to-br from-[#14305c] via-[#0a1f44] to-[#071530]
+            dark:from-white/15 dark:via-white/10 dark:to-white/5 text-white
             px-6 py-3 font-semibold text-sm rounded
             border border-transparent dark:border-white/20
-            hover:bg-[#c41e1e] dark:hover:bg-[#c41e1e] transition-colors duration-200
+            hover:from-[#d6241c] hover:via-[#c41e1e] hover:to-[#8f1414]
+            dark:hover:from-[#d6241c] dark:hover:via-[#c41e1e] dark:hover:to-[#8f1414]
+            transition-all duration-200
           "
         >
           <Home size={15} />

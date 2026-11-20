@@ -110,7 +110,7 @@ function ContactPageContent() {
   return (
     <div className="min-h-screen bg-[#f5f8fc] dark:bg-[#091832] transition-colors duration-300">
       {/* ===== HERO HALAMAN ===== */}
-      <div className="bg-[#0a1f44] relative overflow-hidden">
+      <div className="bg-[#efeeec] dark:bg-[#0a1f44] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -124,7 +124,7 @@ function ContactPageContent() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-white/50 hover:text-white text-sm mb-6 transition-colors"
+            className="inline-flex items-center gap-2 text-[#0a1f44]/60 hover:text-[#0a1f44] dark:text-white/50 dark:hover:text-white text-sm mb-6 transition-colors"
           >
             <ArrowLeft size={14} /> Kembali ke Beranda
           </Link>
@@ -137,13 +137,13 @@ function ContactPageContent() {
               <p className="text-[#c41e1e] text-xs font-semibold uppercase tracking-[0.2em]">
                 Hubungi Kami
               </p>
-              <h1 className="font-['Bebas_Neue'] text-5xl text-white tracking-wide leading-tight">
+              <h1 className="font-['Bebas_Neue'] text-5xl text-[#0a1f44] dark:text-white tracking-wide leading-tight">
                 Kontak
               </h1>
             </div>
           </div>
 
-          <p className="text-white/60 text-base max-w-2xl leading-relaxed">
+          <p className="text-[#0a1f44]/60 dark:text-white/60 text-base max-w-2xl leading-relaxed">
             Tim ahli kami siap menjawab pertanyaan Anda mengenai layanan
             drilling fluids, cementing, dan mud logging. Kirim pesan atau
             hubungi kami langsung.
@@ -156,7 +156,7 @@ function ContactPageContent() {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* ===== FORM KONTAK (2/3 lebar) ===== */}
           <div className="lg:col-span-2">
-            <div className="reveal bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
+            <div className="reveal bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
               <div className="bg-[#0a1f44] dark:bg-[#091832] px-6 py-4 flex items-center gap-3">
                 <Send size={16} className="text-[#c41e1e]" />
                 <h2 className="text-white font-bold text-sm uppercase tracking-wide">
@@ -312,9 +312,9 @@ function ContactPageContent() {
                     className="
                       w-full sm:w-auto
                       inline-flex items-center justify-center gap-2
-                      bg-[#c41e1e] text-white
+                      bg-gradient-to-br from-[#d6241c] via-[#c41e1e] to-[#8f1414] text-white
                       px-10 py-3.5 font-semibold text-sm rounded
-                      hover:bg-[#a01818] transition-colors duration-200
+                      hover:brightness-110 transition-all duration-200
                       disabled:opacity-60 disabled:cursor-not-allowed
                     "
                   >
@@ -357,7 +357,7 @@ function ContactPageContent() {
           {/* ===== INFO KONTAK (1/3 lebar) ===== */}
           <div className="space-y-5">
             {/* Alamat */}
-            <div className="reveal bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
+            <div className="reveal bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-9 h-9 bg-[#c41e1e] rounded flex items-center justify-center">
                   <MapPin size={16} className="text-white" />
@@ -385,7 +385,7 @@ function ContactPageContent() {
             </div>
 
             {/* Telepon & Email */}
-            <div className="reveal reveal-delay-1 bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6 space-y-4">
+            <div className="reveal reveal-delay-1 bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6 space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 bg-[#0a1f44] rounded flex items-center justify-center">
                   <Phone size={16} className="text-white" />
@@ -473,7 +473,7 @@ function ContactPageContent() {
             </div>
 
             {/* Peta Lokasi */}
-            <div className="reveal reveal-delay-3 bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
+            <div className="reveal reveal-delay-3 bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
               <div className="relative aspect-video">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d333.1843841007858!2d106.67906508702487!3d-6.293378507241656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTcnMzUuOSJTIDEwNsKwNDAnNDQuOSJF!5e1!3m2!1sen!2sid!4v1786020634961!5m2!1sen!2sid"

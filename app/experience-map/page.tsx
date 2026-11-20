@@ -12,7 +12,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 const ExperienceMapWidget = dynamic(() => import("./ExperienceMapWidget"), {
   ssr: false,
   loading: () => (
-    <div className="h-[78vh] min-h-[560px] max-h-[860px] w-full rounded-xl border border-[#0a1f44]/10 dark:border-white/10 bg-white dark:bg-[#0a1f44] flex items-center justify-center">
+    <div className="h-[78vh] min-h-[560px] max-h-[860px] w-full rounded-xl border border-[#0a1f44]/10 dark:border-white/10 bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] flex items-center justify-center">
       <p className="text-gray-400 dark:text-white/40 text-sm">Memuat peta…</p>
     </div>
   ),
@@ -25,7 +25,7 @@ export default function ExperienceMapPage() {
   return (
     <div className="min-h-screen bg-[#f5f8fc] dark:bg-[#091832] transition-colors duration-300">
       {/* ===== HERO HALAMAN ===== */}
-      <div className="bg-[#0a1f44] relative overflow-hidden">
+      <div className="bg-[#efeeec] dark:bg-[#0a1f44] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -40,7 +40,7 @@ export default function ExperienceMapPage() {
           <Link
             href="/"
             className="
-              inline-flex items-center gap-2 text-white/50 hover:text-white
+              inline-flex items-center gap-2 text-[#0a1f44]/60 hover:text-[#0a1f44] dark:text-white/50 dark:hover:text-white
               text-sm mb-6 transition-colors
             "
           >
@@ -56,13 +56,13 @@ export default function ExperienceMapPage() {
               <p className="text-[#c41e1e] text-xs font-semibold uppercase tracking-[0.2em]">
                 Rekam Jejak
               </p>
-              <h1 className="font-['Bebas_Neue'] text-5xl text-white tracking-wide leading-tight">
+              <h1 className="font-['Bebas_Neue'] text-5xl text-[#0a1f44] dark:text-white tracking-wide leading-tight">
                 Peta Sebaran Pengalaman Kerja
               </h1>
             </div>
           </div>
 
-          <p className="text-white/60 text-base max-w-2xl leading-relaxed">
+          <p className="text-[#0a1f44]/60 dark:text-white/60 text-base max-w-2xl leading-relaxed">
             Jelajahi sebaran kontrak layanan Drilling &amp; Completion Fluids maupun Cementing
             PT ACS di seluruh Indonesia secara interaktif — pilih kategori layanan, klik wilayah
             pada peta, atau cari klien, lokasi, maupun provinsi untuk melihat detail riwayat kerja.

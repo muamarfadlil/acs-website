@@ -114,7 +114,7 @@ export default function Sidebar() {
               transition-all duration-200 group
               ${
                 pathname === "/"
-                  ? "bg-[#c41e1e] text-white shadow-[0_4px_12px_rgba(196,30,30,0.35)]"
+                  ? "bg-gradient-to-br from-[#d6241c] via-[#c41e1e] to-[#8f1414] text-white shadow-[0_4px_12px_rgba(196,30,30,0.35)]"
                   : "text-white/70 hover:text-white hover:bg-white/8"
               }
             `}
@@ -148,7 +148,7 @@ export default function Sidebar() {
                   transition-all duration-200 group
                   ${
                     isActive
-                      ? "bg-[#c41e1e] text-white shadow-[0_4px_12px_rgba(196,30,30,0.35)]"
+                      ? "bg-gradient-to-br from-[#d6241c] via-[#c41e1e] to-[#8f1414] text-white shadow-[0_4px_12px_rgba(196,30,30,0.35)]"
                       : "text-white/70 hover:text-white hover:bg-white/8"
                   }
                 `}

@@ -47,7 +47,7 @@ export default function CareerPage() {
     <div className="min-h-screen bg-[#f5f8fc] dark:bg-[#091832] transition-colors duration-300">
 
       {/* ===== HERO HALAMAN ===== */}
-      <div className="bg-[#0a1f44] relative overflow-hidden">
+      <div className="bg-[#efeeec] dark:bg-[#0a1f44] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -61,7 +61,7 @@ export default function CareerPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-white/50 hover:text-white text-sm mb-6 transition-colors"
+            className="inline-flex items-center gap-2 text-[#0a1f44]/60 hover:text-[#0a1f44] dark:text-white/50 dark:hover:text-white text-sm mb-6 transition-colors"
           >
             <ArrowLeft size={14} /> Kembali ke Beranda
           </Link>
@@ -74,13 +74,13 @@ export default function CareerPage() {
               <p className="text-[#c41e1e] text-xs font-semibold uppercase tracking-[0.2em]">
                 Bergabung Bersama Kami
               </p>
-              <h1 className="font-['Bebas_Neue'] text-5xl text-white tracking-wide leading-tight">
+              <h1 className="font-['Bebas_Neue'] text-5xl text-[#0a1f44] dark:text-white tracking-wide leading-tight">
                 Karir
               </h1>
             </div>
           </div>
 
-          <p className="text-white/60 text-base max-w-2xl leading-relaxed">
+          <p className="text-[#0a1f44]/60 dark:text-white/60 text-base max-w-2xl leading-relaxed">
             PT ACS terdiri dari para profesional berpengalaman yang berdedikasi di bidang
             teknik fluida pemboran dan sementasi. Kami selalu mencari individu berbakat
             untuk bergabung dan berkembang bersama kami.
@@ -106,7 +106,7 @@ export default function CareerPage() {
                 key={job.id}
                 className={`
                   reveal-left reveal-delay-${Math.min(idx + 1, 4)}
-                  bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden
+                  bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden
                   hover:border-[#c41e1e]/30 hover:shadow-md
                   transition-all duration-200 group
                 `}
@@ -166,11 +166,14 @@ export default function CareerPage() {
                     href={`/contact?subject=career&job=${encodeURIComponent(job.title)}`}
                     className="
                       inline-flex items-center gap-2
-                      bg-[#0a1f44] dark:bg-white/10 text-white
+                      bg-gradient-to-br from-[#14305c] via-[#0a1f44] to-[#071530]
+                      dark:from-white/15 dark:via-white/10 dark:to-white/5 text-white
                       px-5 py-2.5 text-xs font-semibold rounded
                       border border-transparent dark:border-white/20
-                      hover:bg-[#c41e1e] dark:hover:bg-[#c41e1e] transition-colors duration-200
-                      group-hover:bg-[#c41e1e]
+                      hover:from-[#d6241c] hover:via-[#c41e1e] hover:to-[#8f1414]
+                      dark:hover:from-[#d6241c] dark:hover:via-[#c41e1e] dark:hover:to-[#8f1414]
+                      transition-all duration-200
+                      group-hover:from-[#d6241c] group-hover:via-[#c41e1e] group-hover:to-[#8f1414]
                     "
                   >
                     Lamar Posisi Ini
@@ -185,7 +188,7 @@ export default function CareerPage() {
           <div className="space-y-6">
 
             {/* Keuntungan bekerja di ACS */}
-            <div className="reveal-right bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
+            <div className="reveal-right bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
               <h3 className="font-bold text-[#0a1f44] dark:text-white text-sm uppercase tracking-wide mb-4">
                 Keuntungan Bergabung
               </h3>
@@ -245,10 +248,13 @@ export default function CareerPage() {
                 href="mailto:adiguna@acs-indonesia.com?subject=CV%20Spontan%20-%20[Nama%20Anda]"
                 className="
                   inline-flex items-center gap-2
-                  bg-[#0a1f44] dark:bg-white/10 text-white
+                  bg-gradient-to-br from-[#14305c] via-[#0a1f44] to-[#071530]
+                  dark:from-white/15 dark:via-white/10 dark:to-white/5 text-white
                   px-5 py-2.5 text-xs font-semibold rounded
                   border border-transparent dark:border-white/20
-                  hover:bg-[#c41e1e] dark:hover:bg-[#c41e1e] transition-colors duration-200
+                  hover:from-[#d6241c] hover:via-[#c41e1e] hover:to-[#8f1414]
+                  dark:hover:from-[#d6241c] dark:hover:via-[#c41e1e] dark:hover:to-[#8f1414]
+                  transition-all duration-200
                 "
               >
                 Kirim CV via Email

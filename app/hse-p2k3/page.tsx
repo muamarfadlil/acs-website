@@ -55,7 +55,7 @@ export default function HseP2k3Page() {
   return (
     <div className="min-h-screen bg-[#f5f8fc] dark:bg-[#091832] transition-colors duration-300">
       {/* ===== HERO HALAMAN ===== */}
-      <div className="bg-[#0a1f44] relative overflow-hidden">
+      <div className="bg-[#efeeec] dark:bg-[#0a1f44] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -69,7 +69,7 @@ export default function HseP2k3Page() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-white/50 hover:text-white text-sm mb-6 transition-colors"
+            className="inline-flex items-center gap-2 text-[#0a1f44]/60 hover:text-[#0a1f44] dark:text-white/50 dark:hover:text-white text-sm mb-6 transition-colors"
           >
             <ArrowLeft size={14} /> Kembali ke Beranda
           </Link>
@@ -82,13 +82,13 @@ export default function HseP2k3Page() {
               <p className="text-[#c41e1e] text-xs font-semibold uppercase tracking-[0.2em]">
                 Tanggung Jawab Sosial
               </p>
-              <h1 className="font-['Bebas_Neue'] text-5xl text-white tracking-wide leading-tight">
+              <h1 className="font-['Bebas_Neue'] text-5xl text-[#0a1f44] dark:text-white tracking-wide leading-tight">
                 HSE &amp; P2K3
               </h1>
             </div>
           </div>
 
-          <p className="text-white/60 text-base max-w-2xl leading-relaxed">
+          <p className="text-[#0a1f44]/60 dark:text-white/60 text-base max-w-2xl leading-relaxed">
             Dokumentasi kegiatan Health, Safety &amp; Environment (HSE), Panitia
             Pembina Keselamatan dan Kesehatan Kerja (P2K3), dan tanggung jawab
             sosial perusahaan (CSR) PT Adiguna Cakra Semesta — komitmen kami
@@ -108,7 +108,7 @@ export default function HseP2k3Page() {
                 px-4 py-2 text-xs font-semibold rounded transition-all duration-200
                 ${
                   category === c
-                    ? "bg-[#0a1f44] dark:bg-white/10 text-white border border-transparent dark:border-white/20"
+                    ? "bg-gradient-to-br from-[#14305c] via-[#0a1f44] to-[#071530] dark:from-white/15 dark:via-white/10 dark:to-white/5 text-white border border-transparent dark:border-white/20"
                     : "bg-white dark:bg-white/5 text-[#0a1f44] dark:text-white/70 border border-[#0a1f44]/10 dark:border-white/10 hover:border-[#c41e1e]/40"
                 }
               `}
@@ -129,7 +129,7 @@ export default function HseP2k3Page() {
                 px-4 py-2 text-xs font-semibold rounded transition-all duration-200
                 ${
                   year === y
-                    ? "bg-[#c41e1e] text-white"
+                    ? "bg-gradient-to-br from-[#d6241c] via-[#c41e1e] to-[#8f1414] text-white"
                     : "bg-white dark:bg-white/5 text-[#0a1f44] dark:text-white/70 border border-[#0a1f44]/10 dark:border-white/10 hover:border-[#c41e1e]/40"
                 }
               `}
@@ -153,7 +153,7 @@ export default function HseP2k3Page() {
                 key={activity.id}
                 className={`
                   reveal-scale reveal-delay-${(idx % 4) + 1}
-                  bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10
+                  bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10
                   overflow-hidden hover:border-[#c41e1e]/30 hover:shadow-md
                   transition-all duration-200
                 `}

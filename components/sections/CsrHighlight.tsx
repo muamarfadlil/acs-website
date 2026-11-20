@@ -21,7 +21,7 @@ export default function CsrHighlight() {
     .slice(0, 3);
 
   return (
-    <section id="csr" ref={sectionRef} className="py-24 bg-white dark:bg-[#0a1f44] transition-colors duration-300">
+    <section id="csr" ref={sectionRef} className="py-24 bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="reveal flex items-center justify-center gap-3 mb-4">
@@ -89,10 +89,13 @@ export default function CsrHighlight() {
             href="/hse-p2k3"
             className="
               inline-flex items-center gap-2
-              bg-[#0a1f44] dark:bg-white/10 text-white
+              bg-gradient-to-br from-[#14305c] via-[#0a1f44] to-[#071530]
+              dark:from-white/15 dark:via-white/10 dark:to-white/5 text-white
               px-7 py-3 font-semibold text-sm rounded
               border border-transparent dark:border-white/20
-              hover:bg-[#c41e1e] dark:hover:bg-[#c41e1e] transition-all duration-200
+              hover:from-[#d6241c] hover:via-[#c41e1e] hover:to-[#8f1414]
+              dark:hover:from-[#d6241c] dark:hover:via-[#c41e1e] dark:hover:to-[#8f1414]
+              transition-all duration-200
             "
           >
             Lihat Semua Kegiatan

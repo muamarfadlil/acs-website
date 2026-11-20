@@ -26,7 +26,7 @@ export default function LaboratoryPage() {
     <div className="min-h-screen bg-[#f5f8fc] dark:bg-[#091832] transition-colors duration-300">
 
       {/* ===== HERO HALAMAN ===== */}
-      <div className="bg-[#0a1f44] relative overflow-hidden">
+      <div className="bg-[#efeeec] dark:bg-[#0a1f44] relative overflow-hidden">
         {/* Pattern */}
         <div
           className="absolute inset-0 opacity-10"
@@ -43,7 +43,7 @@ export default function LaboratoryPage() {
           <Link
             href="/"
             className="
-              inline-flex items-center gap-2 text-white/50 hover:text-white
+              inline-flex items-center gap-2 text-[#0a1f44]/60 hover:text-[#0a1f44] dark:text-white/50 dark:hover:text-white
               text-sm mb-6 transition-colors
             "
           >
@@ -63,14 +63,14 @@ export default function LaboratoryPage() {
                 Fasilitas
               </p>
               <h1 className="
-                font-['Bebas_Neue'] text-5xl text-white tracking-wide leading-tight
+                font-['Bebas_Neue'] text-5xl text-[#0a1f44] dark:text-white tracking-wide leading-tight
               ">
                 Laboratorium
               </h1>
             </div>
           </div>
 
-          <p className="text-white/60 text-base max-w-2xl leading-relaxed">
+          <p className="text-[#0a1f44]/60 dark:text-white/60 text-base max-w-2xl leading-relaxed">
             Laboratorium PT ACS berlokasi di kantor pusat BSD, Tangerang Selatan.
             Dilengkapi dengan peralatan uji berstandar API dan software dari Pegasus Vertex, Inc.
             untuk mendukung perencanaan dan pemantauan fluida pemboran.
@@ -86,7 +86,7 @@ export default function LaboratoryPage() {
           <div className="lg:col-span-2 space-y-8">
 
             {/* PERALATAN LAB */}
-            <div className="reveal-left bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
+            <div className="reveal-left bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
               <div className="bg-[#0a1f44] px-6 py-4 flex items-center gap-3">
                 <FlaskConical size={18} className="text-[#c41e1e]" />
                 <h2 className="text-white font-bold text-sm uppercase tracking-wide">
@@ -119,7 +119,7 @@ export default function LaboratoryPage() {
             </div>
 
             {/* SOFTWARE */}
-            <div className="reveal-left reveal-delay-1 bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
+            <div className="reveal-left reveal-delay-1 bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
               <div className="bg-[#1a3a6e] px-6 py-4 flex items-center gap-3">
                 <Monitor size={18} className="text-[#c41e1e]" />
                 <h2 className="text-white font-bold text-sm uppercase tracking-wide">
@@ -165,7 +165,7 @@ export default function LaboratoryPage() {
           <div className="space-y-6">
 
             {/* LOKASI FASILITAS */}
-            <div className="reveal-right bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
+            <div className="reveal-right bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
               <h3 className="font-bold text-[#0a1f44] dark:text-white text-sm mb-4 uppercase tracking-wide">
                 Lokasi Fasilitas
               </h3>
@@ -250,9 +250,9 @@ export default function LaboratoryPage() {
                 href="/contact"
                 className="
                   inline-flex items-center gap-2
-                  bg-[#c41e1e] text-white
+                  bg-gradient-to-br from-[#d6241c] via-[#c41e1e] to-[#8f1414] text-white
                   px-5 py-2.5 text-xs font-semibold rounded
-                  hover:bg-[#a01818] transition-colors
+                  hover:brightness-110 transition-all
                 "
               >
                 Hubungi Kami

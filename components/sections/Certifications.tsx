@@ -10,7 +10,7 @@ export default function Certifications() {
   useScrollReveal(sectionRef);
 
   return (
-    <section id="certifications" ref={sectionRef} className="py-24 bg-white dark:bg-[#0a1f44] transition-colors duration-300">
+    <section id="certifications" ref={sectionRef} className="py-24 bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* === HEADER === */}

@@ -31,8 +31,8 @@ export default function Header() {
           fixed top-0 left-0 right-0 z-40 transition-all duration-300
           ${
             scrolled
-              ? "bg-[#0a1f44] shadow-[0_4px_24px_rgba(0,0,0,0.4)] border-b border-white/5"
-              : "bg-[#0a1f44]/95 backdrop-blur-sm"
+              ? "bg-gradient-to-r from-[#102a52] via-[#0a1f44] to-[#071530] shadow-[0_4px_24px_rgba(0,0,0,0.4)] border-b border-white/5"
+              : "bg-gradient-to-r from-[#102a52]/95 via-[#0a1f44]/95 to-[#071530]/95 backdrop-blur-sm"
           }
         `}
       >
@@ -120,9 +120,9 @@ export default function Header() {
                 className="
                   hidden sm:flex items-center gap-1.5
                   px-4 py-2 text-sm font-semibold
-                  bg-[#c41e1e] text-white rounded
+                  bg-gradient-to-br from-[#d6241c] via-[#c41e1e] to-[#8f1414] text-white rounded
                   shadow-[0_2px_12px_rgba(196,30,30,0.35)]
-                  hover:bg-[#a01818] hover:shadow-[0_4px_16px_rgba(196,30,30,0.5)]
+                  hover:brightness-110 hover:shadow-[0_4px_16px_rgba(196,30,30,0.5)]
                   hover:-translate-y-px
                   transition-all duration-200
                 "
@@ -144,7 +144,7 @@ export default function Header() {
 
         {/* === MENU MOBILE === */}
         {mobileNavOpen && (
-          <div className="lg:hidden bg-[#091532] border-t border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
+          <div className="lg:hidden bg-gradient-to-b from-[#0d2559] to-[#071530] border-t border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
             <nav className="px-4 py-3 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
@@ -164,8 +164,8 @@ export default function Header() {
                 onClick={() => setMobileNavOpen(false)}
                 className="
                   mt-2 px-3 py-2.5 text-sm font-semibold text-center
-                  bg-[#c41e1e] text-white rounded hover:bg-[#a01818]
-                  transition-colors
+                  bg-gradient-to-br from-[#d6241c] via-[#c41e1e] to-[#8f1414] text-white rounded hover:brightness-110
+                  transition-all
                 "
               >
                 Hubungi Kami

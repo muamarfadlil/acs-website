@@ -16,7 +16,7 @@ export default function ClientsPage() {
   return (
     <div className="min-h-screen bg-[#f5f8fc] dark:bg-[#091832] transition-colors duration-300">
       {/* ===== HERO HALAMAN ===== */}
-      <div className="bg-[#0a1f44] relative overflow-hidden">
+      <div className="bg-[#efeeec] dark:bg-[#0a1f44] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -31,7 +31,7 @@ export default function ClientsPage() {
           <Link
             href="/"
             className="
-              inline-flex items-center gap-2 text-white/50 hover:text-white
+              inline-flex items-center gap-2 text-[#0a1f44]/60 hover:text-[#0a1f44] dark:text-white/50 dark:hover:text-white
               text-sm mb-6 transition-colors
             "
           >
@@ -47,13 +47,13 @@ export default function ClientsPage() {
               <p className="text-[#c41e1e] text-xs font-semibold uppercase tracking-[0.2em]">
                 Rekam Jejak
               </p>
-              <h1 className="font-['Bebas_Neue'] text-5xl text-white tracking-wide leading-tight">
+              <h1 className="font-['Bebas_Neue'] text-5xl text-[#0a1f44] dark:text-white tracking-wide leading-tight">
                 Klien &amp; Proyek
               </h1>
             </div>
           </div>
 
-          <p className="text-white/60 text-base max-w-2xl leading-relaxed">
+          <p className="text-[#0a1f44]/60 dark:text-white/60 text-base max-w-2xl leading-relaxed">
             Sejak berdiri pada 2004, PT ACS telah menyelesaikan lebih dari 28
             kontrak kerja dengan KKKS (Kontraktor Kontrak Kerja Sama) terkemuka
             di Indonesia — mencakup wilayah Sumatera, Jawa, Kalimantan, hingga
@@ -72,7 +72,7 @@ export default function ClientsPage() {
                 <p className="font-['Bebas_Neue'] text-3xl text-[#c41e1e] leading-none">
                   {stat.value}
                 </p>
-                <p className="text-white/40 text-xs mt-0.5">{stat.label}</p>
+                <p className="text-[#0a1f44]/50 dark:text-white/40 text-xs mt-0.5">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -82,7 +82,7 @@ export default function ClientsPage() {
       {/* ===== KONTEN UTAMA ===== */}
       <div ref={contentRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
         {/* DAFTAR KLIEN / MITRA */}
-        <div className="reveal bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 p-8">
+        <div className="reveal bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 p-8">
           <h2 className="font-['Bebas_Neue'] text-3xl text-[#0a1f44] dark:text-white tracking-wide mb-2">
             Klien &amp; Mitra Kami
           </h2>
@@ -109,7 +109,7 @@ export default function ClientsPage() {
         </div>
 
         {/* TABEL RIWAYAT PROYEK */}
-        <div className="reveal reveal-delay-1 bg-white dark:bg-[#0a1f44] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
+        <div className="reveal reveal-delay-1 bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
           <div className="bg-[#0a1f44] dark:bg-[#091832] px-6 py-4 flex items-center gap-3">
             <h2 className="text-white font-bold text-sm uppercase tracking-wide">
               Riwayat Proyek (2005 – 2022)
@@ -179,7 +179,7 @@ export default function ClientsPage() {
                     key={project.no}
                     className={`
                       hover:bg-[#f5f8fc] dark:hover:bg-white/5 transition-colors
-                      ${idx % 2 === 0 ? "bg-white dark:bg-[#0a1f44]" : "bg-gray-50/50 dark:bg-white/[0.03]"}
+                      ${idx % 2 === 0 ? "bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532]" : "bg-gray-50/50 dark:bg-white/[0.03]"}
                     `}
                   >
                     <td className="px-4 py-3.5">
@@ -224,10 +224,13 @@ export default function ClientsPage() {
             href="/contact"
             className="
               inline-flex items-center gap-2
-              bg-[#0a1f44] dark:bg-white/10 text-white
+              bg-gradient-to-br from-[#14305c] via-[#0a1f44] to-[#071530]
+              dark:from-white/15 dark:via-white/10 dark:to-white/5 text-white
               px-8 py-3 font-semibold text-sm rounded
               border border-transparent dark:border-white/20
-              hover:bg-[#c41e1e] dark:hover:bg-[#c41e1e] transition-colors duration-200
+              hover:from-[#d6241c] hover:via-[#c41e1e] hover:to-[#8f1414]
+              dark:hover:from-[#d6241c] dark:hover:via-[#c41e1e] dark:hover:to-[#8f1414]
+              transition-all duration-200
             "
           >
             Hubungi Tim Kami

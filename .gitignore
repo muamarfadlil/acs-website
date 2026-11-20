@@ -42,3 +42,6 @@ next-env.d.ts
 
 # Folder test coverage
 coverage/
+
+.vercel
+.env*

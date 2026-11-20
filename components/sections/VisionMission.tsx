@@ -78,7 +78,7 @@ export default function VisionMission() {
           {/* Misi */}
           <div
             className="
-              reveal-right reveal-delay-1 bg-white dark:bg-[#0a1f44] rounded overflow-hidden
+              reveal-right reveal-delay-1 bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded overflow-hidden
               border border-[#0a1f44]/10 dark:border-white/10
               shadow-[0_8px_32px_rgba(10,31,68,0.1)]
               hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(10,31,68,0.18)]
@@ -139,7 +139,7 @@ export default function VisionMission() {
                   key={idx}
                   className={`
                     reveal-scale reveal-delay-${idx + 1}
-                    bg-white dark:bg-[#0a1f44] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
+                    bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
                     hover:border-[#c41e1e]/30
                     hover:-translate-y-1.5
                     hover:shadow-[0_12px_32px_rgba(10,31,68,0.14)]
