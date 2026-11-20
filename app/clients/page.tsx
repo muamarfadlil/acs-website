@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Briefcase, ArrowLeft, MapPin, Calendar } from "lucide-react"; // DollarSign dihapus karena tidak lagi digunakan
 import { clients, projects } from "@/lib/data";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import SectionSeam from "@/components/SectionSeam";
 
 export default function ClientsPage() {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -78,6 +79,7 @@ export default function ClientsPage() {
           </div>
         </div>
       </div>
+      <SectionSeam />
 
       {/* ===== KONTEN UTAMA ===== */}
       <div ref={contentRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">

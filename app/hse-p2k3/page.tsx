@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { csrK3Activities } from "@/lib/data";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import SectionSeam from "@/components/SectionSeam";
 
 const categoryLabel: Record<string, string> = {
   csr: "CSR",
@@ -96,6 +97,7 @@ export default function HseP2k3Page() {
           </p>
         </div>
       </div>
+      <SectionSeam />
 
       {/* ===== FILTER ===== */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 flex flex-wrap items-center gap-3">

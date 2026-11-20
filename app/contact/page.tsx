@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { company } from "@/lib/data";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import SectionSeam from "@/components/SectionSeam";
 
 /**
  * Halaman Kontak (/contact)
@@ -150,6 +151,7 @@ function ContactPageContent() {
           </p>
         </div>
       </div>
+      <SectionSeam />
 
       {/* ===== KONTEN UTAMA ===== */}
       <div ref={contentRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

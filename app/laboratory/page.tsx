@@ -8,6 +8,7 @@ import Link from "next/link";
 import { FlaskConical, Monitor, ArrowLeft, CheckCircle2 } from "lucide-react";
 import { labEquipment, software, personnel } from "@/lib/data";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import SectionSeam from "@/components/SectionSeam";
 
 /**
  * Halaman Laboratorium (/laboratory)
@@ -77,6 +78,7 @@ export default function LaboratoryPage() {
           </p>
         </div>
       </div>
+      <SectionSeam />
 
       {/* ===== KONTEN UTAMA ===== */}
       <div ref={contentRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

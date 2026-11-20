@@ -7,6 +7,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import { UserCheck, ArrowLeft, Briefcase, MapPin, Clock, ChevronRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import SectionSeam from "@/components/SectionSeam";
 
 // Data posisi yang sedang dibuka
 // Perbarui array ini sesuai kebutuhan rekrutmen terkini
@@ -87,6 +88,7 @@ export default function CareerPage() {
           </p>
         </div>
       </div>
+      <SectionSeam />
 
       {/* ===== KONTEN ===== */}
       <div ref={contentRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

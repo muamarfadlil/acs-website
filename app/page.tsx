@@ -9,6 +9,7 @@ import VisionMission from "@/components/sections/VisionMission";
 import Certifications from "@/components/sections/Certifications";
 import ContactSection from "@/components/sections/ContactSection";
 import SectionDots from "@/components/SectionDots";
+import SectionSeam from "@/components/SectionSeam";
 
 /**
  * Halaman Utama (/)
@@ -29,11 +30,17 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <SectionSeam />
       <About />
+      <SectionSeam />
       <Services />
+      <SectionSeam />
       <CsrHighlight />
+      <SectionSeam />
       <VisionMission />
+      <SectionSeam />
       <Certifications />
+      <SectionSeam />
       <ContactSection />
       <SectionDots />
     </>

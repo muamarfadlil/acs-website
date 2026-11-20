@@ -8,6 +8,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import { MapPinned, ArrowLeft } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import SectionSeam from "@/components/SectionSeam";
 
 const ExperienceMapWidget = dynamic(() => import("./ExperienceMapWidget"), {
   ssr: false,
@@ -69,6 +70,7 @@ export default function ExperienceMapPage() {
           </p>
         </div>
       </div>
+      <SectionSeam />
 
       {/* ===== KONTEN UTAMA ===== */}
       <div ref={contentRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
