@@ -107,7 +107,7 @@ export default function About() {
                     className="
                       px-4 py-2 border border-[#0a1f44]/20 dark:border-white/20 rounded
                       text-xs font-medium text-[#0a1f44] dark:text-white
-                      hover:border-[#c41e1e]/40 hover:bg-[#f0f4fa] dark:hover:bg-white/10
+                      hover:border-[#c41e1e]/40 hover:bg-[#f5f8fc] dark:hover:bg-white/10
                       hover:shadow-sm transition-all duration-200
                     "
                   >
@@ -170,7 +170,7 @@ export default function About() {
                 <div
                   key={i}
                   className="
-                    bg-[#f0f4fa] dark:bg-white/5 border border-[#0a1f44]/10 dark:border-white/10 rounded p-4
+                    bg-[#f5f8fc] dark:bg-white/5 border border-[#0a1f44]/10 dark:border-white/10 rounded p-4
                     flex flex-col gap-2
                     hover:border-[#c41e1e]/30 hover:bg-white dark:hover:bg-white/10
                     hover:-translate-y-0.5 hover:shadow-md

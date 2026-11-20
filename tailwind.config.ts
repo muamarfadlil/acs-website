@@ -27,7 +27,7 @@ const config: Config = {
           navy: "#0a1f44",
           blue: "#1a3a6e",
           red: "#c41e1e",
-          light: "#f0f4fa",
+          light: "#f5f8fc",
         },
       },
       fontFamily: {

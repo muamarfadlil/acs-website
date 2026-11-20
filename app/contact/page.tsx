@@ -108,7 +108,7 @@ function ContactPageContent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f0f4fa] dark:bg-[#091832] transition-colors duration-300">
+    <div className="min-h-screen bg-[#f5f8fc] dark:bg-[#091832] transition-colors duration-300">
       {/* ===== HERO HALAMAN ===== */}
       <div className="bg-[#0a1f44] relative overflow-hidden">
         <div

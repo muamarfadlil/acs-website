@@ -14,7 +14,7 @@ export default function ClientsPage() {
   useScrollReveal(contentRef);
 
   return (
-    <div className="min-h-screen bg-[#f0f4fa] dark:bg-[#091832] transition-colors duration-300">
+    <div className="min-h-screen bg-[#f5f8fc] dark:bg-[#091832] transition-colors duration-300">
       {/* ===== HERO HALAMAN ===== */}
       <div className="bg-[#0a1f44] relative overflow-hidden">
         <div
@@ -155,7 +155,7 @@ export default function ClientsPage() {
           <div className="hidden md:block overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-[#f0f4fa] dark:bg-white/5 border-b border-[#0a1f44]/10 dark:border-white/10">
+                <tr className="bg-[#f5f8fc] dark:bg-white/5 border-b border-[#0a1f44]/10 dark:border-white/10">
                   <th className="px-4 py-3 text-left text-xs font-bold text-[#0a1f44] dark:text-white uppercase tracking-wide w-10">
                     No.
                   </th>
@@ -178,7 +178,7 @@ export default function ClientsPage() {
                   <tr
                     key={project.no}
                     className={`
-                      hover:bg-[#f0f4fa] dark:hover:bg-white/5 transition-colors
+                      hover:bg-[#f5f8fc] dark:hover:bg-white/5 transition-colors
                       ${idx % 2 === 0 ? "bg-white dark:bg-[#0a1f44]" : "bg-gray-50/50 dark:bg-white/[0.03]"}
                     `}
                   >

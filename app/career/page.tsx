@@ -44,7 +44,7 @@ export default function CareerPage() {
   useScrollReveal(contentRef);
 
   return (
-    <div className="min-h-screen bg-[#f0f4fa] dark:bg-[#091832] transition-colors duration-300">
+    <div className="min-h-screen bg-[#f5f8fc] dark:bg-[#091832] transition-colors duration-300">
 
       {/* ===== HERO HALAMAN ===== */}
       <div className="bg-[#0a1f44] relative overflow-hidden">
@@ -232,7 +232,7 @@ export default function CareerPage() {
             </div>
 
             {/* Kirim CV Spontan */}
-            <div className="reveal-right reveal-delay-2 bg-[#f0f4fa] dark:bg-white/5 border border-[#0a1f44]/10 dark:border-white/10 rounded p-5 text-center">
+            <div className="reveal-right reveal-delay-2 bg-[#f5f8fc] dark:bg-white/5 border border-[#0a1f44]/10 dark:border-white/10 rounded p-5 text-center">
               <Briefcase size={24} className="text-[#c41e1e] mx-auto mb-3" />
               <p className="font-bold text-[#0a1f44] dark:text-white text-sm mb-2">
                 Tidak Ada Posisi yang Cocok?

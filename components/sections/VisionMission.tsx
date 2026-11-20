@@ -25,7 +25,7 @@ export default function VisionMission() {
   useScrollReveal(sectionRef);
 
   return (
-    <section id="vision" ref={sectionRef} className="py-24 bg-[#f0f4fa] dark:bg-[#091832] transition-colors duration-300">
+    <section id="vision" ref={sectionRef} className="py-24 bg-[#f5f8fc] dark:bg-[#091832] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* === HEADER === */}
@@ -149,7 +149,7 @@ export default function VisionMission() {
                   <div
                     className="
                       w-11 h-11 rounded
-                      bg-[#f0f4fa] dark:bg-white/10 group-hover:bg-[#c41e1e]
+                      bg-[#f5f8fc] dark:bg-white/10 group-hover:bg-[#c41e1e]
                       flex items-center justify-center mb-4
                       group-hover:shadow-[0_4px_16px_rgba(196,30,30,0.3)]
                       transition-all duration-300
