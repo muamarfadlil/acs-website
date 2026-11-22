@@ -17,7 +17,10 @@ export function useScrollReveal<T extends HTMLElement>(
         entries.forEach((entry) => {
           if (entry.isIntersecting) entry.target.classList.add("visible");
         }),
-      { threshold: 0.1 },
+      // rootMargin positif memperluas area deteksi ke bawah viewport, jadi
+      // elemen mulai fade-in sebelum benar-benar masuk layar saat di-scroll
+      // cepat — menghindari efek "kosong sekejap" sebelum animasi selesai.
+      { threshold: 0.1, rootMargin: "0px 0px 200px 0px" },
     );
     ref.current?.querySelectorAll(REVEAL_SELECTOR).forEach((el) => observer.observe(el));
     return () => observer.disconnect();

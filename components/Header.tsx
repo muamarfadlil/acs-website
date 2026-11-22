@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ChevronRight } from "lucide-react";
+import { Menu, X, ChevronRight, PanelLeft, PanelLeftOpen } from "lucide-react";
 import { navLinks } from "@/lib/data";
 import ThemeToggle from "@/components/ThemeToggle";
 
@@ -53,7 +53,8 @@ export default function Header() {
             <div className="flex items-center gap-4">
               <button
                 onClick={toggleSidebar}
-                aria-label="Toggle sidebar"
+                aria-label="Buka navigasi halaman lain"
+                title="Navigasi halaman lain"
                 className="
                   flex items-center justify-center w-9 h-9
                   text-white/70 hover:text-white
@@ -63,7 +64,7 @@ export default function Header() {
                   rounded transition-all duration-200
                 "
               >
-                {sidebarOpen ? <X size={18} /> : <Menu size={18} />}
+                {sidebarOpen ? <PanelLeftOpen size={18} /> : <PanelLeft size={18} />}
               </button>
 
               <Link href="/" className="flex items-center gap-3 group">
@@ -134,7 +135,8 @@ export default function Header() {
               <button
                 onClick={() => setMobileNavOpen(!mobileNavOpen)}
                 className="lg:hidden text-white/70 hover:text-white transition-colors duration-150"
-                aria-label="Toggle mobile navigation"
+                aria-label="Buka menu navigasi beranda"
+                title="Menu navigasi beranda"
               >
                 {mobileNavOpen ? <X size={22} /> : <Menu size={22} />}
               </button>

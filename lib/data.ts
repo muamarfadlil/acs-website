@@ -321,13 +321,16 @@ export const navLinks = [
 ];
 
 // Link navigasi sidebar (menuju halaman terpisah)
+// Label dibuat berbeda dari navLinks walau menyasar topik yang sama
+// (mis. "HSE & P2K3" / "Kontak") agar jelas bahwa ini adalah halaman
+// detail terpisah, bukan anchor section di beranda.
 export const sidebarLinks = [
   { label: "Laboratorium", href: "/laboratory", icon: "FlaskConical" },
-  { label: "HSE & P2K3", href: "/hse-p2k3", icon: "HeartHandshake" },
+  { label: "Dokumentasi HSE & P2K3", href: "/hse-p2k3", icon: "HeartHandshake" },
   { label: "Klien & Proyek", href: "/clients", icon: "Briefcase" },
   { label: "Peta Pengalaman Kerja", href: "/experience-map", icon: "MapPinned" },
   { label: "Karir", href: "/career", icon: "UserCheck" },
-  { label: "Kontak", href: "/contact", icon: "Mail" },
+  { label: "Formulir Kontak", href: "/contact", icon: "Mail" },
 ];
 
 // Dokumentasi kegiatan CSR (Corporate Social Responsibility) & P2K3
@@ -367,7 +370,7 @@ export const csrK3Activities = [
     category: "k3" as const,
     year: 2026,
     title: "Seminar Kesehatan BMI & ISPA",
-    date: "2026, pukul 13.00 WIB",
+    date: "Rabu, 7 Januari 2026, pukul 13.00 WIB",
     location: "Kantor PT Adiguna Cakra Semesta",
     speaker: "dr. Grishya Nanda Suryaratna",
     description:
