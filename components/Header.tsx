@@ -18,6 +18,17 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Sidebar bisa ditutup dari banyak tempat selain tombol ini (tombol X
+  // di dalam sidebar, klik overlay, Escape, atau klik link navigasi).
+  // Tanpa listener ini, sidebarOpen di sini jadi basi dan klik pertama
+  // setelah sidebar ditutup dari tempat lain hanya "menutup ulang"
+  // state basi itu tanpa efek terlihat — baru klik kedua yang membuka.
+  useEffect(() => {
+    const handler = (e: CustomEvent) => setSidebarOpen(e.detail as boolean);
+    window.addEventListener("toggleSidebar", handler as EventListener);
+    return () => window.removeEventListener("toggleSidebar", handler as EventListener);
+  }, []);
+
   const toggleSidebar = () => {
     const next = !sidebarOpen;
     setSidebarOpen(next);
