@@ -21,7 +21,7 @@ export default function ContactSection() {
           <div
             className="
               reveal
-              bg-gradient-to-br from-[#f4f2ef] via-[#efeeec] to-[#e6e3dd]
+              bg-gradient-to-br from-[#f4f2ef] via-[#E4E6E8] to-[#e6e3dd]
               dark:from-[#0d2559] dark:via-[#0a1f44] dark:to-[#091532]
               rounded overflow-hidden relative mb-16
               shadow-[0_16px_64px_rgba(10,31,68,0.12)] dark:shadow-[0_16px_64px_rgba(10,31,68,0.35)]

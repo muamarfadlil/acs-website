@@ -27,7 +27,7 @@ export default function LaboratoryPage() {
     <div className="min-h-screen bg-[#f5f8fc] dark:bg-[#091832] transition-colors duration-300">
 
       {/* ===== HERO HALAMAN ===== */}
-      <div className="bg-[#efeeec] dark:bg-[#0a1f44] relative overflow-hidden">
+      <div className="bg-[#E4E6E8] dark:bg-[#0a1f44] relative overflow-hidden">
         {/* Pattern */}
         <div
           className="absolute inset-0 opacity-10"
