@@ -54,7 +54,7 @@ export default function HseP2k3Page() {
   useScrollReveal(listRef, [category, year]);
 
   return (
-    <div className="min-h-screen bg-[#f5f8fc] dark:bg-[#091832] transition-colors duration-300">
+    <div className="min-h-screen bg-[#F2F3F5] dark:bg-[#091832] transition-colors duration-300">
       {/* ===== HERO HALAMAN ===== */}
       <div className="bg-[#E4E6E8] dark:bg-[#0a1f44] relative overflow-hidden">
         <div
@@ -155,7 +155,7 @@ export default function HseP2k3Page() {
                 key={activity.id}
                 className={`
                   reveal-scale reveal-delay-${(idx % 4) + 1}
-                  bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10
+                  bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10
                   overflow-hidden hover:border-[#c41e1e]/30 hover:shadow-md
                   transition-all duration-200
                 `}

@@ -25,7 +25,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[92vh] flex flex-col justify-center bg-gradient-to-br from-[#f4f2ef] via-[#E4E6E8] to-[#e2dfd8] dark:from-[#102a52] dark:via-[#0a1f44] dark:to-[#061328] overflow-hidden"
+      className="relative min-h-[92vh] flex flex-col justify-center bg-gradient-to-br from-[#F0F1F3] via-[#E4E6E8] to-[#DCDEE1] dark:from-[#102a52] dark:via-[#0a1f44] dark:to-[#061328] overflow-hidden"
     >
       {/* === BACKGROUND: Pola grid geometris === */}
       <div
@@ -43,7 +43,7 @@ export default function Hero() {
       <div className="absolute top-1/3 -left-32 w-[600px] h-[600px] rounded-full bg-[#c41e1e]/8 blur-3xl pointer-events-none" />
 
       {/* Gradient overlay kiri → tengah */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#E4E6E8] via-[#E4E6E8]/85 to-[#e4e1db]/40 dark:from-[#0a1f44] dark:via-[#0a1f44]/85 dark:to-[#0d2559]/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#E4E6E8] via-[#E4E6E8]/85 to-[#DCDEE1]/40 dark:from-[#0a1f44] dark:via-[#0a1f44]/85 dark:to-[#0d2559]/40" />
 
       {/* Gradient overlay bawah untuk fade ke section berikutnya */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#E4E6E8] dark:from-[#091532] to-transparent" />

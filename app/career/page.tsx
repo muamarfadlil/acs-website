@@ -45,7 +45,7 @@ export default function CareerPage() {
   useScrollReveal(contentRef);
 
   return (
-    <div className="min-h-screen bg-[#f5f8fc] dark:bg-[#091832] transition-colors duration-300">
+    <div className="min-h-screen bg-[#F2F3F5] dark:bg-[#091832] transition-colors duration-300">
 
       {/* ===== HERO HALAMAN ===== */}
       <div className="bg-[#E4E6E8] dark:bg-[#0a1f44] relative overflow-hidden">
@@ -108,7 +108,7 @@ export default function CareerPage() {
                 key={job.id}
                 className={`
                   reveal-left reveal-delay-${Math.min(idx + 1, 4)}
-                  bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden
+                  bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden
                   hover:border-[#c41e1e]/30 hover:shadow-md
                   transition-all duration-200 group
                 `}
@@ -190,7 +190,7 @@ export default function CareerPage() {
           <div className="space-y-6">
 
             {/* Keuntungan bekerja di ACS */}
-            <div className="reveal-right bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
+            <div className="reveal-right bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
               <h3 className="font-bold text-[#0a1f44] dark:text-white text-sm uppercase tracking-wide mb-4">
                 Keuntungan Bergabung
               </h3>
@@ -237,7 +237,7 @@ export default function CareerPage() {
             </div>
 
             {/* Kirim CV Spontan */}
-            <div className="reveal-right reveal-delay-2 bg-[#f5f8fc] dark:bg-white/5 border border-[#0a1f44]/10 dark:border-white/10 rounded p-5 text-center">
+            <div className="reveal-right reveal-delay-2 bg-[#F2F3F5] dark:bg-white/5 border border-[#0a1f44]/10 dark:border-white/10 rounded p-5 text-center">
               <Briefcase size={24} className="text-[#c41e1e] mx-auto mb-3" />
               <p className="font-bold text-[#0a1f44] dark:text-white text-sm mb-2">
                 Tidak Ada Posisi yang Cocok?

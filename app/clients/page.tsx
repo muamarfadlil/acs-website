@@ -15,7 +15,7 @@ export default function ClientsPage() {
   useScrollReveal(contentRef);
 
   return (
-    <div className="min-h-screen bg-[#f5f8fc] dark:bg-[#091832] transition-colors duration-300">
+    <div className="min-h-screen bg-[#F2F3F5] dark:bg-[#091832] transition-colors duration-300">
       {/* ===== HERO HALAMAN ===== */}
       <div className="bg-[#E4E6E8] dark:bg-[#0a1f44] relative overflow-hidden">
         <div
@@ -84,7 +84,7 @@ export default function ClientsPage() {
       {/* ===== KONTEN UTAMA ===== */}
       <div ref={contentRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
         {/* DAFTAR KLIEN / MITRA */}
-        <div className="reveal bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 p-8">
+        <div className="reveal bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 p-8">
           <h2 className="font-['Bebas_Neue'] text-3xl text-[#0a1f44] dark:text-white tracking-wide mb-2">
             Klien &amp; Mitra Kami
           </h2>
@@ -111,7 +111,7 @@ export default function ClientsPage() {
         </div>
 
         {/* TABEL RIWAYAT PROYEK */}
-        <div className="reveal reveal-delay-1 bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
+        <div className="reveal reveal-delay-1 bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
           <div className="bg-[#0a1f44] dark:bg-[#091832] px-6 py-4 flex items-center gap-3">
             <h2 className="text-white font-bold text-sm uppercase tracking-wide">
               Riwayat Proyek (2005 – 2022)
@@ -157,7 +157,7 @@ export default function ClientsPage() {
           <div className="hidden md:block overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-[#f5f8fc] dark:bg-white/5 border-b border-[#0a1f44]/10 dark:border-white/10">
+                <tr className="bg-[#F2F3F5] dark:bg-white/5 border-b border-[#0a1f44]/10 dark:border-white/10">
                   <th className="px-4 py-3 text-left text-xs font-bold text-[#0a1f44] dark:text-white uppercase tracking-wide w-10">
                     No.
                   </th>
@@ -180,8 +180,8 @@ export default function ClientsPage() {
                   <tr
                     key={project.no}
                     className={`
-                      hover:bg-[#f5f8fc] dark:hover:bg-white/5 transition-colors
-                      ${idx % 2 === 0 ? "bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532]" : "bg-gray-50/50 dark:bg-white/[0.03]"}
+                      hover:bg-[#F2F3F5] dark:hover:bg-white/5 transition-colors
+                      ${idx % 2 === 0 ? "bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532]" : "bg-gray-50/50 dark:bg-white/[0.03]"}
                     `}
                   >
                     <td className="px-4 py-3.5">

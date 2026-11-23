@@ -10,7 +10,7 @@ export default function Certifications() {
   useScrollReveal(sectionRef);
 
   return (
-    <section id="certifications" ref={sectionRef} className="py-24 bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] transition-colors duration-300">
+    <section id="certifications" ref={sectionRef} className="py-24 bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* === HEADER === */}
@@ -85,7 +85,7 @@ export default function Certifications() {
         <div
           className="
             border border-[#0a1f44]/10 dark:border-white/10 rounded
-            bg-gradient-to-br from-[#f5f8fc] to-[#e8eef8] dark:from-[#0f2449] dark:to-[#091832]
+            bg-gradient-to-br from-[#F2F3F5] to-[#E8EAED] dark:from-[#0f2449] dark:to-[#091832]
             p-8
             shadow-[0_4px_24px_rgba(10,31,68,0.08)]
           "
@@ -139,7 +139,7 @@ export default function Certifications() {
         <div
           className="
             border border-[#0a1f44]/10 dark:border-white/10 rounded
-            bg-gradient-to-br from-[#f5f8fc] to-[#e8eef8] dark:from-[#0f2449] dark:to-[#091832]
+            bg-gradient-to-br from-[#F2F3F5] to-[#E8EAED] dark:from-[#0f2449] dark:to-[#091832]
             p-8 mt-6
             shadow-[0_4px_24px_rgba(10,31,68,0.08)]
           "

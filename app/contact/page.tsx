@@ -109,7 +109,7 @@ function ContactPageContent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f5f8fc] dark:bg-[#091832] transition-colors duration-300">
+    <div className="min-h-screen bg-[#F2F3F5] dark:bg-[#091832] transition-colors duration-300">
       {/* ===== HERO HALAMAN ===== */}
       <div className="bg-[#E4E6E8] dark:bg-[#0a1f44] relative overflow-hidden">
         <div
@@ -158,7 +158,7 @@ function ContactPageContent() {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* ===== FORM KONTAK (2/3 lebar) ===== */}
           <div className="lg:col-span-2">
-            <div className="reveal bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
+            <div className="reveal bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
               <div className="bg-[#0a1f44] dark:bg-[#091832] px-6 py-4 flex items-center gap-3">
                 <Send size={16} className="text-[#c41e1e]" />
                 <h2 className="text-white font-bold text-sm uppercase tracking-wide">
@@ -359,7 +359,7 @@ function ContactPageContent() {
           {/* ===== INFO KONTAK (1/3 lebar) ===== */}
           <div className="space-y-5">
             {/* Alamat */}
-            <div className="reveal bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
+            <div className="reveal bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-9 h-9 bg-[#c41e1e] rounded flex items-center justify-center">
                   <MapPin size={16} className="text-white" />
@@ -387,7 +387,7 @@ function ContactPageContent() {
             </div>
 
             {/* Telepon & Email */}
-            <div className="reveal reveal-delay-1 bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6 space-y-4">
+            <div className="reveal reveal-delay-1 bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6 space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 bg-[#0a1f44] rounded flex items-center justify-center">
                   <Phone size={16} className="text-white" />
@@ -475,7 +475,7 @@ function ContactPageContent() {
             </div>
 
             {/* Peta Lokasi */}
-            <div className="reveal reveal-delay-3 bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
+            <div className="reveal reveal-delay-3 bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
               <div className="relative aspect-video">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d333.1843841007858!2d106.67906508702487!3d-6.293378507241656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTcnMzUuOSJTIDEwNsKwNDAnNDQuOSJF!5e1!3m2!1sen!2sid!4v1786020634961!5m2!1sen!2sid"

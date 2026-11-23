@@ -32,7 +32,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" ref={sectionRef} className="py-24 bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] transition-colors duration-300">
+    <section id="about" ref={sectionRef} className="py-24 bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
 
@@ -107,7 +107,7 @@ export default function About() {
                     className="
                       px-4 py-2 border border-[#0a1f44]/20 dark:border-white/20 rounded
                       text-xs font-medium text-[#0a1f44] dark:text-white
-                      hover:border-[#c41e1e]/40 hover:bg-[#f5f8fc] dark:hover:bg-white/10
+                      hover:border-[#c41e1e]/40 hover:bg-[#F2F3F5] dark:hover:bg-white/10
                       hover:shadow-sm transition-all duration-200
                     "
                   >
@@ -170,7 +170,7 @@ export default function About() {
                 <div
                   key={i}
                   className="
-                    bg-[#f5f8fc] dark:bg-white/5 border border-[#0a1f44]/10 dark:border-white/10 rounded p-4
+                    bg-[#F2F3F5] dark:bg-white/5 border border-[#0a1f44]/10 dark:border-white/10 rounded p-4
                     flex flex-col gap-2
                     hover:border-[#c41e1e]/30 hover:bg-white dark:hover:bg-white/10
                     hover:-translate-y-0.5 hover:shadow-md

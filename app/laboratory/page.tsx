@@ -24,7 +24,7 @@ export default function LaboratoryPage() {
   useScrollReveal(contentRef);
 
   return (
-    <div className="min-h-screen bg-[#f5f8fc] dark:bg-[#091832] transition-colors duration-300">
+    <div className="min-h-screen bg-[#F2F3F5] dark:bg-[#091832] transition-colors duration-300">
 
       {/* ===== HERO HALAMAN ===== */}
       <div className="bg-[#E4E6E8] dark:bg-[#0a1f44] relative overflow-hidden">
@@ -88,7 +88,7 @@ export default function LaboratoryPage() {
           <div className="lg:col-span-2 space-y-8">
 
             {/* PERALATAN LAB */}
-            <div className="reveal-left bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
+            <div className="reveal-left bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
               <div className="bg-[#0a1f44] px-6 py-4 flex items-center gap-3">
                 <FlaskConical size={18} className="text-[#c41e1e]" />
                 <h2 className="text-white font-bold text-sm uppercase tracking-wide">
@@ -107,7 +107,7 @@ export default function LaboratoryPage() {
                       key={i}
                       className="
                         flex items-start gap-2.5
-                        p-3 rounded bg-[#f5f8fc] dark:bg-white/5
+                        p-3 rounded bg-[#F2F3F5] dark:bg-white/5
                         border border-[#0a1f44]/5 dark:border-white/10
                         hover:border-[#c41e1e]/20 transition-colors
                       "
@@ -121,7 +121,7 @@ export default function LaboratoryPage() {
             </div>
 
             {/* SOFTWARE */}
-            <div className="reveal-left reveal-delay-1 bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
+            <div className="reveal-left reveal-delay-1 bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 overflow-hidden">
               <div className="bg-[#1a3a6e] px-6 py-4 flex items-center gap-3">
                 <Monitor size={18} className="text-[#c41e1e]" />
                 <h2 className="text-white font-bold text-sm uppercase tracking-wide">
@@ -167,7 +167,7 @@ export default function LaboratoryPage() {
           <div className="space-y-6">
 
             {/* LOKASI FASILITAS */}
-            <div className="reveal-right bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
+            <div className="reveal-right bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] rounded border border-[#0a1f44]/10 dark:border-white/10 p-6">
               <h3 className="font-bold text-[#0a1f44] dark:text-white text-sm mb-4 uppercase tracking-wide">
                 Lokasi Fasilitas
               </h3>
@@ -241,7 +241,7 @@ export default function LaboratoryPage() {
             </div>
 
             {/* CTA */}
-            <div className="reveal-right reveal-delay-2 bg-[#f5f8fc] dark:bg-white/5 border border-[#0a1f44]/10 dark:border-white/10 rounded p-5 text-center">
+            <div className="reveal-right reveal-delay-2 bg-[#F2F3F5] dark:bg-white/5 border border-[#0a1f44]/10 dark:border-white/10 rounded p-5 text-center">
               <p className="text-[#0a1f44] dark:text-white font-bold text-sm mb-2">
                 Butuh Konsultasi Teknis?
               </p>

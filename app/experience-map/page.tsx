@@ -13,7 +13,7 @@ import SectionSeam from "@/components/SectionSeam";
 const ExperienceMapWidget = dynamic(() => import("./ExperienceMapWidget"), {
   ssr: false,
   loading: () => (
-    <div className="h-[78vh] min-h-[560px] max-h-[860px] w-full rounded-xl border border-[#0a1f44]/10 dark:border-white/10 bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] flex items-center justify-center">
+    <div className="h-[78vh] min-h-[560px] max-h-[860px] w-full rounded-xl border border-[#0a1f44]/10 dark:border-white/10 bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] flex items-center justify-center">
       <p className="text-gray-400 dark:text-white/40 text-sm">Memuat peta…</p>
     </div>
   ),
@@ -24,7 +24,7 @@ export default function ExperienceMapPage() {
   useScrollReveal(contentRef);
 
   return (
-    <div className="min-h-screen bg-[#f5f8fc] dark:bg-[#091832] transition-colors duration-300">
+    <div className="min-h-screen bg-[#F2F3F5] dark:bg-[#091832] transition-colors duration-300">
       {/* ===== HERO HALAMAN ===== */}
       <div className="bg-[#E4E6E8] dark:bg-[#0a1f44] relative overflow-hidden">
         <div

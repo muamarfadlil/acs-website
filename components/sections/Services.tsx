@@ -26,10 +26,10 @@ export default function Services() {
     <section
       id="services"
       ref={sectionRef}
-      className="py-24 bg-gradient-to-br from-[#f2f0ed] via-[#E4E6E8] to-[#e2dfd8] dark:from-[#102a52] dark:via-[#0a1f44] dark:to-[#061328] relative overflow-hidden"
+      className="py-24 bg-gradient-to-br from-[#F0F1F3] via-[#E4E6E8] to-[#DCDEE1] dark:from-[#102a52] dark:via-[#0a1f44] dark:to-[#061328] relative overflow-hidden"
     >
       {/* Background gradient depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#e8e5df] via-transparent to-[#e8e5df] dark:from-[#091532] dark:via-transparent dark:to-[#091532]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#E8EAED] via-transparent to-[#E8EAED] dark:from-[#091532] dark:via-transparent dark:to-[#091532]" />
 
       {/* Pattern geometris tipis — versi mode siang (garis navy) & mode malam (garis putih) */}
       <div

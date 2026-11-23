@@ -7,7 +7,7 @@ import { Home, ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="min-h-[80vh] flex flex-col items-center justify-center bg-[#f5f8fc] dark:bg-[#091832] text-center px-4 transition-colors duration-300">
+    <div className="min-h-[80vh] flex flex-col items-center justify-center bg-[#F2F3F5] dark:bg-[#091832] text-center px-4 transition-colors duration-300">
       {/* Angka 404 besar */}
       <p className="font-['Bebas_Neue'] text-[180px] text-[#0a1f44]/10 dark:text-white/10 leading-none select-none">
         404

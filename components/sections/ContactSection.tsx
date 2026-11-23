@@ -14,14 +14,14 @@ export default function ContactSection() {
   return (
     <>
       {/* ===== CONTACT SECTION ===== */}
-      <section id="contact" ref={sectionRef} className="py-24 bg-[#f5f8fc] dark:bg-[#091832] transition-colors duration-300">
+      <section id="contact" ref={sectionRef} className="py-24 bg-[#F2F3F5] dark:bg-[#091832] transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* === CTA BESAR === */}
           <div
             className="
               reveal
-              bg-gradient-to-br from-[#f4f2ef] via-[#E4E6E8] to-[#e6e3dd]
+              bg-gradient-to-br from-[#F0F1F3] via-[#E4E6E8] to-[#DCDEE1]
               dark:from-[#0d2559] dark:via-[#0a1f44] dark:to-[#091532]
               rounded overflow-hidden relative mb-16
               shadow-[0_16px_64px_rgba(10,31,68,0.12)] dark:shadow-[0_16px_64px_rgba(10,31,68,0.35)]
@@ -99,7 +99,7 @@ export default function ContactSection() {
             <div
               className="
                 reveal-scale
-                bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
+                bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
                 hover:border-[#c41e1e]/30 hover:shadow-lg hover:-translate-y-1
                 transition-all duration-300
               "
@@ -130,7 +130,7 @@ export default function ContactSection() {
             <div
               className="
                 reveal-scale reveal-delay-1
-                bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
+                bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
                 hover:border-[#c41e1e]/30 hover:shadow-lg hover:-translate-y-1
                 transition-all duration-300
               "
@@ -171,7 +171,7 @@ export default function ContactSection() {
             <div
               className="
                 reveal-scale reveal-delay-2
-                bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
+                bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] border border-[#0a1f44]/10 dark:border-white/10 rounded p-6
                 hover:border-[#c41e1e]/30 hover:shadow-lg hover:-translate-y-1
                 transition-all duration-300
               "

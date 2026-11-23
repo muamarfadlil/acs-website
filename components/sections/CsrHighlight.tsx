@@ -21,7 +21,7 @@ export default function CsrHighlight() {
     .slice(0, 3);
 
   return (
-    <section id="csr" ref={sectionRef} className="py-24 bg-gradient-to-b from-white to-[#f7f5f2] dark:from-[#0f2449] dark:to-[#091532] transition-colors duration-300">
+    <section id="csr" ref={sectionRef} className="py-24 bg-gradient-to-b from-white to-[#ECEEF0] dark:from-[#0f2449] dark:to-[#091532] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="reveal flex items-center justify-center gap-3 mb-4">

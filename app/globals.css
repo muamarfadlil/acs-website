@@ -11,11 +11,11 @@
   --navy:    #0a1f44;
   --blue:    #1a3a6e;
   --red:     #c41e1e;
-  --light:   #f5f8fc;
+  --light:   #F2F3F5;
   --white:   #ffffff;
   --gray:    #6b7280;
   --surface: #ffffff;
-  --surface-alt: #f5f8fc;
+  --surface-alt: #F2F3F5;
   --text-body: #1f2937;
   --font-display: 'Bebas Neue', sans-serif;
   --font-body:    'Barlow', sans-serif;
@@ -297,7 +297,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #ECEEF0;
 }
 
 .dark ::-webkit-scrollbar-track {
