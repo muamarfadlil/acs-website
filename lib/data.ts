@@ -25,7 +25,7 @@ export const company = {
 // Statistik untuk ditampilkan di Hero / About section
 export const stats = [
   { value: "20+", label: "Tahun Pengalaman" },
-  { value: "150+", label: "Proyek Selesai" },
+  { value: "200+", label: "Proyek Selesai" },
   { value: "3", label: "Sertifikasi ISO" },
   { value: "35+", label: "Tenaga Ahli" },
 ];
